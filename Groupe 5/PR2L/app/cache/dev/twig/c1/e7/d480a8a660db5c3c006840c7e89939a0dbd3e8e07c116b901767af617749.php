@@ -1,6 +1,6 @@
 <?php
 
-/* SecurityBundle:Collector:security.html.twig */
+/* @Security/Collector/security.html.twig */
 class __TwigTemplate_c1e7d480a8a660db5c3c006840c7e89939a0dbd3e8e07c116b901767af617749 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -215,7 +215,7 @@ class __TwigTemplate_c1e7d480a8a660db5c3c006840c7e89939a0dbd3e8e07c116b901767af6
 
     public function getTemplateName()
     {
-        return "SecurityBundle:Collector:security.html.twig";
+        return "@Security/Collector/security.html.twig";
     }
 
     public function isTraitable()

@@ -1,3 +1,3 @@
-pr2_l_menu_homepage:
-    path:     /hello/{name}
+pr2l_menu_accueil: 
+    path:     /
     defaults: { _controller: PR2LMenuBundle:Default:index }
