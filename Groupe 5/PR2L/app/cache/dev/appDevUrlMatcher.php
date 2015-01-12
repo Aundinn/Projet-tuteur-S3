@@ -127,17 +127,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // pr2_l_article_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_article_homepage')), array (  '_controller' => 'PR2L\\ArticleBundle\\Controller\\DefaultController::indexAction',));
+        // pr2_l_article_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_article_homepage')), array (  '_controller' => 'PR2L\\ArticleBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // pr2l_menu_accueil
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'pr2l_menu_accueil');
             }
 
-            // pr2_l_menu_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_menu_homepage')), array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\DefaultController::indexAction',));
-            }
-
+            return array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pr2l_menu_accueil',);
         }
 
         if (0 === strpos($pathinfo, '/user')) {
@@ -175,6 +176,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::listAction',  '_route' => 'pr2l_user_list',);
             }
 
+            // pr2l_user_connexion
+            if ($pathinfo === '/user/connexion') {
+                return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::connexionAction',  '_route' => 'pr2l_user_connexion',);
+            }
+
             if (0 === strpos($pathinfo, '/user/demo')) {
                 // pr2l_demo_formArticle
                 if ($pathinfo === '/user/demo/article') {
@@ -197,6 +203,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  ':' => 'base.html.twig',  '_route' => 'pr2l_accueil',);
+        }
+
+        // homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

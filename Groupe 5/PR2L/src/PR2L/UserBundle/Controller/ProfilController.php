@@ -22,6 +22,7 @@ use Symfony\Component\httpFoundation\Request;
 use Symfony\Component\httpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PR2L\UserBundle\Entity\Profil;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Cette classe contient les méthodes de gestions des utilisateurs <br />
@@ -38,7 +39,7 @@ class ProfilController extends Controller {
 	public function addAction(Request $request) {
 		if ($request->isMethod ( 'POST' )) {
 			// Dans ce cas, le formulaire à été saisi, on traitera les données.
-
+			
 			// message que l'on passera dans le template.
 			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
 			
@@ -112,12 +113,28 @@ class ProfilController extends Controller {
 	public function listAction() {
 	}
 	
+	/**
+	 * Connexion d'un utilisateur
+	 *
+	 * @param Request $request        	
+	 */
+	public function connexionAction(Request $request) {
+		$session = new Session ();
+		$session->start ();
+		if ($request->isMethod ( 'POST' )) {
+			// formulaire rempli.
+			
+		}
+	}
 	// TMP
 	/**
 	 * PR2LUserBundle:Profil:formArticle
 	 */
-	public function formArticleAction() {
+	public function formArticleAction(Request $request) {
 		return $this->render ( 'PR2LUserBundle:Profil:formArticle.html.twig' );
+		if ($request->isMethod('GET')) {
+			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été modifié.' );
+		}
 	}
 	public function listerNewsAction() {
 		return $this->render ( 'PR2LUserBundle:Profil:listerNews.html.twig' );

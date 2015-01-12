@@ -1,6 +1,6 @@
 pr2_l_article:
     resource: "@PR2LArticleBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /publication #Toutes les routes du ArticleBundle
 
 pr2_l_menu:
     resource: "@PR2LMenuBundle/Resources/config/routing.yml"
@@ -11,14 +11,10 @@ pr2_l_user:
     prefix:   /user #TOUTES les routes du UserBundle commenceront par /user
 
 #Accueil du site.
-pr2l_accueil:
-    defaults: {::base.html.twig}
-    path: /
-    
-#pr2l__user_add:
-#    path: /add
-#    defaults: {_controller: PR2LUserBundle:Profil:add }
+#pr2l_accueil:
+#    defaults: {::base.html.twig}
+#    path: /
 
-#app:
-#    resource: @AppBundle/Controller/
-#    type:     annotation
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
