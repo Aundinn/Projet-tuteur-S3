@@ -3,29 +3,12 @@ var app = angular.module('CMS', []).config(['$interpolateProvider', function ($i
     $interpolateProvider.endSymbol('}]}');
   }]);
 
-app.controller('CMSController', function($scope, $http) {
-  $http.get('json/data.json')
-  .success(function (data) {
-       $scope.articles = data;
-   })
-   .error(function (data) {
-      alert("Problème lors du chargement des données");
-   });
+app.controller('CMSController', function(){
+    this.articles = [{}];
+  });
 
-   /*$scope.save = function() {
-   $http({
-        method: 'POST',
-        url: 'json/data.json',        
-        data: $scope.articles   
-    }).success(function(response) {
-        alert("c'est bon !" + $scope.articles );
-    }).error(function(response){
-        alert("c'est pas bon !");
-    });
-  };*/
-});
 
-  app.controller("ArticleController", function(){
+app.controller("ArticleController", function(){
 
     this.article = {elements:[{}]};
 
@@ -38,7 +21,7 @@ app.controller('CMSController', function($scope, $http) {
   });
 
 
- app.controller('TabController', function(){
+app.controller('TabController', function(){
     this.tab = 1;
 
     this.setTab = function(newValue){
