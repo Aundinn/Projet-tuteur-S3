@@ -13,8 +13,8 @@ app.controller("ArticleController", function(){
     this.article = {elements:[{}]};
 
     this.addArticle = function(articles){
-      articles.push(this.article);
-      this.article = {elements:[{}]};
+        articles.push(this.article);
+        this.article = {elements:[{}]};
     };
 
 
