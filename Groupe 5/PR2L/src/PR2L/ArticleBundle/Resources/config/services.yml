@@ -1,0 +1,4 @@
+services:
+#    pr2_l_article.example:
+#        class: PR2L\ArticleBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+pr2_l_article_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PR2LArticleBundle:Default:index }

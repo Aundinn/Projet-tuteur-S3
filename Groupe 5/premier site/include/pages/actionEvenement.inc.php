@@ -1,12 +1,12 @@
 <br />
-<div class="field-items">
+<!--<div class="field-items">
 	<div class="field-item even" rel="og:image rdfs:seeAlso"
 		resource="http://pr2l.fr/sites/default/files/styles/large/public/field/image/DSCN2937.JPG?itok=8wxgQc9T">
 		<img typeof="foaf:Image"
 			src="http://pr2l.fr/sites/default/files/styles/large/public/field/image/DSCN2937.JPG?itok=8wxgQc9T"
 			width="276" height="207" alt="" />
 	</div>
-</div>
+</div> -->
 </div>
 <div
 	class="field field-name-body field-type-text-with-summary field-label-hidden">

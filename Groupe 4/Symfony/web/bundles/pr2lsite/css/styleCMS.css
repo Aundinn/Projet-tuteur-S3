@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 		/*__Page__*/
 /*.cadre{
 	background-color: #C76565;
@@ -13,6 +14,8 @@
 	background-color: #FAEDED;
 }
 
+=======
+>>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
    /*__Edition d'articles__*/
 .boutonGris {
 	box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -40,6 +43,7 @@
 }
 
 .nonEdition{
+<<<<<<< HEAD
 	border: 5px solid lightgrey;
 	border-radius: 15px;
 	margin: 5px;
@@ -80,6 +84,16 @@
 	padding: 5px;
 	background-color: darkgrey;
 	height: 400px;
+=======
+	margin: 5px;
+	text-align:center;
+	padding: 15px 0;
+}
+
+.edition{
+	margin: 5px;
+	padding: 5px;
+>>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 }
 
 .boutonContenu{
@@ -110,6 +124,7 @@
 	margin: 5px;
 	padding: 5px;
 	background-color: #EBE8E8;
+<<<<<<< HEAD
 }
 
 .validerAnnulerContenu button{
@@ -120,6 +135,58 @@
 
 
 
+=======
+    text-align: center;
+}
+
+.boutonEdition{
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+.boutonEdition:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+.boutonEdition:active {
+	position:relative;
+	top:1px;
+}
+
+.selectType select {
+   background: transparent;
+   width: 220px;
+   padding: 5px;
+   font-size: 16px;
+   border: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+
+.selectType {
+   width: 200px;
+   height: 34px;
+   margin-bottom:-13px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+   background: url("../../../../web/bundles/pr2lsite/images/down_arrow_select.jpg") no-repeat right #ddd;
+   display:inline-block;
+}
+    
+    /*__Prévisualisation__*/
+>>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 .previsualisation{
 	border: 1px solid grey;
 	border-radius: 15px;
@@ -131,11 +198,16 @@
 
     /*__Liste d'articles__*/
 .article{
+<<<<<<< HEAD
 	border: 5px solid lightgrey;
 	border-radius: 15px;
 	margin: 5px;
 	padding: 5px;
 	background-color: #EBE8E8;
+=======
+	margin: 5px;
+	padding: 5px;
+>>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 }
 
 

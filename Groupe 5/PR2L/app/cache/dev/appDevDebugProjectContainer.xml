@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">app</parameter>
+    <parameter key="kernel.name">ap_</parameter>
     <parameter key="kernel.cache_dir">C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -18,6 +18,8 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="PR2LUserBundle">PR2L\UserBundle\PR2LUserBundle</parameter>
+      <parameter key="PR2LMenuBundle">PR2L\MenuBundle\PR2LMenuBundle</parameter>
+      <parameter key="PR2LArticleBundle">PR2L\ArticleBundle\PR2LArticleBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2522,7 +2524,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="PR2LUserBundle">PR2L\UserBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2535,7 +2539,19 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>PR2L\UserBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2976,6 +2992,14 @@
       <call method="addPath">
         <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\UserBundle/Resources/views</argument>
         <argument>PR2LUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\MenuBundle/Resources/views</argument>
+        <argument>PR2LMenu</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\ArticleBundle/Resources/views</argument>
+        <argument>PR2LArticle</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
