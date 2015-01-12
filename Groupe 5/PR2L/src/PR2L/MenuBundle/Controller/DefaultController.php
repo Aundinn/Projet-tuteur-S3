@@ -11,7 +11,7 @@ class DefaultController extends Controller
     {
     	$session = new Session ();
     	$session->start ();
-    	$session->set('toto', null);
+    	$session->set('toto','null');
         return $this->render('::base.html.twig');
     }
 }
