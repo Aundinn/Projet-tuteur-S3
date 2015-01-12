@@ -146,7 +146,6 @@ if (!(is_null(\$_SESSION[\"userCourant\"])))
                                         <input type=\"text\" ng-model=\"element.contenu\" required>
                                     </div>
                                 </div>
-                                <!--<input ng-model=\"element.contenu\"> -->
                               </li>
                               <br/>
                               <li>
@@ -157,7 +156,7 @@ if (!(is_null(\$_SESSION[\"userCourant\"])))
                         </div>
 
                         <div class=\"validerAnnulerContenu\">
-                            <button class=\"boutonEdition\" type=\"submit\" name=\"valider\" href ng-click=\"tab.setTab(1)\">Valider</button>
+                            <button class=\"boutonEdition\" type=\"submit\" name=\"valider\" href ng-click=\"tab.setTab(1)\" ng-show=\"formArticle.\$valid\">Valider</button>
                             <button class=\"boutonEdition\" type=\"reset\" name=\"annuler\" href ng-click=\"tab.setTab(1)\">Annuler</button>
                         </div>
 
