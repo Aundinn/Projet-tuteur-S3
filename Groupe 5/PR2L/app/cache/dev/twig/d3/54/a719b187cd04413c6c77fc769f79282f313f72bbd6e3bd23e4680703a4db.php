@@ -12,10 +12,10 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
+            'javascripts' => array($this, 'block_javascripts'),
             'menu' => array($this, 'block_menu'),
             'body' => array($this, 'block_body'),
             'footer' => array($this, 'block_footer'),
-            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -38,6 +38,11 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
         // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 15
+        echo "  
+  ";
+        // line 16
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 21
         echo "</head>
 
 <body>
@@ -46,21 +51,21 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
       <h1>PR2L</h1>
       <p>
         Pôle international de Ressources de Limoges et du Limousin pour l'histoire du monde du travail et de l'économie sociale
-      </p>
+      </p>      
     </div>
 
     <div class=\"row\">
       <div id=\"menu\" class=\"col-md-3\">
         ";
-        // line 28
-        $this->displayBlock('menu', $context, $blocks);
         // line 34
+        $this->displayBlock('menu', $context, $blocks);
+        // line 40
         echo "      </div>
       <div id=\"content\" class=\"col-md-9\">
         ";
-        // line 36
+        // line 42
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 44
         echo "      </div>
     </div>
 
@@ -68,17 +73,12 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
 
     <footer>
 \t  ";
-        // line 44
+        // line 50
         $this->displayBlock('footer', $context, $blocks);
-        // line 47
+        // line 53
         echo "    </footer>
   </div>
 
-  ";
-        // line 50
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 55
-        echo "
 </body>
 </html>";
     }
@@ -99,10 +99,21 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
   ";
     }
 
-    // line 28
+    // line 16
+    public function block_javascripts($context, array $blocks = array())
+    {
+        // line 17
+        echo "    ";
+        // line 18
+        echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
+    <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>
+  ";
+    }
+
+    // line 34
     public function block_menu($context, array $blocks = array())
     {
-        // line 29
+        // line 35
         echo "        <h3>Menu</h3>
         <ul class=\"nav nav-pills nav-stacked\">
        
@@ -110,32 +121,21 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
         ";
     }
 
-    // line 36
+    // line 42
     public function block_body($context, array $blocks = array())
     {
-        // line 37
+        // line 43
         echo "        ";
     }
 
-    // line 44
+    // line 50
     public function block_footer($context, array $blocks = array())
     {
-        // line 45
-        echo "      <p>The sky's the limit © ";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
-        echo " and beyond.</p>
-      ";
-    }
-
-    // line 50
-    public function block_javascripts($context, array $blocks = array())
-    {
         // line 51
-        echo "    ";
-        // line 52
-        echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
-    <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>
-  ";
+        echo "      <p> © ";
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
+        echo "</p>
+      ";
     }
 
     public function getTemplateName()
@@ -145,6 +145,6 @@ class __TwigTemplate_d354a719b187cd04413c6c77fc769f79282f313f72bbd6e3bd23e468070
 
     public function getDebugInfo()
     {
-        return array (  136 => 52,  134 => 51,  131 => 50,  124 => 45,  121 => 44,  117 => 37,  114 => 36,  106 => 29,  103 => 28,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  81 => 55,  79 => 50,  74 => 47,  72 => 44,  64 => 38,  62 => 36,  58 => 34,  56 => 28,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
+        return array (  135 => 51,  132 => 50,  128 => 43,  125 => 42,  117 => 35,  114 => 34,  108 => 18,  106 => 17,  103 => 16,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  79 => 53,  77 => 50,  69 => 44,  67 => 42,  63 => 40,  61 => 34,  46 => 21,  44 => 16,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
     }
 }

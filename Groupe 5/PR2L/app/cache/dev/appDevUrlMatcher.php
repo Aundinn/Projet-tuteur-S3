@@ -128,7 +128,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // pr2_l_article_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/publication/hello') && preg_match('#^/publication/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_article_homepage')), array (  '_controller' => 'PR2L\\ArticleBundle\\Controller\\DefaultController::indexAction',));
         }
 
@@ -194,15 +194,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-        }
-
-        // pr2l_accueil
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'pr2l_accueil');
-            }
-
-            return array (  ':' => 'base.html.twig',  '_route' => 'pr2l_accueil',);
         }
 
         // homepage

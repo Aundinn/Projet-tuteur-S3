@@ -14,7 +14,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\httpFoundation\Request;
 use Symfony\Component\httpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use PR2L\UserBundle\Entity\Profil;
 
 /**
  * Cette classe contient les méthodes de menu <br />

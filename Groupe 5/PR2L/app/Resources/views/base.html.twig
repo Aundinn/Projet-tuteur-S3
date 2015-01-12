@@ -12,6 +12,12 @@
     {# On charge le CSS de bootstrap depuis le site directement #}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   {% endblock %}
+  
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  {% endblock %}
 </head>
 
 <body>
@@ -20,7 +26,7 @@
       <h1>PR2L</h1>
       <p>
         Pôle international de Ressources de Limoges et du Limousin pour l'histoire du monde du travail et de l'économie sociale
-      </p>
+      </p>      
     </div>
 
     <div class="row">
@@ -42,16 +48,10 @@
 
     <footer>
 	  {% block footer %}
-      <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+      <p> © {{ 'now'|date('Y') }}</p>
       {% endblock %}
     </footer>
   </div>
-
-  {% block javascripts %}
-    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  {% endblock %}
 
 </body>
 </html>

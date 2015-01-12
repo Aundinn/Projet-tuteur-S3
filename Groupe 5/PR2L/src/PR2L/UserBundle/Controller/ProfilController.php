@@ -23,6 +23,7 @@ use Symfony\Component\httpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PR2L\UserBundle\Entity\Profil;
 use Symfony\Component\HttpFoundation\Session\Session;
+use PR2LUserBundle\Utility;
 
 /**
  * Cette classe contient les méthodes de gestions des utilisateurs <br />
@@ -119,13 +120,57 @@ class ProfilController extends Controller {
 	 * @param Request $request        	
 	 */
 	public function connexionAction(Request $request) {
-		$session = new Session ();
-		$session->start ();
+		
 		if ($request->isMethod ( 'POST' )) {
-			// formulaire rempli.
+			// formulaire rempli, on va tester les logins.
 			
+			$nb1_verif = $_POST ['nb1'];
+			$nb2_verif = $_POST ['nb2'];
+			$resultat = $nb1_verif + $nb2_verif; // resultat attendu.
+			
+			$reponse = $_POST ['reponse']; // réponse utilisateur
+			
+			$login = $request->query->get('user_login');
+			$pass = $request->query->get('user_mdp');
+			// détails de la connexion
+
+			$connexionOK = $userManager->testConnexion ( $login, $pass );
+			//var_dump($connexionOK);
+			if ($reponse != $resultat) { // si le captcha est incorrect
+				echo "<img src=\"image/erreur.png\" alt='erreur' /> <strong>Le captcha est incorrect</strong><br/>";
+				$captcha = false;
+				?>
+			<?php
+					if (isset ( $_SESSION ['per_login_connecte'] )) {
+						session_destroy ();
+						// pour eviter des erreurs.
+					}
+				} else {
+					$captcha = true;
+					// le captcha est correct
+				}
+				
+				if ($connexionOK == false) { // mauvais mot de passe/identifiant
+					echo "<img src=\"image/erreur.png\" alt='erreur' /> Erreur d'identifiant / mot de passe <br/>\n";
+					if (isset ( $_SESSION ['per_login_connecte'] )) {
+						session_destroy ();
+						// pour eviter des erreurs.
+					}
+
+				}
+				
+				if (($connexionOK == true) && $captcha == true) { // le captcha est bon et les id/mdp aussi
+					$personneConnectee = $userManager->getPersonneParLogin ( $_POST ['user_login'] );
+					$_SESSION ["personne_connecte"] = ($personneConnectee);
+					
+				//	echo "<h3> Bienvenue echo $_SESSION [""personne_connecte""]->getUserPrenom(); ! Vous allez &ecirc;tre redirig&eacute;...</h3>
+				//	<META HTTP-EQUIV=""Refresh"" CONTENT=""2;URL=index.php"">";  
+		}
+		
+		return ($this->render('PR2LUserBundle:Profil:connexion.html.twig'));
 		}
 	}
+	
 	// TMP
 	/**
 	 * PR2LUserBundle:Profil:formArticle
@@ -136,6 +181,7 @@ class ProfilController extends Controller {
 			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été modifié.' );
 		}
 	}
+	
 	public function listerNewsAction() {
 		return $this->render ( 'PR2LUserBundle:Profil:listerNews.html.twig' );
 	}
