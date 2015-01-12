@@ -545,3 +545,10 @@ f23169,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/ap
 fe77a4,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/recensementMutualite,1421047875,
 c60430,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/actualites,1421047921,
 120f30,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/partenaires,1421047923,
+7b8167,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1421050410,
+0435b0,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1421050446,
+420e09,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1421050453,
+29251a,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/connexion,1421050488,898306
+898306,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/connexion,1421050488,
+c693ab,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/fondateurs,1421050498,8ef8cd
+8ef8cd,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/fondateurs,1421050498,
