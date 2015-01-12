@@ -3,6 +3,7 @@ if (isset($_SESSION['personne_connecte'])) { //une personne est connecte
 	if ($_SESSION['personne_connecte']->getUserDroit()=='lecture/ecriture' || $_SESSION['personne_connecte']->getUserDroit()=='admin' ) {
 		//a remplacer quand on aura ajouter les droits par lecture/ecriture ou admin
 ?>
+
 <div>
 	<form method="post" action="#">
 		<label for='typeArticle'>Type d'article :</label> 
@@ -32,13 +33,14 @@ if (isset($_SESSION['personne_connecte'])) { //une personne est connecte
 		<textarea name='paragraphe' id=paragraphe' rows=10 cols=50 ng-model="paragraphe" 
 		placeholder="Tapez votre texte..."> </textarea>
 
-		<center><h1>Pr&eacute;visualisation :</h1></center>
+		<h1>Pr&eacute;visualisation :</h1>
 		<h2>Titre : {{ titre }}</h2>
 		<h3>Auteur : {{ auteur }}</h3>
 		<center><p>{{ paragraphe}}</p></center>
 
 	</div>
 </div>
+
 <?php 
 	} else {
 		?> 

@@ -77,7 +77,7 @@ if (! empty ( $_SESSION ['personne_connecte'] )) {
 		</select>
 	<label for='isAdherent'>Adh&eacute;rent :</label> 
 		<input type='radio' name='isAdherent' value='o' checked='checked' />Oui 
-		<input type='radio' name='isAdherent' value='n' />Non 
+		<input type='radio' name='isAdherent' value='n' />Non  <br/>
 	<label for='user_mdp'>Mot de passe actuel :</label> 
 		<input name='user_mdp' id='user_mdp' type='password' value='' /> <br />
 	<!-- On saisie deux fois afin d'être sur que la user saississe le bon mdp-->
@@ -98,8 +98,7 @@ if (! empty ( $_SESSION ['personne_connecte'] )) {
 			$PersonneModifie->setUserId ( $_SESSION ['user_id'] );
 			$PersonneModifie->setUserMdp ( $user->getUserMdp () );
 			
-			var_dump ( $PersonneModifie );
-			var_dump ( $user->getUserMdp () );
+			
 			
 			if (! empty ( $_POST ['user_mdp'] )) {
 				// Il a voulu changer de mdp
@@ -122,6 +121,9 @@ if (! empty ( $_SESSION ['personne_connecte'] )) {
 				} else {
 					echo "<img src=\"image/erreur.png\" alt='erreur' /> Mot de passe incorrect.";
 				}
+			} else {
+				$userManager->modifierUser ( $PersonneModifie );
+				echo " <img src=\"image/valid.png\" alt='erreur' /> Personne mise à jour";
 			}
 		} //fin update user
 	} //fin des personne sont enregistrees

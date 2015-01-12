@@ -13,30 +13,51 @@
  * Cf pdf OC Symfony pour détails sur comment utiliser Response, Request, RedirectResponse & Co.
  * Utile : $session = $request->getSession(); -- Obtenir les détails de la session en cours.
  */
-
 namespace PR2L\UserBundle\Controller;
 
 // use = import en java
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response; // Retourner une réponse : 90% des cas -> $this->render();
-use Symfony\Component\httpFoundation\Request; // pour les $_POST & Co.
-use Symfony\Component\httpFoundation\RedirectResponse;  // pour les redirections.
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\httpFoundation\Request;
+use Symfony\Component\httpFoundation\RedirectResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use PR2L\UserBundle\Entity\Profil;
 
 /**
  * Cette classe contient les méthodes de gestions des utilisateurs <br />
  *
  * @author Sylvain
- *        
  */
 class ProfilController extends Controller {
+	
+	/**
+	 * Cette fonction permet d'ajouter un utilisateur
+	 *
+	 * Route : pr2l_user_add
+	 */
+	public function addAction(Request $request) {
+		if ($request->isMethod ( 'POST' )) {
+			// Dans ce cas, le formulaire à été saisi, on traitera les données.
+
+			// message que l'on passera dans le template.
+			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
+			
+			// il faudra ensuite rediriger l'user sur son profil juste créé.
+		}
+		
+		// Si on est pas en POST, on affiche le formulaire.
+		// TODO formulaire.
+		return ($this->render ( 'PR2LUserBundle:Profil:add.html.twig' ));
+	}
 	
 	/**
 	 * Cette fonction permet d'afficher la page d'accueil concernant ce qui est gestion des utilisateurs
 	 * Ca sera un "lien" vers les autres actions possibles.
 	 * Route : pr2l_user_main
+	 * pour dire que l'on retourne directement une page.html.twig
 	 */
 	public function indexAction() {
-		return new Response('Toto</body>');
+		return $this->render ( 'PR2LUserBundle:Profil:indexAction.html.twig' );
 	}
 	
 	/**
@@ -50,26 +71,6 @@ class ProfilController extends Controller {
 		if ($id == null) {
 			// id non renseigné, on affiche le profil de l'user par défaut.
 		}
-	}
-	
-	/**
-	 * Cette fonction permet d'ajouter un utilisateur
-	 *
-	 * Route : pr2l_user_add
-	 */
-	public function addAction(Request $request) {
-		if ($request->isMethod ( 'POST' )) {
-			// Dans ce cas, le formulaire à été saisi, on traitera les données.
-			
-			// message que l'on passera dans le template.
-			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
-			
-			// il faudra ensuite rediriger l'user sur son profil juste créé.
-		}
-		
-		// Si on est pas en POST, on affiche le formulaire.
-		// TODO formulaire.
-		return ($this->render ( 'PR2LUserBundle:Profil:add.html.twig' ));
 	}
 	
 	/**
@@ -103,11 +104,22 @@ class ProfilController extends Controller {
 		return ($this->render ( 'PR2LUserBundle:Profil:edit.html.twig' ));
 	}
 	
-// 	/**
-// 	 * Permet de lister tous les utilisateurs.
-// 	 *
-// 	 * Route : pr2l_user_list
-// 	 */
-// 	public function listAction() {
-// 	}
+	/**
+	 * Permet de lister tous les utilisateurs.
+	 *
+	 * Route : pr2l_user_list
+	 */
+	public function listAction() {
+	}
+	
+	// TMP
+	/**
+	 * PR2LUserBundle:Profil:formArticle
+	 */
+	public function formArticleAction() {
+		return $this->render ( 'PR2LUserBundle:Profil:formArticle.html.twig' );
+	}
+	public function listerNewsAction() {
+		return $this->render ( 'PR2LUserBundle:Profil:listerNews.html.twig' );
+	}
 }

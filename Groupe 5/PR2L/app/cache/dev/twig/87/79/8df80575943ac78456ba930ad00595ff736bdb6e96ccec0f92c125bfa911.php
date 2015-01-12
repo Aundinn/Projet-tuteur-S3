@@ -1,6 +1,6 @@
 <?php
 
-/* @Debug/Profiler/dump.html.twig */
+/* DebugBundle:Profiler:dump.html.twig */
 class __TwigTemplate_87798df80575943ac78456ba930ad00595ff736bdb6e96ccec0f92c125bfa911 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -253,7 +253,7 @@ class __TwigTemplate_87798df80575943ac78456ba930ad00595ff736bdb6e96ccec0f92c125b
 
     public function getTemplateName()
     {
-        return "@Debug/Profiler/dump.html.twig";
+        return "DebugBundle:Profiler:dump.html.twig";
     }
 
     public function isTraitable()

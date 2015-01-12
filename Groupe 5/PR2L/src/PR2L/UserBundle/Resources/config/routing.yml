@@ -31,4 +31,13 @@ pr2l_user_edit:
 pr2l_user_list: 
     path: /list
     defaults: {_controller: PR2LUserBundle:Profil:list }
-        
+    
+#Route temporaire pour demo client.
+pr2l_demo_formArticle:
+    path: /demo/article
+    defaults: {_controller: PR2LUserBundle:Profil:formArticle }
+    
+pr2l_demo_listerNews: 
+    path: /demo/news
+    defaults: {_controller: PR2LUserBundle:Profil:listerNews }
+    
