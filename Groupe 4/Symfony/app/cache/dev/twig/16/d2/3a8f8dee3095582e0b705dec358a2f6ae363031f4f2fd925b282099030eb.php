@@ -35,20 +35,6 @@ class __TwigTemplate_16d23a8f8dee3095582e0b705dec358a2f6ae363031f4f2fd925b282099
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 6
-        echo "
-";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('')->testEcho(), "html", null, true);
-        echo "
-
-";
-        // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nom", array()), "html", null, true);
-        echo "
-
-
-";
     }
 
     public function getTemplateName()
@@ -63,6 +49,6 @@ class __TwigTemplate_16d23a8f8dee3095582e0b705dec358a2f6ae363031f4f2fd925b282099
 
     public function getDebugInfo()
     {
-        return array (  47 => 9,  42 => 7,  39 => 6,  36 => 5,  29 => 3,);
+        return array (  36 => 5,  29 => 3,);
     }
 }
