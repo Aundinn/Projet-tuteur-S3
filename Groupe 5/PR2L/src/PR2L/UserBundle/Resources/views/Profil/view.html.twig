@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %} 
+
+{% block title %}
+Se connecter - {{ parent() }} 
+{% endblock %} 
+
+{% block body %}
+
+{% set nb1 =  random(9)   %}
+{% set nb2 =  random(9)   %}
+{% set cheminImage1 = asset('images/nb') %}
+
+<form action="#" method="post">
+	<label for=user_login'>Login : </label>
+		<input type="text" name="user_login" id="user_login"> <br /> 
+	<label for='user_mdp'>Mot de passe : </label>
+		<input type="password" name="user_mdp" id="user_mdp">
+	<br />
+
+	<p class="captcha">
+		Merci de r&eacute;soudre le calcul suivant pour confirmer que vous
+		n'&ecirc;tes pas un robot <br />
+		<img 
+			src="{{ asset('images/nb/')~nb1~'.jpg' }}" alt='numero' /> + <img
+			src="{{ asset('images/nb/')~nb2~'.jpg' }}" alt='numero' /> =
+	</p>
+
+	<input type="hidden" name="nb1" value="{{ nb1 }}" /> 
+	<input type="hidden" name="nb2" value="{{ nb2 }}" /> <br /> 
+	
+	<input type="text" name="reponse" required/> <br /> 
+	<input type="submit" value="Connexion" />
+</form>
+{% endblock %}

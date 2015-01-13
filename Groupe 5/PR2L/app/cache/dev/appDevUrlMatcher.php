@@ -151,9 +151,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::indexAction',  '_route' => 'pr2l_user_main',);
             }
 
-            // pr2l_user_view
-            if (0 === strpos($pathinfo, '/user/view') && preg_match('#^/user/view(?:/(?P<id>\\d))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2l_user_view')), array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::viewAction',  'id' => NULL,));
+            if (0 === strpos($pathinfo, '/user/view')) {
+                // pr2l_user_view_single
+                if (preg_match('#^/user/view(?:/(?P<id>\\d))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2l_user_view_single')), array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::viewAction',  'id' => NULL,));
+                }
+
+                // pr2l_user_view_all
+                if ($pathinfo === '/user/view') {
+                    return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::viewAllAction',  '_route' => 'pr2l_user_view_all',);
+                }
+
             }
 
             // pr2l__user_add

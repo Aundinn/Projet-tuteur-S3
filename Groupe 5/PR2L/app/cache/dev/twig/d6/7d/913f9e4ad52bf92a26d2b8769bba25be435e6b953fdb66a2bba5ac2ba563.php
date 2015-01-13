@@ -44,7 +44,7 @@ class __TwigTemplate_d67d913f9e4ad52bf92a26d2b8769bba25be435e6b953fdb66a2bba5ac2
 <div id='user'>
 \t<form name='ajouter_user' id='ajouter_user' action='#' method='post'>
 \t\t<fieldset>
-\t\t\t<legend>Informations sur l'utilisateur :</legend>
+\t\t\t<legend>Informations g&eacute;n&eacute;rale :</legend>
 \t\t\t\t<label for='nom'>Nom : </label> 
 \t\t\t\t\t<input type='text' placeholder='Ex : Rossard' name='nom' required> <br/> 
 \t\t\t\t<label for='prenom'>Pr&eacute;nom : </label>
@@ -65,32 +65,29 @@ class __TwigTemplate_d67d913f9e4ad52bf92a26d2b8769bba25be435e6b953fdb66a2bba5ac2
 \t\t<fieldset>
 \t\t\t<legend>Informations de connexion :</legend>
 \t\t\t\t<label for='login'>Login :</label> 
-\t\t\t\t\t<input type='text' placeholder='Ex : Sarah87' name='login' required> 
+\t\t\t\t\t<input type='text' placeholder='Ex : Sarah87' name='login' required> <br/> 
 \t\t\t\t<label for='mdp'>Mot de passe :</label> 
 \t\t\t\t\t<input type='password' placeholder='********' name='mdp' required /> <br />
 \t\t</fieldset> 
 \t\t<br/>
 \t\t<fieldset>
 \t\t\t<legend> Type de compte :</legend>
-\t\t\t
-\t\t\t\t<input type='checkbox' name='isAdherent'/>
+\t\t\t\t<input type='checkbox' name='isAdherent' value='1'/>
 \t\t\t\t<label for='isAdherent' title=\"L'utilisateur est adh&eacute;rent de l'association\"> Adh&eacute;rent </label>
 \t\t\t\t<br/>
 \t\t\t\t
-\t\t\t\t<input type='checkbox' name='isContributeur'/>
+\t\t\t\t<input type='checkbox' name='isContributeur' value='1'/>
 \t\t\t\t<label for='isContributeur' title=\"L'utilisateur pourra participer &agrave la r&eacute;daction d'article\" > Contributeur </label>
 \t\t\t\t<br/>
 \t\t\t\t
-\t\t\t\t<input type='checkbox' name='isModerateur'/>
+\t\t\t\t<input type='checkbox' name='isModerateur' value='1'/>
 \t\t\t\t<label for='isModerateur' title=\"L'utilisateur pourra mod&eacute;rer les articles avant leur parution sur le site\" > Mod&eacute;rateur </label>
 \t\t\t\t<br/>
 \t\t\t\t
-\t\t\t\t<input type='checkbox' name='isAdmin'/>
+\t\t\t\t<input type='checkbox' name='isAdmin' value='1'/>
 \t\t\t\t<label for='isAdmin' title=\"L'utilisateur sera administrateur et pourra donc avoir acc&egrave;s &agrave; des parties r&eacute;serv&eacute;es &agrave; la gestion des utilisateurs et du site\" > Administrateur </label>
-\t\t\t\t<br/>
-\t\t\t\t
+\t\t\t\t<br/>\t\t
 \t\t</fieldset>
-\t\t 
 \t\t<input type='submit' value='Valider'>
 \t</form>
 </div>

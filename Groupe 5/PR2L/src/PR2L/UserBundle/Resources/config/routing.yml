@@ -6,12 +6,16 @@ pr2l_user_main:
     path: /
     defaults: {_controller: PR2LUserBundle:Profil:index }
     
-pr2l_user_view:
+pr2l_user_view_single: 
     path: /view/{id} 
     defaults: {_controller: PR2LUserBundle:Profil:view , id: null }
     requirements:
         id: \d
         
+pr2l_user_view_all: 
+    path: /view
+    defaults: {_controller: PR2LUserBundle:Profil:viewAll }
+
 pr2l__user_add:
     path: /add
     defaults: {_controller: PR2LUserBundle:Profil:add }

@@ -18,8 +18,8 @@ namespace PR2L\UserBundle\Controller;
 // use = import en java
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\httpFoundation\Request;
-use Symfony\Component\httpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PR2L\UserBundle\Entity\Profil;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -38,7 +38,7 @@ class ProfilController extends Controller {
 	 * Route : pr2l_user_add
 	 */
 	public function addAction(Request $request) {
-		if ($request->isMethod ( 'POST' )) {
+		if ($request->isMethod ('POST')) {
 			//on aura besoin de doctrine et em
 			$doctrine = $this->getDoctrine();
 			$em = $this->getDoctrine()->getManager();
@@ -47,58 +47,82 @@ class ProfilController extends Controller {
 			// Dans ce cas, le formulaire à été saisi, on traitera les données.
 			$user = new Profil();
 			
+			//On va recuperer les valeurs du post et les set dans l'user
+			
 			//infos générales
-			$userNom = $request->query('nom');
-			$userPrenom = $request->query('prenom');
-			$userTtel = $request->query('tel');
-			$userEmail = $request->query('mail');
-			$userRoles = $request->query('fonction');
+			$userNom = $request->request->get('nom');
+			$user->setUserNom($userNom);
+			$userPrenom = $request->request->get('prenom');
+			$user->setUserPrenom($userPrenom);
+			$userTel = $request->request->get('tel');
+			$user->setUserTelephone($userTel);
+			$userEmail = $request->request->get('mail');
+			$user->setUserEmail($userEmail);
+			$userFonction = $request->request->get('fonction');
+			$user->setUserFonction($userFonction);
 			
 			//infos de connexion
-			$userLogin = $request->query('login');
-			$userPwd = $request->query('mdp');
+			$userLogin = $request->request->get('login');
+			$user->setUserLogin($userLogin);
+			$userPwd = $request->request->get('mdp');
+			$user->setUserPwd($userPwd);
 			
-			$userCanRead = false;
-			$userCanWrite = false;
+			$userCanRead = 0;
+			$userCanWrite = 0;
 			//type compte
-			if (isset($request->query('isAdherent'))) {
-				$userIsAdherent = $request->query('isAdherent');
+			if ($request->request->get('isAdherent')!=null) {
+				$userIsAdherent = $request->request->get('isAdherent');
 				
-				$userCanRead = true;
+				$userCanRead = 1;
 			} else {
-				$userIsAdherent = false;
-				
-				
+				$userIsAdherent = 0;
 			}
 			
-			if (isset($request->query('isContributeur'))) {
-				$userIsContributeur = $request->query('isContributeur');
+			if ($request->request->get('isContributeur')!=null) {
+				$userIsContributeur = $request->request->get('isContributeur');
+		
+				$userCanRead = 1;
+				$userCanWrite = 1;
+			} else {
+				$userIsContributeur = 0;
+			}
+			
+			if ($request->request->get('isModerateur')!=null) {
+				$userIsModerateur = $request->request->get('isModerateur');
 				
-				$userCanRead = true;
-				$userCanWrite = true;
+				$userCanRead = 1;
+				$userCanWrite = 1;
 			} else {
-				$userIsContributeur = false;
+				$userIsModerateur = 0;
 			}
 			
-			if (isset($request->query('isModerateur'))) {
-				$userIsModerateur = $request->query('isModerateur');
+			if ($request->request->get('isAdmin')!=null) {
+				$userIsAdmin = $request->request->get('isAdmin');
 				
-				$userCanRead = true;
-				$userCanWrite = true;
+				$userCanRead = 1;
+				$userCanWrite = 1;
 			} else {
-				$userIsModerateur = false;
+				$userIsAdmin = 0;
 			}
+
+			$user->setUserCanRead($userCanRead);
+			$user->setUserCanWrite($userCanWrite);
+			$user->setUserIsAdmin($userIsAdmin);
+			$user->setUserIsModerateur($userIsModerateur);
+			$user->setUserIsAdherent($userIsAdherent);
+			$user->setUserIsContributeur($userIsContributeur);
 			
-			if (isset($request->query('isAdmin'))) {
-				$userIsAdmin = $request->query('isAdmin');
-			} else {
-				$userIsAdmin = false;
-			}
-			
-			// message que l'on passera dans le template.
-			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
-			
+			$date = new \DateTime();
+			$user->setUserDateDerniereConnexion($date);
+
+			//ajout dans la BD
+			$em->persist($user);
+			$em->flush();
 			// il faudra ensuite rediriger l'user sur son profil juste créé.
+			//TODO Verifier que tout s'est bien passé.
+			// message que l'on passera dans le template.
+			//$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
+			return $this->render('PR2LUserBundle:Profil:addSuccess.html.twig', array('user' =>$user));
 		}
 		
 		// Si on est pas en POST, on affiche le formulaire.
@@ -126,7 +150,47 @@ class ProfilController extends Controller {
 	public function viewAction($id) {
 		if ($id == null) {
 			// id non renseigné, on affiche le profil de l'user par défaut.
+			// TODO
 		}
+		
+		//Dans ce cas, personne non connectée
+		// On affiche donc tout les profils. 
+		$doctrine = $this->getDoctrine();
+		$profilRepository = $em->getRepository('PR2LUserBundle:Profil');
+		
+		$em = $this->getDoctrine()->getManager();
+		$query = $em->createQuery(
+				'SELECT *
+    			FROM PR2LUserBundle:Profil p
+    			ORDER BY p.id ASC'
+		);
+		
+		$products = $query->getResult();
+		
+// 		$product = $this->getDoctrine()
+// 		->getRepository('AcmeStoreBundle:Product')
+// 		->find($id);
+		
+// 		if (!$product) {
+// 			throw $this->createNotFoundException(
+// 					'Aucun produit trouvé pour cet id : '.$id
+// 			);
+// 		}
+	}
+	
+	/**
+	 * 
+	 */
+	public function viewAllAction() {
+		$em = $this->getDoctrine()->getManager();
+		$query = $em->createQuery(
+				'SELECT *
+    			FROM PR2LUserBundle:Profil p
+    			ORDER BY p.id ASC'
+		);
+		
+		$products = $query->getResult();
+		return $this->render('PR2LUserBundle:Profil:viewAll.html.twig', array());
 	}
 	
 	/**
@@ -192,8 +256,8 @@ class ProfilController extends Controller {
 			
 			$reponse = $_POST ['reponse']; // réponse utilisateur
 			
-			$login = $request->query->get('user_login');
-			$pass = $request->query->get('user_mdp');
+			$login = $request->request->get('user_login');
+			$pass = $request->request->get('user_mdp');
 			// détails de la connexion
 
 			$connexionOK = $userManager->testConnexion ( $login, $pass );

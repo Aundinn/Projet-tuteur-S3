@@ -55,12 +55,12 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
     </div>
 
     <div class=\"row\">
-      <div id=\"menu\" class=\"col-md-3\">
+      <nav id=\"menu\" class=\"col-md-3\">
         ";
         // line 34
         $this->displayBlock('menu', $context, $blocks);
         // line 40
-        echo "      </div>
+        echo "      </nav>
       <div id=\"content\" class=\"col-md-9\">
         ";
         // line 42
