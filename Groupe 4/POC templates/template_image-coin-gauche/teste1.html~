@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="teste1.css">
+        <link rel="stylesheet" href="template_image-coin-gauche.css">
     </head>
     <body>
         <div id="image"> 
