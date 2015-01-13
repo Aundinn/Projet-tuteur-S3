@@ -39,7 +39,61 @@ class ProfilController extends Controller {
 	 */
 	public function addAction(Request $request) {
 		if ($request->isMethod ( 'POST' )) {
+			//on aura besoin de doctrine et em
+			$doctrine = $this->getDoctrine();
+			$em = $this->getDoctrine()->getManager();
+			$profilRepository = $em->getRepository('PR2LUserBundle:Profil');
+			
 			// Dans ce cas, le formulaire à été saisi, on traitera les données.
+			$user = new Profil();
+			
+			//infos générales
+			$userNom = $request->query('nom');
+			$userPrenom = $request->query('prenom');
+			$userTtel = $request->query('tel');
+			$userEmail = $request->query('mail');
+			$userRoles = $request->query('fonction');
+			
+			//infos de connexion
+			$userLogin = $request->query('login');
+			$userPwd = $request->query('mdp');
+			
+			$userCanRead = false;
+			$userCanWrite = false;
+			//type compte
+			if (isset($request->query('isAdherent'))) {
+				$userIsAdherent = $request->query('isAdherent');
+				
+				$userCanRead = true;
+			} else {
+				$userIsAdherent = false;
+				
+				
+			}
+			
+			if (isset($request->query('isContributeur'))) {
+				$userIsContributeur = $request->query('isContributeur');
+				
+				$userCanRead = true;
+				$userCanWrite = true;
+			} else {
+				$userIsContributeur = false;
+			}
+			
+			if (isset($request->query('isModerateur'))) {
+				$userIsModerateur = $request->query('isModerateur');
+				
+				$userCanRead = true;
+				$userCanWrite = true;
+			} else {
+				$userIsModerateur = false;
+			}
+			
+			if (isset($request->query('isAdmin'))) {
+				$userIsAdmin = $request->query('isAdmin');
+			} else {
+				$userIsAdmin = false;
+			}
 			
 			// message que l'on passera dans le template.
 			$request->getSession ()->getFlashBag->add ( 'notification', 'L\'utilisateur à bien été enregistré.' );
@@ -120,7 +174,15 @@ class ProfilController extends Controller {
 	 * @param Request $request        	
 	 */
 	public function connexionAction(Request $request) {
+		$doctrine = $this->getDoctrine();
+		$em = $this->getDoctrine()->getManager(); // ce que on utilisera
 		
+		
+		$admin = new Profil();
+		$admin->setUserLogin("admin");
+		
+		$em->persist($admin);
+		$em->flush();
 		if ($request->isMethod ( 'POST' )) {
 			// formulaire rempli, on va tester les logins.
 			
@@ -183,6 +245,7 @@ class ProfilController extends Controller {
 	}
 	
 	public function listerNewsAction() {
+		$userManager = $this->container->get('pr2l_user.manager');
 		return $this->render ( 'PR2LUserBundle:Profil:listerNews.html.twig' );
 	}
 }

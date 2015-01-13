@@ -30,7 +30,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => 'C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'ap_',
+            'kernel.name' => 'app',
             'kernel.cache_dir' => 'C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app/cache/dev',
             'kernel.logs_dir' => 'C:/wamp/www/Projet-tuteur-S3/Groupe 5/PR2L/app/logs',
             'kernel.bundles' => array(
@@ -803,6 +803,7 @@ class appDevDebugProjectContainer extends Container
             'monolog.logger.security' => 'getMonolog_Logger_SecurityService',
             'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
             'monolog.logger.translation' => 'getMonolog_Logger_TranslationService',
+            'pr2l_user.manager' => 'getPr2lUser_ManagerService',
             'profiler' => 'getProfilerService',
             'profiler_listener' => 'getProfilerListenerService',
             'property_accessor' => 'getPropertyAccessorService',
@@ -2409,6 +2410,19 @@ class appDevDebugProjectContainer extends Container
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'pr2l_user.manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \PR2L\UserBundle\Utility\UserManager A PR2L\UserBundle\Utility\UserManager instance.
+     */
+    protected function getPr2lUser_ManagerService()
+    {
+        return $this->services['pr2l_user.manager'] = new \PR2L\UserBundle\Utility\UserManager();
     }
 
     /**
