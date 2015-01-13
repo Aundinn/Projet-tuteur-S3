@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="teste1.css">
+    </head>
+    <body>
+        <div id="image"> 
+            <a href="images/image.jpge" title="Powa">
+                <img src="images/image.jpge" alt="Powa" />
+                
+            </a>
+                
+        </div>
+        <div id="texte">
+            <h1>titre article</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis feugiat felis. Vestibulum mattis dapibus porttitor. In sed congue orci. Aenean massa lectus, consectetur id mattis ut, varius nec ipsum. Mauris eu libero est. Nulla consectetur quam at semper elementum. Morbi tincidunt turpis vel dapibus scelerisque. Fusce enim elit, tempus eget tortor id, pretium dictum sapien. Etiam feugiat nec nibh vitae volutpat. Vivamus sit amet sagittis purus, et maximus risus. Sed lobortis erat magna. Suspendisse at malesuada arcu. Integer vulputate nisl et sem euismod, non egestas diam tincidunt.</p>
+<p>Sed non interdum sem, et egestas dolor. Fusce iaculis commodo lectus, vitae laoreet velit. Integer ut erat vitae enim tristique imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam lacinia, magna ac vulputate tincidunt, sem velit cursus nunc, quis aliquet augue odio sit amet ligula. Donec sollicitudin auctor sollicitudin. Aliquam id sem ut risus tristique luctus faucibus at ante. Sed vitae eleifend leo. Nullam ut ex quis diam lobortis vehicula. Vestibulum vehicula dictum mauris, vel pharetra orci dapibus eu. Aenean tincidunt orci sed lacus blandit pharetra. Quisque mauris dolor, iaculis ut ultrices in, venenatis sed risus. Sed ante metus, dictum convallis gravida vitae, suscipit eget purus. Curabitur ornare at leo vel iaculis. Maecenas quis iaculis neque, lacinia suscipit eros.</p>
+<p>Donec hendrerit eros id enim cursus auctor. Maecenas metus justo, suscipit non fermentum quis, varius vel tellus. Donec in bibendum lacus, at sodales dui. Nullam semper facilisis lorem at congue. Sed at ligula nec dui eleifend gravida. Cras dignissim ac tellus et tempor. Mauris convallis risus erat, id ultrices purus vestibulum non. Sed sit amet fermentum quam, ornare convallis ligula. </p> </div>
+    </body>
+</html>
