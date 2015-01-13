@@ -3,8 +3,12 @@
 {% block title %}{{ parent() }} - Fondateurs{% endblock %}
 
 {% block body %}
-<<<<<<< HEAD
 {{ maFonction() }}
-=======
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
+
+<ul>
+  {% for advert in listAdverts %}
+    <li>{{ advert.content }}</li>
+  {% endfor %}
+</ul>
+
 {% endblock %}

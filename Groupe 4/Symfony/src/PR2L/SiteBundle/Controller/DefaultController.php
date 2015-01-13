@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function accueilAction()
+    /*public function accueilAction()
     {
         return $this->render('PR2LSiteBundle:Default:accueil.html.twig');
     }
@@ -134,7 +134,7 @@ class DefaultController extends Controller
     public function deconnexionAction()
     {
         return $this->render('PR2LSiteBundle:Default:deconnexion.html.twig');
-    }
+    }*/
 }
 
 

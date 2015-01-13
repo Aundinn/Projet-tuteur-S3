@@ -35,13 +35,29 @@ class __TwigTemplate_c620b18241aa2e7c2f4625ae3fa01c10897cde01e50b2978cef2957f2b9
     // line 5
     public function block_body($context, array $blocks = array())
     {
-<<<<<<< HEAD
         // line 6
         echo twig_escape_filter($this->env, $this->env->getExtension('')->testEcho(), "html", null, true);
         echo "
+
+<ul>
+  ";
+        // line 9
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listAdverts"]) ? $context["listAdverts"] : $this->getContext($context, "listAdverts")));
+        foreach ($context['_seq'] as $context["_key"] => $context["advert"]) {
+            // line 10
+            echo "    <li>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "content", array()), "html", null, true);
+            echo "</li>
+  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['advert'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "</ul>
+
 ";
-=======
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
     }
 
     public function getTemplateName()
@@ -56,10 +72,6 @@ class __TwigTemplate_c620b18241aa2e7c2f4625ae3fa01c10897cde01e50b2978cef2957f2b9
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  39 => 6,  36 => 5,  29 => 3,);
-=======
-        return array (  36 => 5,  29 => 3,);
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
+        return array (  58 => 12,  49 => 10,  45 => 9,  39 => 6,  36 => 5,  29 => 3,);
     }
 }

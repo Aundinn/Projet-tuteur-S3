@@ -126,137 +126,137 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/pr2l/ac')) {
                 // pr2_l_site_accueil
                 if ($pathinfo === '/pr2l/accueil') {
-                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::accueilAction',  '_route' => 'pr2_l_site_accueil',);
+                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\AccueilController::accueilAction',  '_route' => 'pr2_l_site_accueil',);
                 }
 
                 // pr2_l_site_actionsEvenements
                 if ($pathinfo === '/pr2l/actionsEvenements') {
-                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::actionsEvenementsAction',  '_route' => 'pr2_l_site_actionsEvenements',);
+                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ActionsEvenementsController::actionsEvenementsAction',  '_route' => 'pr2_l_site_actionsEvenements',);
                 }
 
             }
 
             // pr2_l_site_projet
             if ($pathinfo === '/pr2l/projet') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::projetAction',  '_route' => 'pr2_l_site_projet',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ProjetController::projetAction',  '_route' => 'pr2_l_site_projet',);
             }
 
             // pr2_l_site_fondateurs
             if ($pathinfo === '/pr2l/fondateurs') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::fondateursAction',  '_route' => 'pr2_l_site_fondateurs',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\FondateursController::fondateursAction',  '_route' => 'pr2_l_site_fondateurs',);
             }
 
             // pr2_l_site_revuePresse
             if ($pathinfo === '/pr2l/revuePresse') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::revuePresseAction',  '_route' => 'pr2_l_site_revuePresse',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\RevuePresseController::revuePresseAction',  '_route' => 'pr2_l_site_revuePresse',);
             }
 
             // pr2_l_site_adherer
             if ($pathinfo === '/pr2l/adherer') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::adhererAction',  '_route' => 'pr2_l_site_adherer',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\AdhererController::adhererAction',  '_route' => 'pr2_l_site_adherer',);
             }
 
             // pr2_l_site_vieAssociation
             if ($pathinfo === '/pr2l/vieAssociation') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::vieAssociationAction',  '_route' => 'pr2_l_site_vieAssociation',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\VieAssociationController::vieAssociationAction',  '_route' => 'pr2_l_site_vieAssociation',);
             }
 
             // pr2_l_site_actualites
             if ($pathinfo === '/pr2l/actualites') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::actualitesAction',  '_route' => 'pr2_l_site_actualites',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ActualitesController::actualitesAction',  '_route' => 'pr2_l_site_actualites',);
             }
 
             // pr2_l_site_quoiDeNeuf
             if ($pathinfo === '/pr2l/quoiDeNeuf') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::quoiDeNeufAction',  '_route' => 'pr2_l_site_quoiDeNeuf',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\QuoiDeNeufController::quoiDeNeufAction',  '_route' => 'pr2_l_site_quoiDeNeuf',);
             }
 
             // pr2_l_site_autourDeNous
             if ($pathinfo === '/pr2l/autourDeNous') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::autourDeNousAction',  '_route' => 'pr2_l_site_autourDeNous',);
+                return array (  '_controller' => 'PR2LSiteBundle:AutourDeNous:autourDeNous',  '_route' => 'pr2_l_site_autourDeNous',);
             }
 
             // pr2_l_site_partenaires
             if ($pathinfo === '/pr2l/partenaires') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::partenairesAction',  '_route' => 'pr2_l_site_partenaires',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\PartenairesController::partenairesAction',  '_route' => 'pr2_l_site_partenaires',);
             }
 
             // pr2_l_site_gererPartenaires
             if ($pathinfo === '/pr2l/gererPartenaires') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::gererPartenairesAction',  '_route' => 'pr2_l_site_gererPartenaires',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\GererPartenairesController::gererPartenairesAction',  '_route' => 'pr2_l_site_gererPartenaires',);
             }
 
             // pr2_l_site_ressources
             if ($pathinfo === '/pr2l/ressources') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::ressourcesAction',  '_route' => 'pr2_l_site_ressources',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\RessourcesController::ressourcesAction',  '_route' => 'pr2_l_site_ressources',);
             }
 
             // pr2_l_site_archives
             if ($pathinfo === '/pr2l/archives') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::archivesAction',  '_route' => 'pr2_l_site_archives',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ArchivesController::archivesAction',  '_route' => 'pr2_l_site_archives',);
             }
 
             // pr2_l_site_bibliotheque
             if ($pathinfo === '/pr2l/bibliotheque') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::bibliothequeAction',  '_route' => 'pr2_l_site_bibliotheque',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\BibliothequeController::bibliothequeAction',  '_route' => 'pr2_l_site_bibliotheque',);
             }
 
             // pr2_l_site_travauxRecherche
             if ($pathinfo === '/pr2l/travauxRecherche') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::travauxRechercheAction',  '_route' => 'pr2_l_site_travauxRecherche',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\TravauxRechercheController::travauxRechercheAction',  '_route' => 'pr2_l_site_travauxRecherche',);
             }
 
             // pr2_l_site_publications
             if ($pathinfo === '/pr2l/publications') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::publicationsAction',  '_route' => 'pr2_l_site_publications',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\PublicationsController::publicationsAction',  '_route' => 'pr2_l_site_publications',);
             }
 
             // pr2_l_site_liensUtiles
             if ($pathinfo === '/pr2l/liensUtiles') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::liensUtilesAction',  '_route' => 'pr2_l_site_liensUtiles',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\LiensUtilesController::liensUtilesAction',  '_route' => 'pr2_l_site_liensUtiles',);
             }
 
             // pr2_l_site_chantiers
             if ($pathinfo === '/pr2l/chantiers') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::chantiersAction',  '_route' => 'pr2_l_site_chantiers',);
+                return array (  '_controller' => 'PR2LSiteBundle:Chantiers:chantiers',  '_route' => 'pr2_l_site_chantiers',);
             }
 
             // pr2_l_site_recensementMutualite
             if ($pathinfo === '/pr2l/recensementMutualite') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::recensementMutualiteAction',  '_route' => 'pr2_l_site_recensementMutualite',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\RecensementMutualiteController::recensementMutualiteAction',  '_route' => 'pr2_l_site_recensementMutualite',);
             }
 
             // pr2_l_site_intranet
             if ($pathinfo === '/pr2l/intranet') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::intranetAction',  '_route' => 'pr2_l_site_intranet',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\IntranetController::intranetAction',  '_route' => 'pr2_l_site_intranet',);
             }
 
             if (0 === strpos($pathinfo, '/pr2l/c')) {
                 // pr2_l_site_connexion
                 if ($pathinfo === '/pr2l/connexion') {
-                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'pr2_l_site_connexion',);
+                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ConnexionController::connexionAction',  '_route' => 'pr2_l_site_connexion',);
                 }
 
                 // pr2_l_site_creation
                 if ($pathinfo === '/pr2l/creation') {
-                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::creationAction',  '_route' => 'pr2_l_site_creation',);
+                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\CreationController::creationAction',  '_route' => 'pr2_l_site_creation',);
                 }
 
             }
 
             // pr2_l_site_gestionAdmin
             if ($pathinfo === '/pr2l/gestionAdmin') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::gestionAdminAction',  '_route' => 'pr2_l_site_gestionAdmin',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\GestionAdminController::gestionAdminAction',  '_route' => 'pr2_l_site_gestionAdmin',);
             }
 
             // pr2_l_site_modification
             if ($pathinfo === '/pr2l/modification') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::modificationAction',  '_route' => 'pr2_l_site_modification',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ModificationController::modificationAction',  '_route' => 'pr2_l_site_modification',);
             }
 
             // pr2_l_site_deconnexion
             if ($pathinfo === '/pr2l/deconnexion') {
-                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::deconnexionAction',  '_route' => 'pr2_l_site_deconnexion',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DeconnexionController::deconnexionAction',  '_route' => 'pr2_l_site_deconnexion',);
             }
 
         }
