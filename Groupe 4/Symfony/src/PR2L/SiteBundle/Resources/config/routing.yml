@@ -14,6 +14,13 @@ pr2_l_site_fondateurs:
     path:     /pr2l/fondateurs
     defaults: { _controller: PR2LSiteBundle:Default:fondateurs }
     
+pr2l_l_site_show:
+    pattern: /{id}
+    defaults: { _controller: PR2LSiteBundle:Utilisateur:show }
+    requirements: 
+        _method: GET
+        id: \d+
+    
 pr2_l_site_revuePresse:
     path:     /pr2l/revuePresse
     defaults: { _controller: PR2LSiteBundle:Default:revuePresse }

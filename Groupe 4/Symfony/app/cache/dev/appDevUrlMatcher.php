@@ -146,6 +146,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::fondateursAction',  '_route' => 'pr2_l_site_fondateurs',);
             }
 
+        }
+
+        // pr2l_l_site_show
+        if (preg_match('#^/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_pr2l_l_site_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2l_l_site_show')), array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\UtilisateurController::showAction',));
+        }
+        not_pr2l_l_site_show:
+
+        if (0 === strpos($pathinfo, '/pr2l')) {
             // pr2_l_site_revuePresse
             if ($pathinfo === '/pr2l/revuePresse') {
                 return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DefaultController::revuePresseAction',  '_route' => 'pr2_l_site_revuePresse',);
