@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-		/*__Page__*/
-/*.cadre{
-	background-color: #C76565;
-	width: 800px;
-	margin: 5% auto auto auto;
-	border: 5px;
-}*/
-
-		/*__CMS__*/
-.cmsEntier{
-	border: 5px solid #FAEDED;
-	border-radius: 15px;
-	background-color: #FAEDED;
-}
-
-=======
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
    /*__Edition d'articles__*/
 .boutonGris {
 	box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -43,48 +25,6 @@
 }
 
 .nonEdition{
-<<<<<<< HEAD
-	border: 5px solid lightgrey;
-	border-radius: 15px;
-	margin: 5px;
-	text-align:center;
-	padding: 15px 0;
-	background-color: #EBE8E8;
-}
-
-.edition{
-	border: 5px solid lightgrey;
-	border-radius: 15px;
-	margin: 5px;
-	padding: 5px;
-	background-color: #EBE8E8;
-}
-
-.ulliste{
-    list-style-type: none; 
-    margin: 0; 
-    margin-bottom: -6px; 
-}
-
-.liliste{
-	border: 1px solid grey;
-	border-radius: 5px 5px 0px 0px;
-	background-color: #CFCCCC;
-	padding: 2px;
-    display: inline-block;   
-}
-.liliste a:link, .liliste a:visited, .liliste a:hover, .liliste a:focus, .liliste a:active{
-	text-decoration: none;
-}
-
-.contenu{
-	border: 1px solid grey;
-	border-radius: 15px;
-	margin: 5px;
-	padding: 5px;
-	background-color: darkgrey;
-	height: 400px;
-=======
 	margin: 5px;
 	text-align:center;
 	padding: 15px 0;
@@ -93,7 +33,6 @@
 .edition{
 	margin: 5px;
 	padding: 5px;
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 }
 
 .boutonContenu{
@@ -124,18 +63,6 @@
 	margin: 5px;
 	padding: 5px;
 	background-color: #EBE8E8;
-<<<<<<< HEAD
-}
-
-.validerAnnulerContenu button{
-	position:relative;
-    top:40%; 
-    left:40%;
-}
-
-
-
-=======
     text-align: center;
 }
 
@@ -186,7 +113,6 @@
 }
     
     /*__Prévisualisation__*/
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 .previsualisation{
 	border: 1px solid grey;
 	border-radius: 15px;
@@ -198,16 +124,8 @@
 
     /*__Liste d'articles__*/
 .article{
-<<<<<<< HEAD
-	border: 5px solid lightgrey;
-	border-radius: 15px;
 	margin: 5px;
 	padding: 5px;
-	background-color: #EBE8E8;
-=======
-	margin: 5px;
-	padding: 5px;
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
 }
 
 
