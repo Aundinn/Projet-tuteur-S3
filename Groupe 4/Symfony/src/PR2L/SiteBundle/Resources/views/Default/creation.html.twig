@@ -10,13 +10,10 @@ if (!(is_null($_SESSION["userCourant"])))
     if ($_SESSION["userCourant"]->getDroits() == "admin")
     {
         // le login, le mot de passe, le nom, le prenom ne sont pas saisies
-<<<<<<< HEAD
-=======
         ?>
        <h2>Modification de l'utilisateur</h2>
         <?php
         // le login, le mot de passe, le nom, le prenom ne sont pas saisies
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
         if(empty($_POST["login"]) || empty($_POST["password1"]) || empty($_POST["nom"]) || empty($_POST["prenom"]))
         {
         ?>
@@ -34,11 +31,7 @@ if (!(is_null($_SESSION["userCourant"])))
                             <option value = "admin">Administrateur</option>
                          </select><br/>
             <input type=submit value="Valider" onclick="self.location.href='Creation.inc.php'"><br/>
-<<<<<<< HEAD
-=======
             </form>
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
-        <?php
         }
         else
         {
@@ -63,8 +56,6 @@ if (!(is_null($_SESSION["userCourant"])))
                 echo "Erreur";
             }
         }
-<<<<<<< HEAD
-=======
         ?>
         <hr>
         <h2>Modification des menus</h2>
@@ -166,7 +157,6 @@ if (!(is_null($_SESSION["userCourant"])))
             </div>
         </div>
         <?php
->>>>>>> 8fcfdeeb252dd53c476b4684aa9832185163c398
     }
     else
     {

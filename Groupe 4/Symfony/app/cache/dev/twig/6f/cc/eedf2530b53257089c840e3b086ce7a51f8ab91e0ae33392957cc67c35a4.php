@@ -65,7 +65,6 @@ if (!(is_null(\$_SESSION[\"userCourant\"])))
                          </select><br/>
             <input type=submit value=\"Valider\" onclick=\"self.location.href='Creation.inc.php'\"><br/>
             </form>
-        <?php
         }
         else
         {

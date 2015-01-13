@@ -96,8 +96,9 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
         echo "adherer";
         echo "\">Adhérer à l'association</a>
 \t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 46
+\t\t\t\t<li><a
+                       .3href=\"";
+        // line 47
         echo "vieAssociation";
         echo "\">Vie de l'association</a>
 \t\t\t\t</li>
@@ -105,111 +106,111 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
 \t\t</li>
 \t\t<li>
 \t\t\t<a href=\"";
-        // line 51
+        // line 52
         echo "actualites";
         echo "\">ACTUALITES</a> 
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
-        // line 53
+        // line 54
         echo "actionsEvenements";
         echo "\">Action / Evènements</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 55
+        // line 56
         echo "quoiDeNeuf";
         echo "\">Quoi de neuf ?</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 57
+        // line 58
         echo "autourDeNous";
         echo "\">Autour de nous</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</li>
 \t\t<li><a href=\"";
-        // line 61
+        // line 62
         echo "partenaires";
         echo "\">PARTENAIRES</a> 
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
-        // line 63
+        // line 64
         echo "gererPartenaires";
         echo "\">Gérer les partenaires</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</li>
 \t\t<li><a href=\"";
-        // line 67
+        // line 68
         echo "ressources";
         echo "\">RESSOURCES</a> 
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
-        // line 69
+        // line 70
         echo "archives";
         echo "\">Catalogue d'archives</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 71
+        // line 72
         echo "bibliotheque";
         echo "\">Bibliothèque</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 73
+        // line 74
         echo "travauxRecherche";
         echo "\">Travaux de recherche</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 75
+        // line 76
         echo "publications";
         echo "\">Nos publications</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 77
+        // line 78
         echo "liensUtiles";
         echo "\">Liens utiles</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</li>
 \t\t<li><a href=\"";
-        // line 81
+        // line 82
         echo "chantiers";
         echo "\">CHANTIERS</a> 
 \t\t\t<ul>
 \t\t\t\t<li><a href=\"";
-        // line 83
+        // line 84
         echo "recensementMutualite";
         echo "\">Recencement pour la mutualité</a>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"";
-        // line 85
+        // line 86
         echo "inventaireCooperation";
         echo "\">Inventaire de la coopération en Limousin</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</li>
 \t\t<li><a href=\"";
-        // line 89
+        // line 90
         echo "intranet";
         echo "\">INTRANET</a>
 \t\t\t<ul>
 \t\t\t<li><a href=\"";
-        // line 91
+        // line 92
         echo "connexion";
         echo "\">Connexion</a></li>
 \t\t\t<li><a href=\"";
-        // line 92
+        // line 93
         echo "creation";
         echo "\">Creation</a></li>
             <li><a href=\"";
-        // line 93
+        // line 94
         echo "gestionAdmin";
         echo "\">Gestion des utilisateurs</a></li>
             <li><a href=\"";
-        // line 94
+        // line 95
         echo "modification";
         echo "\">Modification d'informations</a></li>
             <li><a href=\"";
-        // line 95
+        // line 96
         echo "deconnexion";
         echo "\">Déconnexion</a></li>
 \t\t</ul>
@@ -221,9 +222,9 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
   <body>
 
     ";
-        // line 104
+        // line 105
         $this->displayBlock('body', $context, $blocks);
-        // line 106
+        // line 107
         echo "
   </body>
   
@@ -243,10 +244,10 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
         echo "PR2L";
     }
 
-    // line 104
+    // line 105
     public function block_body($context, array $blocks = array())
     {
-        // line 105
+        // line 106
         echo "    ";
     }
 
@@ -262,6 +263,6 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
 
     public function getDebugInfo()
     {
-        return array (  250 => 105,  247 => 104,  241 => 12,  227 => 106,  225 => 104,  213 => 95,  209 => 94,  205 => 93,  201 => 92,  197 => 91,  192 => 89,  185 => 85,  180 => 83,  175 => 81,  168 => 77,  163 => 75,  158 => 73,  153 => 71,  148 => 69,  143 => 67,  136 => 63,  131 => 61,  124 => 57,  119 => 55,  114 => 53,  109 => 51,  101 => 46,  96 => 44,  91 => 42,  86 => 40,  81 => 38,  76 => 36,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
+        return array (  251 => 106,  248 => 105,  242 => 12,  228 => 107,  226 => 105,  214 => 96,  210 => 95,  206 => 94,  202 => 93,  198 => 92,  193 => 90,  186 => 86,  181 => 84,  176 => 82,  169 => 78,  164 => 76,  159 => 74,  154 => 72,  149 => 70,  144 => 68,  137 => 64,  132 => 62,  125 => 58,  120 => 56,  115 => 54,  110 => 52,  102 => 47,  96 => 44,  91 => 42,  86 => 40,  81 => 38,  76 => 36,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
     }
 }
