@@ -6,3 +6,8 @@ services:
         class: PR2L\SiteBundle\Tests\PR2LTest
         tags:
             - { name : twig.extension }
+            
+#    pr2l_site.essai:
+#        class: PR2L\SiteBundle\Entity\EssaiRepository
+#        tags:
+#            - { name : twig.extension }

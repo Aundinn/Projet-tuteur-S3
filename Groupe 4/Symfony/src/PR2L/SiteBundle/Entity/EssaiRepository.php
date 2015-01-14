@@ -11,17 +11,14 @@ use Doctrine\ORM\EntityRepository;
  * repository methods below.
  */
 class EssaiRepository extends EntityRepository
-{
-    $repository = $this
-        ->getDoctrine()
-        ->getManager()
-        ->getRepository('PR2lSiteBundle:Entity')
+{    
+  public function myFindAll(){
+         return $this
+        ->createQueryBuilder('a')
+        ->getQuery()
+        ->getResult()
         ;
 
-    $listAdverts = $repository->findAll();
+  }
 
-    foreach ($listAdverts as $advert) {
-        // $advert est une instance de Advert
-    echo $advert->getContent();
-}
 }

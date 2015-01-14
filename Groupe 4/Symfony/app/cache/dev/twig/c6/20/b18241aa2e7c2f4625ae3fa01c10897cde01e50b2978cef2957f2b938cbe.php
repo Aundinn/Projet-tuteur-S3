@@ -47,7 +47,7 @@ class __TwigTemplate_c620b18241aa2e7c2f4625ae3fa01c10897cde01e50b2978cef2957f2b9
         foreach ($context['_seq'] as $context["_key"] => $context["advert"]) {
             // line 10
             echo "    <li>";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "content", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "getNom", array(), "method"), "html", null, true);
             echo "</li>
   ";
         }
