@@ -50,5 +50,19 @@ class MenuController extends Controller {
 				'listeMenu' => $listeMenu 
 		) );
 	}
-}
 	
+	public function listAction() {
+		//return $this->render('PR2LMenuBundle:Menu:lister.html.twig', array('menus' => VariableContenantLesMenus));
+		return $this->render('::base.html.twig');
+	}
+	
+	public function addAction() {
+	
+	
+	}
+	
+	public function removeAction() {
+	
+	
+	}
+}

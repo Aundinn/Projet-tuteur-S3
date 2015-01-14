@@ -1,3 +1,12 @@
-pr2l_menu_accueil: 
-    path:     /
-    defaults: { _controller: PR2LMenuBundle:Default:index }
+pr2l_menu_remove: 
+    path: /removeMenu
+    defaults: { _controller: PR2LMenuBundle:Menu:remove }
+    
+pr2l_menu_add:
+    path: /addMenu
+    defaults: {_controller: PR2LMenuBundle:Menu:add }
+    
+pr2l_menu_list:
+    path: /
+    defaults: {_controller: PR2LMenuBundle:Menu:list }
+    

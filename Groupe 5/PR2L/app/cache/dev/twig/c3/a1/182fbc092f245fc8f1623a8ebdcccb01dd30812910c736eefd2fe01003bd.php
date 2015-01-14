@@ -59,13 +59,13 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
         ";
         // line 34
         $this->displayBlock('menu', $context, $blocks);
-        // line 40
+        // line 55
         echo "      </nav>
       <div id=\"content\" class=\"col-md-9\">
         ";
-        // line 42
+        // line 57
         $this->displayBlock('body', $context, $blocks);
-        // line 44
+        // line 59
         echo "      </div>
     </div>
 
@@ -73,9 +73,9 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
 
     <footer>
 \t  ";
-        // line 50
+        // line 65
         $this->displayBlock('footer', $context, $blocks);
-        // line 53
+        // line 68
         echo "    </footer>
   </div>
 
@@ -116,22 +116,47 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
         // line 35
         echo "        <h3>Menu</h3>
         <ul class=\"nav nav-pills nav-stacked\">
-       
+       \t\t<li> 
+       \t\t<a href=";
+        // line 38
+        echo $this->env->getExtension('routing')->getPath("pr2l_user_main");
+        echo ">Gestion Utilisateurs</a> 
+       \t\t<ul>
+       \t\t\t<li> <a href=\"";
+        // line 40
+        echo $this->env->getExtension('routing')->getPath("pr2l_user_add");
+        echo "\"> Ajouter un utilisateur </a> </li>
+\t\t\t\t<li> <a href=\"";
+        // line 41
+        echo $this->env->getExtension('routing')->getPath("pr2l_user_view_all");
+        echo "\">Voir tous les utilisateurs </a> </li>
+       \t\t</ul>
+       \t\t</li>
+       \t\t
+       \t\t<li> 
+       \t\t<a href=\"\" > Gestion Article </a>
+       \t\t<ul>
+       \t\t
+       \t\t</ul> 
+       \t\t</li>
         </ul>
+        
         ";
-    }
-
-    // line 42
-    public function block_body($context, array $blocks = array())
-    {
-        // line 43
+        // line 54
         echo "        ";
     }
 
-    // line 50
+    // line 57
+    public function block_body($context, array $blocks = array())
+    {
+        // line 58
+        echo "        ";
+    }
+
+    // line 65
     public function block_footer($context, array $blocks = array())
     {
-        // line 51
+        // line 66
         echo "      <p> © ";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo "</p>
@@ -145,6 +170,6 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
 
     public function getDebugInfo()
     {
-        return array (  135 => 51,  132 => 50,  128 => 43,  125 => 42,  117 => 35,  114 => 34,  108 => 18,  106 => 17,  103 => 16,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  79 => 53,  77 => 50,  69 => 44,  67 => 42,  63 => 40,  61 => 34,  46 => 21,  44 => 16,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
+        return array (  160 => 66,  157 => 65,  153 => 58,  150 => 57,  146 => 54,  131 => 41,  127 => 40,  122 => 38,  117 => 35,  114 => 34,  108 => 18,  106 => 17,  103 => 16,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  79 => 68,  77 => 65,  69 => 59,  67 => 57,  63 => 55,  61 => 34,  46 => 21,  44 => 16,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
     }
 }

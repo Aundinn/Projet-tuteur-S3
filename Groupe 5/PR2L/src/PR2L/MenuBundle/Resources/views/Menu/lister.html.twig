@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %} 
+
+{% block menu %}
+<ul>
+	{% for menuPere in menusPere %}
+	<li>
+		<?php echo "<a href='index.php?page=2&id=".$menuP->getIdMenu()."'>".$menuP->getTitreMenu()."</a>"?>
+		<?php $menusF = $menuManager->getAllMenusFils($menuP->getIdMenu());
+		{% if menusFils != null %}
+			<ul>
+			{% for menuFils in menusFils %}
+				<li><?php echo "<a href='index.php?page=2&id=".$menuF->getIdMenu()."'>".$menuF->getTitreMenu()."</a>"?>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endfor %}	
+</ul>
+{% endblock %}

@@ -132,13 +132,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_article_homepage')), array (  '_controller' => 'PR2L\\ArticleBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        // pr2l_menu_accueil
+        // pr2l_menu_remove
+        if ($pathinfo === '/removeMenu') {
+            return array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\MenuController::removeAction',  '_route' => 'pr2l_menu_remove',);
+        }
+
+        // pr2l_menu_add
+        if ($pathinfo === '/addMenu') {
+            return array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\MenuController::addAction',  '_route' => 'pr2l_menu_add',);
+        }
+
+        // pr2l_menu_list
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'pr2l_menu_accueil');
+                return $this->redirect($pathinfo.'/', 'pr2l_menu_list');
             }
 
-            return array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pr2l_menu_accueil',);
+            return array (  '_controller' => 'PR2L\\MenuBundle\\Controller\\MenuController::listAction',  '_route' => 'pr2l_menu_list',);
         }
 
         if (0 === strpos($pathinfo, '/user')) {

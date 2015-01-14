@@ -2,3 +2,5 @@ services:
 #    pr2_l_menu.example:
 #        class: PR2L\MenuBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+    pr2l_menu.manager: 
+        class: PR2L\MenuBundle\Utility\MenuManager

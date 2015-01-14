@@ -34,8 +34,25 @@
         {% block menu %}
         <h3>Menu</h3>
         <ul class="nav nav-pills nav-stacked">
-       
+       		<li> 
+       		<a href={{ path('pr2l_user_main') }}>Gestion Utilisateurs</a> 
+       		<ul>
+       			<li> <a href="{{ path('pr2l_user_add') }}"> Ajouter un utilisateur </a> </li>
+				<li> <a href="{{ path('pr2l_user_view_all') }}">Voir tous les utilisateurs </a> </li>
+       		</ul>
+       		</li>
+       		
+       		<li> 
+       		<a href="" > Gestion Article </a>
+       		<ul>
+       		
+       		</ul> 
+       		</li>
         </ul>
+        
+        {# {% use 'PR2LMenuBundle:Menu:lister.html.twig' %}
+        PEUT ETRE utile., mais peut-être pas !
+        #}
         {% endblock %}
       </nav>
       <div id="content" class="col-md-9">

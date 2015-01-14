@@ -2526,6 +2526,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="PR2LUserBundle">PR2L\UserBundle\Entity</argument>
+              <argument key="PR2LMenuBundle">PR2L\MenuBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2546,10 +2547,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\UserBundle\Entity</argument>
+                        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\MenuBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>PR2L\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\UserBundle\Entity</argument>
+                        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\MenuBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>PR2L\MenuBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2629,6 +2643,7 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="pr2l_user.manager" class="PR2L\UserBundle\Utility\UserManager"/>
+    <service id="pr2l_menu.manager" class="PR2L\MenuBundle\Utility\MenuManager"/>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
