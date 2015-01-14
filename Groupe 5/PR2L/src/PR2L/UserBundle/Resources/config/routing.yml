@@ -16,7 +16,7 @@ pr2l_user_view_all:
     path: /viewAll
     defaults: {_controller: PR2LUserBundle:Profil:viewAll }
 
-pr2l__user_add:
+pr2l_user_add:
     path: /add
     defaults: {_controller: PR2LUserBundle:Profil:add }
     
@@ -35,13 +35,3 @@ pr2l_user_edit:
 pr2l_user_connexion:
     path: /connexion
     defaults: {_controller: PR2LUserBundle:Profil:connexion }
-
-#Route temporaire pour demo client.
-pr2l_demo_formArticle:
-    path: /demo/article
-    defaults: {_controller: PR2LUserBundle:Profil:formArticle }
-    
-pr2l_demo_listerNews: 
-    path: /demo/news
-    defaults: {_controller: PR2LUserBundle:Profil:listerNews }
-    

@@ -42,9 +42,9 @@ class __TwigTemplate_c1264163b5baa16da06edc134110550934b617c064a89a86cca5c8540a7
         echo "
 ";
         // line 9
-        $context["nb1"] = twig_random($this->env, 9);
+        $context["nb1"] = (twig_random($this->env, 8) + 1);
         // line 10
-        $context["nb2"] = twig_random($this->env, 9);
+        $context["nb2"] = (twig_random($this->env, 8) + 1);
         // line 11
         $context["cheminImage1"] = $this->env->getExtension('assets')->getAssetUrl("images/nb");
         // line 12

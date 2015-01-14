@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PR2L\UserBundle\Entity\Profil;
 use Symfony\Component\HttpFoundation\Session\Session;
-use PR2LUserBundle\Utility;
+use PR2L\UserBundle\Utility;
 
 /**
  * Cette classe contient les méthodes de gestions des utilisateurs <br />
@@ -65,6 +65,7 @@ class ProfilController extends Controller {
 			$userLogin = $request->request->get('login');
 			$user->setUserLogin($userLogin);
 			$userPwd = $request->request->get('mdp');
+			$userPwd = 
 			$user->setUserPwd($userPwd);
 			
 			$userCanRead = 0;
@@ -219,53 +220,52 @@ class ProfilController extends Controller {
 	public function connexionAction(Request $request) {
 		$doctrine = $this->getDoctrine();
 		$em = $this->getDoctrine()->getManager(); // ce que on utilisera
-
+		
+		$userManager = $this->container->get('pr2l_user.manager');
+		
 		if ($request->isMethod ( 'POST' )) {
 			// formulaire rempli, on va tester les logins.
 			
-			$nb1_verif = $_POST ['nb1'];
-			$nb2_verif = $_POST ['nb2'];
+			//recupération des donnees du formulaire
+			$nb1_verif = $request->request->get('nb1');
+			$nb2_verif = $request->request->get('nb2');
 			$resultat = $nb1_verif + $nb2_verif; // resultat attendu.
-			
-			$reponse = $_POST ['reponse']; // réponse utilisateur
-			
+			$reponse =$request->request->get('reponse'); // réponse utilisateur
 			$login = $request->request->get('user_login');
 			$pass = $request->request->get('user_mdp');
-			// détails de la connexion
 
 			$connexionOK = $userManager->testConnexion ( $login, $pass );
-			//var_dump($connexionOK);
 			if ($reponse != $resultat) { // si le captcha est incorrect
-				echo "<img src=\"image/erreur.png\" alt='erreur' /> <strong>Le captcha est incorrect</strong><br/>";
-				$captcha = false;
-				?>
-			<?php
-					if (isset ( $_SESSION ['per_login_connecte'] )) {
-						session_destroy ();
-						// pour eviter des erreurs.
-					}
-				} else {
-					$captcha = true;
-					// le captcha est correct
+				//faire un popup captcha incorrect et redicrection vers page login
+				//echo "<img src=\"image/erreur.png\" alt='erreur' /> <strong>Le captcha est incorrect</strong><br/>";
+				$captcha = false; 
+				if (isset ( $_SESSION ['per_login_connecte'] )) {
+					//trouver equivalent à session_destroy ();
+					// pour eviter des erreurs.
 				}
+			} else {
+				$captcha = true;
+				// le captcha est correct
+			}
 				
-				if ($connexionOK == false) { // mauvais mot de passe/identifiant
-					echo "<img src=\"image/erreur.png\" alt='erreur' /> Erreur d'identifiant / mot de passe <br/>\n";
+			if ($connexionOK == false) { // mauvais mot de passe/identifiant
+					// faire un popup et redirection vers page login
+					//echo "<img src=\"image/erreur.png\" alt='erreur' /> Erreur d'identifiant / mot de passe <br/>\n";
 					if (isset ( $_SESSION ['per_login_connecte'] )) {
-						session_destroy ();
+						//session_destroy ();
 						// pour eviter des erreurs.
-					}
-
 				}
+			}
 				
-				if (($connexionOK == true) && $captcha == true) { // le captcha est bon et les id/mdp aussi
-					$personneConnectee = $userManager->getPersonneParLogin ( $_POST ['user_login'] );
-					$_SESSION ["personne_connecte"] = ($personneConnectee);
-					
+			if (($connexionOK == true) && $captcha == true) { // le captcha est bon et les id/mdp aussi
+				$personneConnectee = $userManager->getPersonneParLogin ( $_POST ['user_login'] );
+				$_SESSION ["personne_connecte"] = ($personneConnectee);
+				
 				//	echo "<h3> Bienvenue echo $_SESSION [""personne_connecte""]->getUserPrenom(); ! Vous allez &ecirc;tre redirig&eacute;...</h3>
 				//	<META HTTP-EQUIV=""Refresh"" CONTENT=""2;URL=index.php"">";  
-		}	
-		
+			}	
+			return ($this->render('PR2LUserBundle:Profil:index.html.twig')); 
+			//plus popup 'Bonjour XYZ, vous êtes connectes
 		}
 		return ($this->render('PR2LUserBundle:Profil:connexion.html.twig'));
 	}

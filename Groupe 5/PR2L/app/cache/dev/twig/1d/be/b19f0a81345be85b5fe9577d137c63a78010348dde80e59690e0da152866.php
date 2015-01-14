@@ -49,68 +49,80 @@ class __TwigTemplate_1dbeb19f0a81345be85b5fe9577d137c63a78010348dde80e59690e0da1
 \t\t<th>Fonction</th>
 \t\t<th>Login</th>
 \t\t<th>Mot de passe</th>
+\t\t<th>Editer</th>
+\t\t<th>Supprimer</th>
 \t</tr>
 \t";
-        // line 19
+        // line 21
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["profils"]) ? $context["profils"] : $this->getContext($context, "profils")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 20
+            // line 22
             echo "\t\t<tr>
 \t\t\t<td> <a href='";
-            // line 21
+            // line 23
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 22
+            // line 24
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userNom", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 23
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userPrenom", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 24
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userTelephone", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 25
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userEmail", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 26
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userFonction", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 27
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "userLogin", array()), "html", null, true);
             echo " </a> </td>
 \t\t\t<td> <a href='";
-            // line 28
+            // line 30
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_view_single", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo "'> ********* </a> </td>
+\t\t\t<td> <a href='";
+            // line 31
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_edit", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
+            echo "'> <input type='button' value=''/> </a> </td>
+\t\t\t<td> <a href='";
+            // line 32
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("pr2l_user_remove", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
+            echo "'> <input type='button' value=''/> </a> </td>
 \t\t</tr>
 \t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 35
             echo "\t\t<tr>
+\t\t\t<td>---</td>
+\t\t\t<td>---</td>
 \t\t\t<td>---</td>
 \t\t\t<td>---</td>
 \t\t\t<td>---</td>
@@ -125,7 +137,7 @@ class __TwigTemplate_1dbeb19f0a81345be85b5fe9577d137c63a78010348dde80e59690e0da1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 48
         echo "\t\t
 </table>
 ";
@@ -143,6 +155,6 @@ class __TwigTemplate_1dbeb19f0a81345be85b5fe9577d137c63a78010348dde80e59690e0da1
 
     public function getDebugInfo()
     {
-        return array (  129 => 42,  113 => 31,  105 => 28,  99 => 27,  93 => 26,  87 => 25,  81 => 24,  75 => 23,  69 => 22,  63 => 21,  60 => 20,  55 => 19,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  141 => 48,  123 => 35,  115 => 32,  111 => 31,  107 => 30,  101 => 29,  95 => 28,  89 => 27,  83 => 26,  77 => 25,  71 => 24,  65 => 23,  62 => 22,  57 => 21,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

@@ -164,9 +164,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // pr2l__user_add
+            // pr2l_user_add
             if ($pathinfo === '/user/add') {
-                return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::addAction',  '_route' => 'pr2l__user_add',);
+                return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::addAction',  '_route' => 'pr2l_user_add',);
             }
 
             // pr2l_user_remove
@@ -182,19 +182,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // pr2l_user_connexion
             if ($pathinfo === '/user/connexion') {
                 return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::connexionAction',  '_route' => 'pr2l_user_connexion',);
-            }
-
-            if (0 === strpos($pathinfo, '/user/demo')) {
-                // pr2l_demo_formArticle
-                if ($pathinfo === '/user/demo/article') {
-                    return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::formArticleAction',  '_route' => 'pr2l_demo_formArticle',);
-                }
-
-                // pr2l_demo_listerNews
-                if ($pathinfo === '/user/demo/news') {
-                    return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::listerNewsAction',  '_route' => 'pr2l_demo_listerNews',);
-                }
-
             }
 
         }

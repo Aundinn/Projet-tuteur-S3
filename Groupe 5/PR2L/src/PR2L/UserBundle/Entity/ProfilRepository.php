@@ -3,6 +3,7 @@
 namespace PR2L\UserBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * ProfilRepository
@@ -12,4 +13,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProfilRepository extends EntityRepository
 {
+	public function whereLoginAndPwdAre($login, $pwd)
+	{
+		$qb = $this->createQueryBuilder('p');
+	
+		$qb->where('p.userLogin = :login')
+		->setParameter('login', $login)
+		->andWhere('p.userPwd = :year')
+		->setParameter('year', $pwd)
+		;
+	
+		return $qb
+		->getQuery()
+		->getResult()
+		;
+	}
 }

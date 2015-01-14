@@ -5,7 +5,6 @@ $menuManager = new MenuManager ( $pdo );
 
 <?php
 		
-		//var_dump($_POST ['titreMenu']);
 		if ((empty ( $_POST ['titreMenu'] ))) // formulaire non rempli.
 		{
 			$menus = $menuManager->getAllMenusPrincipaux();
@@ -59,17 +58,8 @@ $menuManager = new MenuManager ( $pdo );
 						'representationMenu' => null,
 						'lienMenu' => $_POST ['lienMenu']
 				) );
-				// Details de l'utilisateur stocké dans une variable
-			// Grain de sel du mot de passe. 
-			// TODO modifier cryptage du mot de passe (sha255?)
-		// 	var_dump($Personne);
-		// 	var_dump($_POST['droit']);
 		
-			//$_SESSION ['Personne'] = $Personne;
-			
-			//$idUser = $PersonneManager->VerifLogin ( $Personne->getUserLogin () );
-			// on teste si le login de la personne existe dÃ©jÃ 
-			if ($_POST ['lienMenu'] != null) { // le login n'existe pas dÃ©jÃ 
+			if ($_POST ['lienMenu'] != null) { 
 				$retour = $menuManager->add ( $menu );
 			}
 			
