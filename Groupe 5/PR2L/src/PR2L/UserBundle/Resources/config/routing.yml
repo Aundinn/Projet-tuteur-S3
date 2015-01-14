@@ -13,7 +13,7 @@ pr2l_user_view_single:
         id: \d
         
 pr2l_user_view_all: 
-    path: /view
+    path: /viewAll
     defaults: {_controller: PR2LUserBundle:Profil:viewAll }
 
 pr2l__user_add:
@@ -31,11 +31,7 @@ pr2l_user_edit:
     defaults: {_controller: PR2LUserBundle:Profil:edit , id: null }
     requirements:
         id: \d
-        
-pr2l_user_list: 
-    path: /list
-    defaults: {_controller: PR2LUserBundle:Profil:list }
-    
+
 pr2l_user_connexion:
     path: /connexion
     defaults: {_controller: PR2LUserBundle:Profil:connexion }

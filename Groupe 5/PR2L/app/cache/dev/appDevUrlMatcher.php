@@ -158,7 +158,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 // pr2l_user_view_all
-                if ($pathinfo === '/user/view') {
+                if ($pathinfo === '/user/viewAll') {
                     return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::viewAllAction',  '_route' => 'pr2l_user_view_all',);
                 }
 
@@ -177,11 +177,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // pr2l_user_edit
             if (0 === strpos($pathinfo, '/user/edit') && preg_match('#^/user/edit(?:/(?P<id>\\d))?$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2l_user_edit')), array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::editAction',  'id' => NULL,));
-            }
-
-            // pr2l_user_list
-            if ($pathinfo === '/user/list') {
-                return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\ProfilController::listAction',  '_route' => 'pr2l_user_list',);
             }
 
             // pr2l_user_connexion

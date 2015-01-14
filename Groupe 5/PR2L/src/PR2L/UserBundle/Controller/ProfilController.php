@@ -148,49 +148,36 @@ class ProfilController extends Controller {
 	 *        	Route : pr2l_user_view
 	 */
 	public function viewAction($id) {
-		if ($id == null) {
-			// id non renseigné, on affiche le profil de l'user par défaut.
-			// TODO
-		}
-		
-		//Dans ce cas, personne non connectée
-		// On affiche donc tout les profils. 
-		$doctrine = $this->getDoctrine();
-		$profilRepository = $em->getRepository('PR2LUserBundle:Profil');
-		
-		$em = $this->getDoctrine()->getManager();
-		$query = $em->createQuery(
-				'SELECT *
-    			FROM PR2LUserBundle:Profil p
-    			ORDER BY p.id ASC'
-		);
-		
-		$products = $query->getResult();
-		
-// 		$product = $this->getDoctrine()
-// 		->getRepository('AcmeStoreBundle:Product')
-// 		->find($id);
-		
-// 		if (!$product) {
-// 			throw $this->createNotFoundException(
-// 					'Aucun produit trouvé pour cet id : '.$id
-// 			);
+// 		if ($id == null) {
+// 			// id non renseigné, on affiche le profil de l'user par défaut.
+// 			// TODO
 // 		}
+		
+		$repository = $this
+		->getDoctrine()
+		->getManager()
+		->getRepository('PR2LUserBundle:Profil');
+		;
+		
+		$user = $repository->findOneById($id);
+		
+		return $this->render('PR2LUserBundle:Profil:view.html.twig', array('user' => $user));
 	}
-	
-	/**
-	 * 
-	 */
+
 	public function viewAllAction() {
 		$em = $this->getDoctrine()->getManager();
 		$query = $em->createQuery(
-				'SELECT *
+				'SELECT p
     			FROM PR2LUserBundle:Profil p
     			ORDER BY p.id ASC'
 		);
 		
-		$products = $query->getResult();
-		return $this->render('PR2LUserBundle:Profil:viewAll.html.twig', array());
+		$listeProfils = $query->getResult();
+		//if (!$listeProfils) {
+			//pas de résultats
+		//	throw $this->createNotFoundException('Aucun profil trouv&eacute;');
+		//}
+		return $this->render('PR2LUserBundle:Profil:viewAll.html.twig', array('profils' => $listeProfils));
 	}
 	
 	/**
@@ -225,14 +212,6 @@ class ProfilController extends Controller {
 	}
 	
 	/**
-	 * Permet de lister tous les utilisateurs.
-	 *
-	 * Route : pr2l_user_list
-	 */
-	public function listAction() {
-	}
-	
-	/**
 	 * Connexion d'un utilisateur
 	 *
 	 * @param Request $request        	
@@ -240,13 +219,7 @@ class ProfilController extends Controller {
 	public function connexionAction(Request $request) {
 		$doctrine = $this->getDoctrine();
 		$em = $this->getDoctrine()->getManager(); // ce que on utilisera
-		
-		
-		$admin = new Profil();
-		$admin->setUserLogin("admin");
-		
-		$em->persist($admin);
-		$em->flush();
+
 		if ($request->isMethod ( 'POST' )) {
 			// formulaire rempli, on va tester les logins.
 			
@@ -291,10 +264,10 @@ class ProfilController extends Controller {
 					
 				//	echo "<h3> Bienvenue echo $_SESSION [""personne_connecte""]->getUserPrenom(); ! Vous allez &ecirc;tre redirig&eacute;...</h3>
 				//	<META HTTP-EQUIV=""Refresh"" CONTENT=""2;URL=index.php"">";  
-		}
+		}	
 		
-		return ($this->render('PR2LUserBundle:Profil:connexion.html.twig'));
 		}
+		return ($this->render('PR2LUserBundle:Profil:connexion.html.twig'));
 	}
 	
 	// TMP

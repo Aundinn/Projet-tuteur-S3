@@ -1,34 +1,44 @@
 {% extends "::base.html.twig" %} 
 
 {% block title %}
-Se connecter - {{ parent() }} 
+Lister les utilisateurs - {{ parent() }} 
 {% endblock %} 
 
 {% block body %}
-
-{% set nb1 =  random(9)   %}
-{% set nb2 =  random(9)   %}
-{% set cheminImage1 = asset('images/nb') %}
-
-<form action="#" method="post">
-	<label for=user_login'>Login : </label>
-		<input type="text" name="user_login" id="user_login"> <br /> 
-	<label for='user_mdp'>Mot de passe : </label>
-		<input type="password" name="user_mdp" id="user_mdp">
-	<br />
-
-	<p class="captcha">
-		Merci de r&eacute;soudre le calcul suivant pour confirmer que vous
-		n'&ecirc;tes pas un robot <br />
-		<img 
-			src="{{ asset('images/nb/')~nb1~'.jpg' }}" alt='numero' /> + <img
-			src="{{ asset('images/nb/')~nb2~'.jpg' }}" alt='numero' /> =
-	</p>
-
-	<input type="hidden" name="nb1" value="{{ nb1 }}" /> 
-	<input type="hidden" name="nb2" value="{{ nb2 }}" /> <br /> 
-	
-	<input type="text" name="reponse" required/> <br /> 
-	<input type="submit" value="Connexion" />
-</form>
+<table border='solid'>
+	<tr>
+		<th>Num&eacute;ro</th>
+		<th>Nom</th>
+		<th>Pr&eacute;nom</th>
+		<th>Num&eacute;ro de t&eacute;l&eacute;phone</th>
+		<th>Adresse email</th>
+		<th>Fonction</th>
+		<th>Login</th>
+		<th>Mot de passe</th>
+	</tr>
+	{% for user in profils %}
+		<tr>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.id  }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userNom }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userPrenom }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userTelephone }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userEmail }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userFonction }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> {{ user.userLogin }} </a> </td>
+			<td> <a href='{{ path('pr2l_user_view_single', {'id': user.id}) }}'> ********* </a> </td>
+		</tr>
+	{% else %}
+		<tr>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+			<td>---</td>
+		</tr>
+	{% endfor %}
+		
+</table>
 {% endblock %}

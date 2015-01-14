@@ -1,34 +1,37 @@
 {% extends "::base.html.twig" %} 
 
 {% block title %}
-Se connecter - {{ parent() }} 
+Ajouter un utilisateur - {{ parent() }} 
 {% endblock %} 
 
 {% block body %}
+<h2>D&eacute;tails de {{ user.userPrenom ~ " " ~ user.userNom|upper}}</h2>
+<hr/>
 
-{% set nb1 =  random(9)   %}
-{% set nb2 =  random(9)   %}
-{% set cheminImage1 = asset('images/nb') %}
+Nom et pr&eacute;nom: {{ user.userNom|upper ~ " " ~ user.userPrenom }} <br/>  
+T&eacute;l&eacute;phone : {{ user.userTelephone }} <br/>
+Mail : {{ user.userEmail }} <br/> 
+Fonction de l'utilisateur : {{ user.userFonction }} <br/> 
+<hr/>
+Login : {{ user.userLogin }} <br/>  
+Mot de passe : ******** <br/> 
+<em>Le mot de passe est crypt&eacute; et ne &ecirctre affich&eacute;. Pensez &agrave le m&eacute;moriser !</em> 
+<hr/>
+Informations compl&eacute;mentaires : <br/>
+{% if user.userIsAdmin != 0 %}
+	- {{ user.userPrenom }} est administrateur. <br/>
+{% endif %}
 
-<form action="#" method="post">
-	<label for=user_login'>Login : </label>
-		<input type="text" name="user_login" id="user_login"> <br /> 
-	<label for='user_mdp'>Mot de passe : </label>
-		<input type="password" name="user_mdp" id="user_mdp">
-	<br />
+{% if user.userIsModerateur != 0 %}
+	- {{ user.userPrenom }} est mod&eacute;rateur. <br/> 
+{% endif %}
 
-	<p class="captcha">
-		Merci de r&eacute;soudre le calcul suivant pour confirmer que vous
-		n'&ecirc;tes pas un robot <br />
-		<img 
-			src="{{ asset('images/nb/')~nb1~'.jpg' }}" alt='numero' /> + <img
-			src="{{ asset('images/nb/')~nb2~'.jpg' }}" alt='numero' /> =
-	</p>
+{% if user.userIsContributeur != 0 %}
+	- {{ user.userPrenom }} est contributeur. <br/>
+{% endif %}
 
-	<input type="hidden" name="nb1" value="{{ nb1 }}" /> 
-	<input type="hidden" name="nb2" value="{{ nb2 }}" /> <br /> 
-	
-	<input type="text" name="reponse" required/> <br /> 
-	<input type="submit" value="Connexion" />
-</form>
+{% if user.userIsAdherent != 0 %}
+	- {{ user.userPrenom }} est adh&eacute;rent. <br/>
+{% endif %}
+
 {% endblock %}
