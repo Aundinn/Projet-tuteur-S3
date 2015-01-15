@@ -35,16 +35,7 @@
 <div><nav>
 
 <ul id="menu-deroulant">
-  {% for menu in listMenu %}
-    <li><a href="{{ menu.getLien7() }}">{{ menu.getLibelle() }}</a></li>
-   	<ul>
-  	{% for menu2 in listMenu2 %}
-  	{% if menu2.getIdMenuParent() == menu.getId() %}
-    		<li><a href="{{ menu2.getLien7() }}">{{ menu2.getLibelle() }}</a></li>
-    	{% endif%}
-    	{% endfor %}
-	</ul>
-  {% endfor %}
+    {{ render(controller("PR2LSiteBundle:Menu:menu")) }}
 </ul>
 	
 </nav></div>

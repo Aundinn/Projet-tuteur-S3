@@ -69,162 +69,26 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
   
   <nav>\t
 <hr/>
+
 <div><nav>
-\t<ul id=\"menu-deroulant\">
-\t\t<li><a href=\"";
-        // line 36
-        echo "accueil";
-        echo "\">PR2L</a> 
-\t\t\t<ul>
-\t\t\t\t<li><a href=\"";
+
+<ul id=\"menu-deroulant\">
+    ";
         // line 38
-        echo "projet";
-        echo "\">Le projet</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 40
-        echo "fondateurs";
-        echo "\">Fondateurs</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 42
-        echo "revuePresse";
-        echo "\">Revue de presse</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 44
-        echo "adherer";
-        echo "\">Adhérer à l'association</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a
-                       .3href=\"";
-        // line 47
-        echo "vieAssociation";
-        echo "\">Vie de l'association</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</li>
-\t\t<li>
-\t\t\t<a href=\"";
-        // line 52
-        echo "actualites";
-        echo "\">ACTUALITES</a> 
-\t\t\t<ul>
-\t\t\t\t<li><a href=\"";
-        // line 54
-        echo "actionsEvenements";
-        echo "\">Action / Evènements</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 56
-        echo "quoiDeNeuf";
-        echo "\">Quoi de neuf ?</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 58
-        echo "autourDeNous";
-        echo "\">Autour de nous</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</li>
-\t\t<li><a href=\"";
-        // line 62
-        echo "partenaires";
-        echo "\">PARTENAIRES</a> 
-\t\t\t<ul>
-\t\t\t\t<li><a href=\"";
-        // line 64
-        echo "gererPartenaires";
-        echo "\">Gérer les partenaires</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</li>
-\t\t<li><a href=\"";
-        // line 68
-        echo "ressources";
-        echo "\">RESSOURCES</a> 
-\t\t\t<ul>
-\t\t\t\t<li><a href=\"";
-        // line 70
-        echo "archives";
-        echo "\">Catalogue d'archives</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 72
-        echo "bibliotheque";
-        echo "\">Bibliothèque</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 74
-        echo "travauxRecherche";
-        echo "\">Travaux de recherche</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 76
-        echo "publications";
-        echo "\">Nos publications</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 78
-        echo "liensUtiles";
-        echo "\">Liens utiles</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</li>
-\t\t<li><a href=\"";
-        // line 82
-        echo "chantiers";
-        echo "\">CHANTIERS</a> 
-\t\t\t<ul>
-\t\t\t\t<li><a href=\"";
-        // line 84
-        echo "recensementMutualite";
-        echo "\">Recencement pour la mutualité</a>
-\t\t\t\t</li>
-\t\t\t\t<li><a href=\"";
-        // line 86
-        echo "inventaireCooperation";
-        echo "\">Inventaire de la coopération en Limousin</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</li>
-\t\t<li><a href=\"";
-        // line 90
-        echo "intranet";
-        echo "\">INTRANET</a>
-\t\t\t<ul>
-\t\t\t<li><a href=\"";
-        // line 92
-        echo "connexion";
-        echo "\">Connexion</a></li>
-\t\t\t<li><a href=\"";
-        // line 93
-        echo "creation";
-        echo "\">Creation</a></li>
-            <li><a href=\"";
-        // line 94
-        echo "gestionAdmin";
-        echo "\">Gestion des utilisateurs</a></li>
-            <li><a href=\"";
-        // line 95
-        echo "modification";
-        echo "\">Modification d'informations</a></li>
-            <li><a href=\"";
-        // line 96
-        echo "deconnexion";
-        echo "\">Déconnexion</a></li>
-\t\t</ul>
-\t\t</li>
-\t</ul>
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("PR2LSiteBundle:Menu:menu"));
+        echo "
+</ul>
+\t
 </nav></div>
 <hr/>
   </nav>
+  
   <body>
 
     ";
-        // line 105
+        // line 47
         $this->displayBlock('body', $context, $blocks);
-        // line 107
+        // line 50
         echo "
   </body>
   
@@ -235,6 +99,23 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
 \tLimousin
   </footer>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ";
     }
 
@@ -244,11 +125,12 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
         echo "PR2L";
     }
 
-    // line 105
+    // line 47
     public function block_body($context, array $blocks = array())
     {
-        // line 106
-        echo "    ";
+        // line 48
+        echo "     
+    ";
     }
 
     public function getTemplateName()
@@ -263,6 +145,6 @@ class __TwigTemplate_8930c48a288982cc5d86190ba016e63977a83586e520476c8d0e49baac0
 
     public function getDebugInfo()
     {
-        return array (  251 => 106,  248 => 105,  242 => 12,  228 => 107,  226 => 105,  214 => 96,  210 => 95,  206 => 94,  202 => 93,  198 => 92,  193 => 90,  186 => 86,  181 => 84,  176 => 82,  169 => 78,  164 => 76,  159 => 74,  154 => 72,  149 => 70,  144 => 68,  137 => 64,  132 => 62,  125 => 58,  120 => 56,  115 => 54,  110 => 52,  102 => 47,  96 => 44,  91 => 42,  86 => 40,  81 => 38,  76 => 36,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
+        return array (  132 => 48,  129 => 47,  123 => 12,  92 => 50,  90 => 47,  78 => 38,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
     }
 }
