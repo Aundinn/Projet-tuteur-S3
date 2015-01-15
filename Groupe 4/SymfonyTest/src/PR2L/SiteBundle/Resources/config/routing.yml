@@ -1,0 +1,132 @@
+pr2_l_site_accueil:
+    path:     /pr2l/accueil
+    defaults: { _controller: PR2LSiteBundle:Accueil:accueil }
+
+pr2_l_site_actionsEvenements:
+    path:     /pr2l/actionsEvenements
+    defaults: { _controller: PR2LSiteBundle:ActionsEvenements:actionsEvenements }
+    
+pr2_l_site_projet:
+    path:     /pr2l/projet
+    defaults: { _controller: PR2LSiteBundle:Projet:projet }
+    
+pr2_l_site_fondateurs:
+    path:     /pr2l/fondateurs
+    defaults: { _controller: PR2LSiteBundle:Fondateurs:fondateurs }
+    
+pr2_l_site_revuePresse:
+    path:     /pr2l/revuePresse
+    defaults: { _controller: PR2LSiteBundle:RevuePresse:revuePresse }
+    
+pr2_l_site_adherer:
+    path:     /pr2l/adherer
+    defaults: { _controller: PR2LSiteBundle:Adherer:adherer }
+    
+pr2_l_site_vieAssociation:
+    path:     /pr2l/vieAssociation
+    defaults: { _controller: PR2LSiteBundle:VieAssociation:vieAssociation }
+    
+pr2_l_site_actualites:
+    path:     /pr2l/actualites
+    defaults: { _controller: PR2LSiteBundle:Actualites:actualites }
+    
+pr2_l_site_quoiDeNeuf:
+    path:     /pr2l/quoiDeNeuf
+    defaults: { _controller: PR2LSiteBundle:QuoiDeNeuf:quoiDeNeuf }
+    
+pr2_l_site_autourDeNous:
+    path:     /pr2l/autourDeNous
+    defaults: { _controller: PR2LSiteBundle:AutourDeNous:autourDeNous }
+    
+pr2_l_site_partenaires:
+    path:     /pr2l/partenaires
+    defaults: { _controller: PR2LSiteBundle:Partenaires:partenaires }
+    
+pr2_l_site_gererPartenaires:
+    path:     /pr2l/gererPartenaires
+    defaults: { _controller: PR2LSiteBundle:GererPartenaires:gererPartenaires }
+    
+pr2_l_site_ressources:
+    path:     /pr2l/ressources
+    defaults: { _controller: PR2LSiteBundle:Ressources:ressources }
+    
+pr2_l_site_archives:
+    path:     /pr2l/archives
+    defaults: { _controller: PR2LSiteBundle:Archives:archives }
+    
+pr2_l_site_bibliotheque:
+    path:     /pr2l/bibliotheque
+    defaults: { _controller: PR2LSiteBundle:Bibliotheque:bibliotheque }
+    
+pr2_l_site_travauxRecherche:
+    path:     /pr2l/travauxRecherche
+    defaults: { _controller: PR2LSiteBundle:TravauxRecherche:travauxRecherche }
+    
+pr2_l_site_publications:
+    path:     /pr2l/publications
+    defaults: { _controller: PR2LSiteBundle:Publications:publications } 
+        
+pr2_l_site_liensUtiles:
+    path:     /pr2l/liensUtiles
+    defaults: { _controller: PR2LSiteBundle:LiensUtiles:liensUtiles }     
+    
+pr2_l_site_chantiers:
+    path:     /pr2l/chantiers
+    defaults: { _controller: PR2LSiteBundle:Chantiers:chantiers }  
+    
+pr2_l_site_recensementMutualite:
+    path:     /pr2l/recensementMutualite
+    defaults: { _controller: PR2LSiteBundle:RecensementMutualite:recensementMutualite }  
+    
+pr2_l_site_intranet:
+    path:     /pr2l/intranet
+    defaults: { _controller: PR2LSiteBundle:Intranet:intranet }  
+    
+pr2_l_site_connexion:
+    path:     /pr2l/connexion
+    defaults: { _controller: PR2LSiteBundle:Connexion:connexion }
+    
+pr2_l_site_creation:
+    path:     /pr2l/creation
+    defaults: { _controller: PR2LSiteBundle:Creation:creation }
+    
+pr2_l_site_gestionAdmin:
+    path:     /pr2l/gestionAdmin
+    defaults: { _controller: PR2LSiteBundle:GestionAdmin:gestionAdmin }
+    
+pr2_l_site_modification:
+    path:     /pr2l/modification
+    defaults: { _controller: PR2LSiteBundle:Modification:modification }
+    
+pr2_l_site_deconnexion:
+    path:     /pr2l/deconnexion
+    defaults: { _controller: PR2LSiteBundle:Deconnexion:deconnexion }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

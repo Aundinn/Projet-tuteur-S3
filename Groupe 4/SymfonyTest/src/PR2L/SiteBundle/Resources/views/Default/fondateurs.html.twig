@@ -1,0 +1,14 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Fondateurs{% endblock %}
+
+{% block body %}
+{{ maFonction() }}
+
+<ul>
+  {% for advert in listAdverts %}
+    <li>{{ advert.getNom() }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
