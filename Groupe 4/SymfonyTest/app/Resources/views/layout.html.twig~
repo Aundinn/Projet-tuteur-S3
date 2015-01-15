@@ -2,18 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" ng-app="CMS">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/image/iconePR2L.png" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/pr2lsite/css/styleSite.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/pr2lsite/css/styleCMS.css') }}" />
+	<link rel="stylesheet" type="text/css" href="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/css/styleSite.css" />
+	<link rel="stylesheet" type="text/css" href="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/css/styleCMS.css" />
 	
-	<script type="text/javascript" src="{{ asset('bundles/pr2lsite/js/angular.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('bundles/pr2lsite/js/app.js') }}"></script>
+	<script type="text/javascript" src="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/js/angular.min.js"></script>
+	<script type="text/javascript" src="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/js/app.js"></script>
+
+    {{ include("PR2LSiteBundle:Style:style.css.twig") }}
     
     <title>{% block title %}PR2L{% endblock %}</title>
   </head>
   
   <header>
-  	<div class="eltEntete"><a href="">	<img src="{{ asset('bundles/pr2lsite/images/logo.png') }}" alt="Logo PR2L" title="Logo association PR2L" />	</a></div>
+  	<div class="eltEntete"><a href="">	<img src="/opt/lampp/htdocs/Symfony/src/PR2L/SiteBundle/Site PR2L/image/logo.png" alt="Logo PR2L" title="Logo association PR2L" />	</a></div>
 	<div class="eltEntete">
 		<strong></bold><em>P</em>ôle international de <br />
 		<em>R</em>essources de <br />
@@ -29,38 +32,19 @@
   <aside>
   </aside>
   
-  <nav>	
-<hr/>
-
-<div><nav>
-
-<ul>
-  {% for menu in listMenu %}
-    <li><a href="{{ menu.getLien7() }}">{{ menu.getLibelle() }}</a></li>
-    <ul>
-    	{% for menu2 in listMenu2 %}
-    	<li><a href="{{ menu2.getLien7().getIdMenuParent() }}">{{ menu2.getLibelle() }}</a></li>
-  	{% endfor %}
-    </ul>
-  {% endfor %}
-</ul>
-	
-</nav></div>
-<hr/>
+  <nav>
+  	{% block menu %}
+  	{% endblock %}
   </nav>
-  
   <body>
 
     {% block body %}
-     
     {% endblock %}
 
   </body>
   
   <footer>
-	Pôle international des<br>
-	Ressources de <br>
-	Limoges et du <br>
-	Limousin
+	{% block footer %}
+	{% endblock %}
   </footer>
 </html>

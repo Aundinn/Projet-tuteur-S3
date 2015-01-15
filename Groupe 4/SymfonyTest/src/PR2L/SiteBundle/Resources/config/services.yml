@@ -7,8 +7,3 @@ services:
         tags:
             - { name : twig.extension }
             
-#    pr2l_site.menu:
-#        class: PR2L\SiteBundle\Entity\menu
-#        tags:
-#            - { name : twig.extension }
-            
