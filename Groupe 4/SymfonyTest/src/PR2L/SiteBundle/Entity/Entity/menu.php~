@@ -1,6 +1,6 @@
 <?php
 
-namespace PR2L\SiteBundle\Entity;
+namespace PR2L\SiteBundle\Entity\menu;
 
 use Doctrine\ORM\Mapping as ORM;
 

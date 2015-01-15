@@ -1,6 +1,6 @@
 <?php
 
-namespace PR2L\SiteBundle\Entity\Entity;
+namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * menu
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PR2L\SiteBundle\Entity\Entity\menuRepository")
+ * @ORM\Entity(repositoryClass="PR2L\SiteBundle\Entity\menuRepository")
  */
 class menu
 {

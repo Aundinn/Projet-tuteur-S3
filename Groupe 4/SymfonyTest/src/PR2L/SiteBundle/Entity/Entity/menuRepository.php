@@ -1,6 +1,6 @@
 <?php
 
-namespace PR2L\SiteBundle\Entity\Entity;
+namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -12,4 +12,52 @@ use Doctrine\ORM\EntityRepository;
  */
 class menuRepository extends EntityRepository
 {
+	public function getAllMenusParents(){
+		$listeMenus = array();
+		$sql = 'SELECT libelle, idMenu, idMenuParent, lien, representation, emplacement
+		FROM Menu
+        WHERE idMenuParent is null';
+		$req = $this->db->prepare($sql);
+		$req->execute();
+		
+		while($menu = $req->fetch(PDO::FETCH_OBJ)){
+			$listeMenus[] = new Menu($menu);
+		}
+		$req->closeCursor();
+		
+		return $listeMenus;
+		
+	}
+	
+	public function findByParent($parent)
+	{
+  		$qb = $this->createQueryBuilder('a');
+
+  		$qb->where('a.idMenuParent = :parent')
+       		->setParameter('idMenuParent', $parent)
+  		;
+
+ 		return $qb
+    		->getQuery()
+    		->getResult()
+  		;
+	}
+    
+    public function getAllMenusByParent($numMenuP){
+		$listeMenus = array();
+		$sql = 'SELECT libelle, idMenu, idMenuParent, lien, representation, emplacement
+		FROM Menu
+        WHERE idMenuParent = :numMenuP';
+		$req = $this->db->prepare($sql);
+        $req->bindValue(':numMenuP', $numMenuP);
+		$req->execute();
+		
+		while($menu = $req->fetch(PDO::FETCH_OBJ)){
+			$listeMenus[] = new Menu($menu);
+		}
+		$req->closeCursor();
+		
+		return $listeMenus;
+		
+	}
 }
