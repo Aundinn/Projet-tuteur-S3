@@ -59,13 +59,13 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
         ";
         // line 34
         $this->displayBlock('menu', $context, $blocks);
-        // line 55
+        // line 57
         echo "      </nav>
       <div id=\"content\" class=\"col-md-9\">
         ";
-        // line 57
-        $this->displayBlock('body', $context, $blocks);
         // line 59
+        $this->displayBlock('body', $context, $blocks);
+        // line 61
         echo "      </div>
     </div>
 
@@ -73,9 +73,9 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
 
     <footer>
 \t  ";
-        // line 65
+        // line 67
         $this->displayBlock('footer', $context, $blocks);
-        // line 68
+        // line 70
         echo "    </footer>
   </div>
 
@@ -142,21 +142,21 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
         </ul>
         
         ";
-        // line 54
+        // line 56
         echo "        ";
     }
 
-    // line 57
+    // line 59
     public function block_body($context, array $blocks = array())
     {
-        // line 58
+        // line 60
         echo "        ";
     }
 
-    // line 65
+    // line 67
     public function block_footer($context, array $blocks = array())
     {
-        // line 66
+        // line 68
         echo "      <p> © ";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo "</p>
@@ -170,6 +170,6 @@ class __TwigTemplate_c3a1182fbc092f245fc8f1623a8ebdcccb01dd30812910c736eefd2fe01
 
     public function getDebugInfo()
     {
-        return array (  160 => 66,  157 => 65,  153 => 58,  150 => 57,  146 => 54,  131 => 41,  127 => 40,  122 => 38,  117 => 35,  114 => 34,  108 => 18,  106 => 17,  103 => 16,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  79 => 68,  77 => 65,  69 => 59,  67 => 57,  63 => 55,  61 => 34,  46 => 21,  44 => 16,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
+        return array (  160 => 68,  157 => 67,  153 => 60,  150 => 59,  146 => 56,  131 => 41,  127 => 40,  122 => 38,  117 => 35,  114 => 34,  108 => 18,  106 => 17,  103 => 16,  98 => 13,  96 => 12,  93 => 11,  87 => 9,  79 => 70,  77 => 67,  69 => 61,  67 => 59,  63 => 57,  61 => 34,  46 => 21,  44 => 16,  41 => 15,  39 => 11,  34 => 9,  25 => 2,);
     }
 }

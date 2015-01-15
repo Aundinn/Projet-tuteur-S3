@@ -7,6 +7,9 @@ class Article{
 	private $corpsTexte;
 	private $lieu;
 	private $typeArticle;
+	private $carrousel;
+	private $priorite;
+	private $auteurReel;
 
 	public function __construct($valeurs = array()) {
 		if (! empty ( $valeurs )) {
@@ -36,6 +39,15 @@ class Article{
 					break;
 				case 'typeArticle' :
 					$this->setTypeArticle( $valeurs );
+					break;
+				case 'priorite' :
+					$this->setPriorite($valeurs);
+					break;
+				case 'carrousel' :
+					$this->setCarrousel($valeurs);
+					break;
+				case 'auteurReel' :
+					$this->setAuteurReel($valeurs);
 					break;
 			}
 		}
@@ -81,6 +93,24 @@ class Article{
 	}
 	public function setTypeArticle($typeArticle){
 		$this->typeArticle=$typeArticle;
+	}
+	public function getPriorite(){
+		return $this->priorite;
+	}
+	public function setPriorite($priorite){
+		$this->priorite=$priorite;
+	}
+	public function getCarrousel(){
+		return $this->carrousel;
+	}
+	public function setCarrousel($carrousel){
+		$this->carrousel=$carrousel;
+	}
+	public function getAuteurReel(){
+		return $this->auteurReel;
+	}
+	public function setAuteurReel($auteurReel){
+		$this->auteurReel=$auteurReel;
 	}
 }
 ?>

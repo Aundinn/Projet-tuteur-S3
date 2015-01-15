@@ -305,3 +305,8 @@ e73b3e,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php
 cbdd0a,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/,1421244218,
 e99dbf,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/,1421244221,
 88aff6,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/add,1421244222,
+d9e325,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/,1421309938,
+87fa09,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/add,1421309941,
+240e86,::1,POST,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/add,1421309998,
+b728ab,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/viewAll,1421310001,
+900eaf,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%205/PR2L/web/app_dev.php/user/view/3,1421310006,

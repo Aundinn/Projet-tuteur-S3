@@ -37,6 +37,16 @@ switch ($page) {
 	case 7 :
 		include_once ('pages/SupprimerPersonne.inc.php');
 		break;
+		//articles
+	case 8 :
+		include_once ('pages/ajouterArticle.inc.php');
+		break;
+	case 9 :
+		include_once ("pages/testArticle.inc.php");
+		break;
+	case 10 : 
+		include_once ("pages/listeArticle.inc.php");
+		break;
 	
 	default :
 		include_once ('pages/accueil.inc.php');

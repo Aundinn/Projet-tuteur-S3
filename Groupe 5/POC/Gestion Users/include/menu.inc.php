@@ -12,6 +12,8 @@
 			<li><a href="index.php?page=4">Gestion des utilisateurs</a></li>
             <?php  if (!empty($_SESSION['personne_connecte'])) { //la personne est connectee ?>
             <li><a href="index.php?page=5">Modifier mes informations</a></li>
+			<li><a href='index.php?page=8'>Ajouter article </a></li>
+			<li><a href='index.php?page=10'>Lister article </a></li>
             <?php } else {} //on affiche pas le champ deconnexion si la personne n'est pas connectée ?>
             <?php  if (!empty($_SESSION['personne_connecte'])) { //la personne est connectee ?>
             <?php  if ($_SESSION['personne_connecte']->getUserDroit()=='admin') { //la personne est connectee en admin ?>
