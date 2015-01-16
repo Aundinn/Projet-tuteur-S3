@@ -11,7 +11,7 @@ class GestionAdminController extends Controller
         $repository = $this
                 ->getDoctrine()
                 ->getManager()
-                ->getRepository('PR2LSiteBundle:Entity\utilisateur');
+                ->getRepository('PR2LSiteBundle:utilisateur');
   
         $listAdverts = $repository->myFindAll();
         

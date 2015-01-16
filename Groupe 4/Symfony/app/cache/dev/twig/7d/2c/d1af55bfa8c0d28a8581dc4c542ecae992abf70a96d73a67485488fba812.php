@@ -37,93 +37,44 @@ class __TwigTemplate_7d2cd1af55bfa8c0d28a8581dc4c542ecae992abf70a96d73a67485488f
     {
         // line 6
         echo "
-<?php
-if (!(is_null(\$_SESSION[\"userCourant\"])))
-{
-    if (\$_SESSION[\"userCourant\"]->getDroits() == \"admin\")
-    {
-        if(empty(\$_POST[\"personne\"]) && empty(\$_POST[\"droits\"]))
-        {
-            \$pdo = new Mypdo();
-\t        \$utilisateurManager = new UtilisateurManager(\$pdo);
-            \$utilisateurs = \$utilisateurManager->getAllUtilisateur();
-?>
-                <table  style=\"border : 1px solid black\">
-                    <tr><th>Nom</th><th>Prénom</th><th>login</th><th>droits</th></tr>
-<?php                
-                    foreach(\$utilisateurs as \$utilisateur)
-                    {
-                        ?>
-                            <tr>
-                                <td  style=\"border : 1px solid black\"><?php echo \$utilisateur->getNom()?> </td>
-                                <td  style=\"border : 1px solid black\"><?php echo \$utilisateur->getPrenom()?></td>
-                                <td  style=\"border : 1px solid black\"><?php echo \$utilisateur->getLogin()?></td>
-                                <td  style=\"border : 1px solid black\"><?php echo \$utilisateur->getDroits() ?></td>
-                            </tr>
-                        <?php
-                    }
-?>
-                </table><br/>
 
-                 <form id=\"form\" method=\"post\">
-                        Saisir l'identifiant de la personne à modifier : <input type=text name=\"personne\"></textarea>
-                        <input type=submit value=\"Valider\" onclick=\"self.location.href='./GestionAdmin.inc.php'\">
-                </form>
-                
-<?php
-        }else if(empty(\$_POST[\"droits\"])){
-            \$pdo = new Mypdo();
-\t        \$utilisateurManager = new UtilisateurManager(\$pdo);
-            \$utilisateurs = \$utilisateurManager->getAllUtilisateur();
-            
-            \$_SESSION['user'] = false;
-            foreach(\$utilisateurs as \$utilisateur){
-                if(\$_POST[\"personne\"] == \$utilisateur->getLogin())
-                {
-                    \$_SESSION['user'] = \$utilisateur;
-                }
-            }
-            
-            if(\$_SESSION['user'] != false)
-            {
-?>
-                <form name=\"changeDroits\" method=\"post\">
-                    <table  style=\"border : 1px solid black\">
-                            <tr><th>Nom</th><th>Prénom</th><th>login</th><th>droits</th></tr>
-                            <tr><td style=\"border : 1px solid black\"><?php echo \$_SESSION['user']->getNom();?></td>
-                                <td style=\"border : 1px solid black\"><?php echo \$_SESSION['user']->getPrenom();?></td>
-                                <td style=\"border : 1px solid black\"><?php echo \$_SESSION['user']->getLogin();?></td>
-                                <td style=\"border : 1px solid black\">
-                                    <select name=\"droits\">
-                                        <option value = \"<?php echo \$_SESSION['user']->getDroits() ?>\"><?php echo \$_SESSION['user']->getDroits() ?></option>
-                                        <option value = \"aucun\">aucun</option>
-                                        <option value = \"lecture\">lecture</option>
-                                        <option value = \"lecture/ecriture\">lecture / ecriture</option>
-                                        <option value = \"admin\">administrateur</option>
-                                    </select>
-                                </td>
-                            </tr>
-                    </table>
-                    <input type=submit value=\"Valider\" onclick=\"self.location.href='./GestionAdmin.inc.php'\">
-                </form>
-<?php
-            }
-            else
-            {
-                echo \"Cet utilisateur n'existe pas\";
-            }
-        }else{
-            \$_SESSION['user']->setDroits(\$_POST[\"droits\"]);
-            \$pdo = new Mypdo();
-            \$utilisateurManager = new UtilisateurManager(\$pdo);
-            \$retour = \$utilisateurManager->update(\$_SESSION['user']);
-            
-            echo \"Les droits de cette personne ont été mis à jour\";
+<table>
+    <tr><th>Nom</th><th>Prénom</th><th>Login</th><th>Droits</th></tr>
+    ";
+        // line 10
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listAdverts"]) ? $context["listAdverts"] : $this->getContext($context, "listAdverts")));
+        foreach ($context['_seq'] as $context["_key"] => $context["advert"]) {
+            // line 11
+            echo "        <tr><td>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "getNom", array(), "method"), "html", null, true);
+            echo "</td><td>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "getPrenom", array(), "method"), "html", null, true);
+            echo "</td><td>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "getIdentifiant", array(), "method"), "html", null, true);
+            echo "</td><td>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "getDroits", array(), "method"), "html", null, true);
+            echo "</td></tr>
+    ";
         }
-    }
-}
-?>
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['advert'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 13
+        echo "</table>
 
+<div class=\"formulaire\">
+    <form method=\"post\" action=\"#\" ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+        echo ">
+        ";
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo "
+        <input type=\"submit\" value=\"Valider\" id=\"boutonform\">
+    </form>
+</div>
 ";
     }
 
@@ -139,6 +90,6 @@ if (!(is_null(\$_SESSION[\"userCourant\"])))
 
     public function getDebugInfo()
     {
-        return array (  39 => 6,  36 => 5,  29 => 3,);
+        return array (  73 => 17,  69 => 16,  64 => 13,  49 => 11,  45 => 10,  39 => 6,  36 => 5,  29 => 3,);
     }
 }

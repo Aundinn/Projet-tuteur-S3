@@ -15,6 +15,7 @@
 
     {% for flashMessage in app.session.flashbag.get('phrase') %}
         <div>
+            <br>
             {{ flashMessage }}
         </div>
     {% endfor %}
