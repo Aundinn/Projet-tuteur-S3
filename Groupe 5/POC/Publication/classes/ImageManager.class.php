@@ -4,20 +4,28 @@ class ImageManager {
 	public function __construct($db) {
 		$this->db = $db;
 	}
+	/**
+	 * Permet l'ajout d'une image.
+	 * @param Image $image
+	 * @return FALSE (image non uploadée) | idImage
+	 */
 	public function add($image) {
-		$requete = $this->db->prepare ( 'INSERT INTO images 
-		(im_id, im_nom, im_size, im_nomBDD, im_uploadBy, im_date, im_desc) 
+		$requete = $this->db->prepare ( 'INSERT INTO image
+		(nomImage, descImage, image, imageUploadBy, typeImage) 
 		VALUES 
-		(:im_id, :im_nom, :im_size, :im_nomBDD, :im_uploadBy, :im_date, :im_desc);' );
-		$requete->bindValue ( ':im_id', $image->getImId);
-		$requete->bindValue ( ':im_nom', $image->getImNom () );
-		$requete->bindValue ( ':im_size', $image->getImSize () );
-		$requete->bindValue ( ':im_nomBDD', $image->getImNomBDD () );
-		$requete->bindValue ( ':im_uploadBy', $image->getImUploadBy () );
-		$requete->bindValue ( ':im_date', $image->getImDate () );
-		$requete->bindValue ( ':im_desc', $image->getImDesc () );
+		(:nom, :desc, :image, :uploadBy, :type);' );
+		$requete->bindValue ( ':nom', $image->getNomImage () );
+		$requete->bindValue ( ':desc', $image->getDescImage () );
+		$requete->bindValue ( ':image', $image->getImage () );
+		$requete->bindValue ( ':uploadBy', $image->getImageUploadBy () );
+		$requete->bindValue ( ':type', $image->getTypeImage() );
 		$retour = $requete->execute ();
-		return $retour;
+		if ($retour == 0) {
+			//OK
+			return $this->db->lastInsertId ();
+		}
+		//erreur lors de l'insertion de l'image
+		return FALSE;
 	}
 	
 	/**
@@ -26,8 +34,8 @@ class ImageManager {
 	 * @return Image
 	 */
 	public function getOneImage($id) {
-		$sql = 'SELECT * FROM images WHERE im_id=:id';
-		$requete = $this->db->prepare ( $sql );
+		$requete = $this->db->prepare ( 'SELECT * FROM image WHERE idImage=:id');
+		$requete->bindValue ( ':id', $id );
 		$requete->execute ();
 		$resultat = $requete->fetch ( PDO::FETCH_OBJ ) ;
 		$image = new Image ( $resultat );
@@ -53,27 +61,29 @@ class ImageManager {
 	}
 	
 	/**
-	 * Upload une image
+	 * Test si une image est valide ou non.
 	 * 
-	 * @param sring $index        	
-	 * @param string $destination        	
-	 * @param int $maxsize        	
-	 * @param array $extensions        	
+	 * @param string $index
+	 * @param string $maxsize
+	 * @param string $extensions
 	 * @return boolean
 	 */
-	function upload($index, $destination, $maxsize = FALSE, $extensions = FALSE) {
+	function testUpload($index, $maxsize = FALSE, $extensions = FALSE) {
 		// Test1: fichier correctement uploadé
-		if (! isset ( $_FILES [$index] ) or $_FILES [$index] ['error'] > 0)
+		if (! isset ( $_FILES [$index] ) or $_FILES [$index] ['error'] > 0) {
 			return FALSE;
-			// Test2: taille limite
-		if ($maxsize !== FALSE and $_FILES [$index] ['size'] > $maxsize)
+		}
+		
+		//Test2: taille limite
+		if ($maxsize !== FALSE and $_FILES [$index] ['size'] > $maxsize) {
 			return FALSE;
-			// Test3: extension
+		}
+		// Test3: extension
 		$ext = substr ( strrchr ( $_FILES [$index] ['name'], '.' ), 1 );
-		if ($extensions !== FALSE and ! in_array ( $ext, $extensions ))
+		if ($extensions !== FALSE and ! in_array ( $ext, $extensions )) {
 			return FALSE;
-			// Déplacement
-		return move_uploaded_file ( $_FILES [$index] ['tmp_name'], $destination );
+		}
+		return TRUE; //tout les test sont passés
 	}
 }
 ?>

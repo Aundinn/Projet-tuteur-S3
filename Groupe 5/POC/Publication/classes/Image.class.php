@@ -1,12 +1,12 @@
 <?php
 class Image{
-	private $im_id;
-	private $im_nom;
-	private $im_size;
-	private $im_nomBDD;
-	private $im_uploadBy;
-	private $im_date;
-	private $im_desc;
+	
+	private $idImage;
+	private $nomImage;
+	private $descImage;
+	private $image;
+	private $imageUploadBy;
+	private $typeImage;
 
 	public function __construct($valeurs = array()) {
 		if (! empty ( $valeurs )) {
@@ -16,19 +16,19 @@ class Image{
 	public function affecte($donnees) {
 		foreach ( $donnees as $attribut => $valeurs ) {
 			switch ($attribut) {
-				case 'im_id' :
+				case 'idImage' :
 					$this->setImId ( $valeurs );
 					break;
-				case 'im_nom' :
+				case 'nomImage' :
 					$this->setImNom ( $valeurs );
 					break;
-				case 'im_size' :
+				case 'descImage' :
 					$this->setImSize ( $valeurs );
 					break;
-				case 'im_nomBDD' :
+				case 'image' :
 					$this->setImNomBDD ( $valeurs );
 					break;
-				case 'im_uploadBy' :
+				case 'imageUploadBy' :
 					$this->setImUploadBy ( $valeurs );
 					break;
 				case 'im_date' :
@@ -37,50 +37,47 @@ class Image{
 				case 'im_desc' :
 					$this->setImDesc( $valeurs );
 					break;
+				case 'typeImage' :
+					$this->setTypeImage($valeurs);
+					break;
 			}
 		}
 	}
-	public function getImId(){
-		return $this->im_id;
+	public function getIdImage(){
+		return $this->idImage;
 	}
-	public function setImId($im_id){
-		$this->im_id=$im_id;
+	public function setIdImage($idImage){
+		$this->idImage=$idImage;
 	}
-	public function getImNom(){
-		return $this->im_nom;
+	public function getNomImage(){
+		return $this->nomImage;
 	}
-	public function setImNom($im_nom){
-		$this->im_nom=$im_nom;
+	public function setNomImage($nomImage){
+		$this->nomImage=$nomImage;
 	}
-	public function getImSize(){
-		return $this->im_size;
+	public function getDescImage(){
+		return $this->descImage;
 	}
-	public function setImSize($im_size){
-		$this->im_size=$im_size;
+	public function setDescImage($descImage){
+		$this->descImage=$descImage;
 	}
-	public function getImNomBDD(){
-		return $this->im_nomBDD;
+	public function getImage(){
+		return $this->image;
 	}
-	public function setImNomBDD($im_nomBDD){
-		$this->im_nomBDD=$im_nomBDD;
+	public function setImage($image){
+		$this->image=$image;
 	}
-	public function getImUploadBy(){
-		return $this->im_uploadBy;
+	public function getImageUploadBy(){
+		return $this->imageUploadBy;
 	}
-	public function setImUploadBy($im_uploadBy){
-		$this->im_uploadBy=$im_uploadBy;
+	public function setImageUploadBy($imageUploadBy){
+		$this->imageUploadBy=$imageUploadBy;
 	}
-	public function getImDate(){
-		return $this->im_date;
+	public function setTypeImage($typeImage) {
+		$this->typeImage = $typeImage;
 	}
-	public function setImDate($im_date){
-		$this->im_date=$im_date;
-	}
-	public function getImDesc(){
-		return $this->im_desc;
-	}
-	public function setImDesc($im_desc){
-		$this->im_desc=$im_desc;
+	public function getTypeImage() {
+		return $this->typeImage;
 	}
 }
 ?>

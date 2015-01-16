@@ -2,6 +2,7 @@
 $db=new Mypdo();
 $articleManager=new ArticleManager($db);
 $articles=$articleManager->getAllArticle();
+$imageManager = new ImageManager($db);
 ?>
 
 <div>
@@ -43,8 +44,13 @@ $articles=$articleManager->getAllArticle();
 				<td> <?php echo $article->getAuteurReel(); ?> </td>
 			</tr>
 		</table>
-		<?php if ($article->getCarrousel()!=null) { 
-			echo $article->getCarrousel();
+		<?php var_dump($article->getIdImage1());?>
+		<?php if ($article->getIdImage1()!=null) { 
+			$idImage = $article->getIdImage1();
+			$image = $imageManager->getOneImage($idImage);
+			var_dump($image);var_dump($article);echo 'idImage'; var_dump($idImage);
+// 			header ("Content-type: ".$image->getTypeImage());
+			echo $image->getImage();
 		} ?>
 		<h2> Corps du texte : </h2>	 
 		<div> <?php echo $article->getCorpsTexte(); ?> </div>

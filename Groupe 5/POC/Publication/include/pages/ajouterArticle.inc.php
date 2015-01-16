@@ -95,36 +95,11 @@
 	    		<input type="hidden" name="MAX_FILE_SIZE" value="20971520" /> 
 	    	</div>
 	    	<br/>
-	    	
-		   
 		</p>
 	</div>
 	
 	<textarea name="texte" id="texte">
-		Welcome to the TinyMCE editor demo!
-		<h1><img style="float: right;" src="./image/valid.png"  />Welcome to the TinyMCE editor demo!</h1>
-		<p>Feel free to try out the different features that are provided, please note that the <b>MoxieManager</b> specific functionality is part of our commercial offering. The demo is to show the integration.</p>
-		<h2>Got questions or need help?</h2>
-		<p>If you have questions or need help, feel free to visit our <a href="../forum/index.php">community forum</a>! We also offer Enterprise <a href="../enterprise/support.php">support</a> solutions. Also do not miss out on the <a href="../wiki.php">documentation</a>, its a great resource wiki for understanding how TinyMCE works and integrates.</p>
-		<h2>Found a bug?</h2>
-		<p>If you think you have found a bug, you can use the <a href="../develop/bugtracker.php">Bug Tracker</a> to report bugs to the developers.</p>
-		<p>And here is a simple table for you to play with.</p>
-		<table border="0"><tbody><tr>
-		<td><strong>Product</strong></td>
-		<td><strong>Cost</strong></td>
-		<td><strong>Really?</strong></td>
-		</tr><tr>
-		<td>TinyMCE</td>
-		<td>Free</td>
-		<td>YES!</td>
-		</tr><tr>
-		<td>Plupload</td>
-		<td>Free</td>
-		<td>YES!</td>
-		</tr></tbody></table>
-		<p>Enjoy our software and create great content!</p>
-		<p>Oh, and by the way, don't forget to check out our other product called <a href="http://www.plupload.com" target="_blank">Plupload</a>,
-		your ultimate upload solution with HTML5 upload support!</p>
+		<p>Tapez votre article ici</p>
 	</textarea>
 	
 	<br/>

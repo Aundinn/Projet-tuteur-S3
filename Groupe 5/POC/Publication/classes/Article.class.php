@@ -7,9 +7,14 @@ class Article{
 	private $corpsTexte;
 	private $lieu;
 	private $typeArticle;
-	private $carrousel;
 	private $priorite;
 	private $auteurReel;
+	private $idImage1;
+	private $idImage2;
+	private $idImage3;
+	private $idImage4;
+	private $idImage5;
+	
 
 	public function __construct($valeurs = array()) {
 		if (! empty ( $valeurs )) {
@@ -43,11 +48,23 @@ class Article{
 				case 'priorite' :
 					$this->setPriorite($valeurs);
 					break;
-				case 'carrousel' :
-					$this->setCarrousel($valeurs);
-					break;
 				case 'auteurReel' :
 					$this->setAuteurReel($valeurs);
+					break;
+				case 'idImage1' :
+					$this->setIdImage1($valeurs);
+					break;
+				case 'idImage2' :
+					$this->setIdImage2($valeurs);
+					break;
+				case 'idImage3' :
+					$this->setIdImage3($valeurs);
+					break;
+				case 'idImage4' :
+					$this->setIdImage4($valeurs);
+					break;
+				case 'idImage5' :
+					$this->setIdImage5($valeurs);
 					break;
 			}
 		}
@@ -100,17 +117,41 @@ class Article{
 	public function setPriorite($priorite){
 		$this->priorite=$priorite;
 	}
-	public function getCarrousel(){
-		return $this->carrousel;
-	}
-	public function setCarrousel($carrousel){
-		$this->carrousel=$carrousel;
-	}
 	public function getAuteurReel(){
 		return $this->auteurReel;
 	}
 	public function setAuteurReel($auteurReel){
 		$this->auteurReel=$auteurReel;
+	}
+	public function setIdImage1($idImage) {
+		$this->idImage1 = $idImage;
+	}
+	public function getIdImage1() {
+		return $this->idImage1;
+	}
+	public function setIdImage2($idImage) {
+		$this->idImage2 = $idImage;
+	}
+	public function getIdImage2() {
+		return $this->idImage2;
+	}
+	public function setIdImage3($idImage) {
+		$this->idImage3 = $idImage;
+	}
+	public function getIdImage3() {
+		return $this->idImage3;
+	}
+	public function setIdImage4($idImage) {
+		$this->idImage4 = $idImage;
+	}
+	public function getIdImage4() {
+		return $this->idImage4;
+	}
+	public function setIdImage5($idImage) {
+		$this->idImage5 = $idImage;
+	}
+	public function getIdImage5() {
+		return $this->idImage5;
 	}
 }
 ?>

@@ -4,5 +4,9 @@ function hideThis(_div){
     	obj.style.display = "none";
     } else {
         obj.style.display = "block";
+        var child = obj.childNodes;
+        for (var i = 0; i < child.length; i++) {
+        	child[i].value = '';
+        }
     }
 }
