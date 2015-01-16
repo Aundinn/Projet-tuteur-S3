@@ -912,3 +912,7 @@ c67f71,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/ap
 dd0219,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/creation?id=16,1421393443,
 8b6c45,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1421393451,d4530e
 d4530e,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/creation?id=16,1421393451,
+099629,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/fondateurs,1421393726,184f19
+184f19,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/fondateurs,1421393726,
+cb9134,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1421393859,aa846c
+aa846c,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/partenaires,1421393859,
