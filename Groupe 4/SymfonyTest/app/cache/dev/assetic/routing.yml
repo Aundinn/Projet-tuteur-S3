@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/wamp/www/Projet-tuteur-S3/Groupe 4/SymfonyTest/app/config/routing_dev.yml'
