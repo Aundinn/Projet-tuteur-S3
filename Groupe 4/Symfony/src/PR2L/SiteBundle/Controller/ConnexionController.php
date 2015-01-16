@@ -27,8 +27,7 @@ class ConnexionController extends Controller
 
             if ($form->isValid()) {
                 
-                $utilisateur = $repository->findOneByLogin($id);
-
+                //todo
                 return $this->redirect($this->generateUrl('pr2_l_site_connexion',array('id' => $utilisateur->getId())));
             }
         }

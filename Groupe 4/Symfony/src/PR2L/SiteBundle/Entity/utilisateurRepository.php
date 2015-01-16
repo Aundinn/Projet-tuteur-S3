@@ -15,5 +15,16 @@ class utilisateurRepository extends EntityRepository
     public function myFindAll(){
         return $this->createQueryBuilder('a')->getQuery()->getResult();
     }
+    
+    public function myFindByLogin($login){
+        $qb = $this->createQueryBuilder('a');
         
+        $qb->where('a.login = :identifiant')
+            ->setParameter('identifiant', $login);
+        
+        return $qb
+                ->getQuery()
+                ->getResult()
+            ;
+    }
 }

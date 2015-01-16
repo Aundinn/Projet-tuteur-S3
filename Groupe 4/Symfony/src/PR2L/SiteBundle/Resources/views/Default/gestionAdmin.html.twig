@@ -4,18 +4,24 @@
 
 {% block body %}
 
+    <table>
+        <tr><th>Nom</th><th>Prénom</th><th>Identifiant</th><th>Droits</th></tr>
+        {% for advert in listAdverts %}
+        <tr><td>{{ advert.getNom() }}</td><td>{{advert.getPrenom()}}</td><td>{{advert.getIdentifiant()}}</td><td>           {{advert.getDroits()}}</td></tr>
+        {% endfor %}
+    </table>
 
-<table>
-    <tr><th>Nom</th><th>Prénom</th><th>Login</th><th>Droits</th></tr>
-    {% for advert in listAdverts %}
-        <tr><td>{{ advert.getNom() }}</td><td>{{advert.getPrenom()}}</td><td>{{advert.getIdentifiant()}}</td><td>{{advert.getDroits()}}</td></tr>
+    <div class="formulaire">
+        <form method="post" action="#" {{form_enctype(form) }}>
+            {{ form_widget(form) }}
+            <input type="submit" value="Valider" id="boutonform">
+        </form>
+    </div>
+
+ {% for flashMessage in app.session.flashbag.get('phrase') %}
+    <div>
+        <br>
+        {{ flashMessage }}
+    </div>
     {% endfor %}
-</table>
-
-<div class="formulaire">
-    <form method="post" action="#" {{form_enctype(form) }}>
-        {{ form_widget(form) }}
-        <input type="submit" value="Valider" id="boutonform">
-    </form>
-</div>
 {% endblock %}
