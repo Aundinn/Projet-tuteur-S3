@@ -73,7 +73,7 @@ class utilisateur
      * @param string $login
      * @return utilisateur
      */
-    public function setIdentifiant($login)
+    public function setLogin($login)
     {
         $this->login = $login;
 
@@ -85,7 +85,7 @@ class utilisateur
      *
      * @return string 
      */
-    public function getIdentifiant()
+    public function getLogin()
     {
         return $this->login;
     }

@@ -8,6 +8,14 @@ class GestionAdminController extends Controller
 {
     public function gestionAdminAction()
     {
-        return $this->render('PR2LSiteBundle:Default:gestionAdmin.html.twig');
+        $repository = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('PR2LSiteBundle:Entity\utilisateur');
+  
+        $listAdverts = $repository->myFindAll();
+        
+        return $this->render('PR2LSiteBundle:Default:gestionAdmin.html.twig',array(
+'listAdverts'=>$listAdverts));
     }
 }
