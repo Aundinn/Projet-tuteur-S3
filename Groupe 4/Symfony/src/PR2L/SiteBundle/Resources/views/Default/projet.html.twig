@@ -4,6 +4,15 @@
 
 {% block body %}
 
+{% for doc in listDoc %}
+<article>
+    {{ doc.titre|raw }}
+    {{ doc.contenu|raw }}
+    {{ doc.contenu|striptags('img') }}
+</article>
+{% endfor %}
+
+
 <article>
 	<h1>Présentation de l'association PR2L</h1>
 
