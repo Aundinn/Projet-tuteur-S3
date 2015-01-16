@@ -14,8 +14,8 @@ class PartenairesController extends Controller
         ->getRepository('PR2LSiteBundle:Document')
         ;
   
-  	$listDoc = $repository->myFindByTheme("partenaire");
+  	     $listDoc = $repository->myFindByTheme("partenaire");
         
-        return $this->render('PR2LSiteBundle:Default:partenaires.html.twig');
+        return $this->render('PR2LSiteBundle:Default:partenaires.html.twig', array('listDoc'=>$listDoc));
     }
 }

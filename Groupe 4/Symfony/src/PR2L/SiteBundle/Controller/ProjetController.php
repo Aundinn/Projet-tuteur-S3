@@ -8,6 +8,13 @@ class ProjetController extends Controller
 {
     public function projetAction()
     {
-        return $this->render('PR2LSiteBundle:Default:projet.html.twig');
+         $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('PR2LSiteBundle:Document')
+        ;
+  
+  	     $listDoc = $repository->myFindByTheme("projet");
+        return $this->render('PR2LSiteBundle:Default:projet.html.twig', array('listDoc'=>$listDoc));
     }
 }
