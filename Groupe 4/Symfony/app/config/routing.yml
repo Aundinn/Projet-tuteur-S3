@@ -4,3 +4,12 @@ pr2_l_site:
     resource: "@PR2LSiteBundle/Resources/config/routing.yml"
     prefix:   /pr2l/
 
+login:
+    pattern:   /pr2l/login
+    defaults:  { _controller: PR2LUserBundle:Security:login }
+
+login_check:
+    pattern:   /pr2l/login_check
+
+logout:
+    pattern:   /pr2l/logout

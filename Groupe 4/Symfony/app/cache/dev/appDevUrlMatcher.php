@@ -259,6 +259,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\DeconnexionController::deconnexionAction',  '_route' => 'pr2_l_site_deconnexion',);
             }
 
+            if (0 === strpos($pathinfo, '/pr2l/log')) {
+                if (0 === strpos($pathinfo, '/pr2l/login')) {
+                    // login
+                    if ($pathinfo === '/pr2l/login') {
+                        return array (  '_controller' => 'PR2L\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                    }
+
+                    // login_check
+                    if ($pathinfo === '/pr2l/login_check') {
+                        return array('_route' => 'login_check');
+                    }
+
+                }
+
+                // logout
+                if ($pathinfo === '/pr2l/logout') {
+                    return array('_route' => 'logout');
+                }
+
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

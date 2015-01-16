@@ -37,80 +37,32 @@ class __TwigTemplate_ad185a286b806180dfd30b8cc19709fe73172b1a993d013c5a1879cfa03
     {
         // line 6
         echo "
-\t\t\t\t\t\t<?php
-
-\t\t\t\t\t\tif (is_null(\$_SESSION[\"userCourant\"]))
-\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\$_SESSION[\"userCourant\"] = NULL;
-
-\t\t\t\t\t\t\t//Récupération de la liste des utilisateurs
-\t\t\t\t\t\t\t\$pdo = new Mypdo();
-\t\t\t\t\t\t\t\$utilisateurManager = new UtilisateurManager(\$pdo);
-\t\t\t\t\t\t\t\$utilisateurs = \$utilisateurManager->getAllUtilisateur();
-
-\t\t\t\t\t\t\t//Première itération dans la page, les champs login et password sont vides
-\t\t\t\t\t\t\tif(empty(\$_POST[\"login\"]) && empty(\$_POST[\"password\"]))
-\t\t\t\t\t\t\t{
-
-\t\t\t\t\t\t\t?>
-
-<form id=\"form\" method=\"post\">
-\tidentifiant : <input type=text name=\"login\"><br>
-\tmot de passe : <input type=password name=\"password\"><br>
-\t<input type=submit value=\"Valider\" onclick=\"self.location.href='index.php?page=501'\">
-</form><br>
-
-\t\t\t\t\t\t\t<?php
-
-\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\telse
-\t\t\t\t\t\t\t{
-
-\t\t\t\t\t\t\t\t//Deuxième itération dans la base de données
-\t\t\t\t\t\t\t\t\$login = \$_POST[\"login\"];
-\t\t\t\t\t\t\t\t\$password = \$_POST[\"password\"];
-
-\t\t\t\t\t\t\t\t\$user = false;
-
-\t\t\t\t\t\t\t\t//Récupération de l'utilisateur correspondant au login
-\t\t\t\t\t\t\t\tforeach(\$utilisateurs as \$utilisateur){
-\t\t\t\t\t\t\t\t\tif(\$login == \$utilisateur->getLogin())
-\t\t\t\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\t\t\t\$user = \$utilisateur;
-\t\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t}
-
-\t\t\t\t\t\t\t\t//Le login existe bien?
-\t\t\t\t\t\t\t\tif(\$user != false)
-\t\t\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\t\t\$mdp = \$user->getPassword();
-
-\t\t\t\t\t\t\t\t\t//Le mot de passe correspond-il?
-\t\t\t\t\t\t\t\t\tif(\$password == \$mdp)
-\t\t\t\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\t\t\techo \"Bonjour \".\$user->getPrenom().\" \".\$user->getNom();
-\t\t\t\t\t\t\t\t\t\t\$_SESSION['userCourant'] = \$user;
-\t\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t\telse
-\t\t\t\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\t\t\t//le mot de passe est invalide
-\t\t\t\t\t\t\t\t\t\techo \"Mauvais mot de passe\";
-\t\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\telse
-\t\t\t\t\t\t\t\t{
-\t\t\t\t\t\t\t\t\t//L'identifiant est incorrecte
-\t\t\t\t\t\t\t\t\techo \"Identifiant incorrect\";
-\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t}
-\t\t\t\t\t\t}
-\t\t\t\t\t\telse
-\t\t\t\t\t\t{
-\t\t\t\t\t\t\techo \"Vous êtes connecté\";
-\t\t\t\t\t\t}
-
-\t\t\t\t\t\t?>
-
+";
+        // line 7
+        if (array_key_exists("getLogin", $context)) {
+            // line 8
+            echo "    coucou
+";
+        } else {
+            // line 10
+            echo "    <h3>Formulaire de connexion</h3>
+    
+    <div class=\"formulaire\">
+        <form method=\"post\" action=\"#\" ";
+            // line 13
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+            echo ">
+        ";
+            // line 14
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+            echo "
+            <input type=\"submit\"/>
+        </form>
+    </div>
+";
+        }
+        // line 19
+        echo "
 ";
     }
 
@@ -126,6 +78,6 @@ class __TwigTemplate_ad185a286b806180dfd30b8cc19709fe73172b1a993d013c5a1879cfa03
 
     public function getDebugInfo()
     {
-        return array (  39 => 6,  36 => 5,  29 => 3,);
+        return array (  65 => 19,  57 => 14,  53 => 13,  48 => 10,  44 => 8,  42 => 7,  39 => 6,  36 => 5,  29 => 3,);
     }
 }

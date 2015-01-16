@@ -54,6 +54,9 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'pr2_l_site_gestionAdmin' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\SiteBundle\\Controller\\GestionAdminController::gestionAdminAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/gestionAdmin',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'pr2_l_site_modification' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\SiteBundle\\Controller\\ModificationController::modificationAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/modification',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'pr2_l_site_deconnexion' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\SiteBundle\\Controller\\DeconnexionController::deconnexionAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/deconnexion',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'login' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\UserBundle\\Controller\\SecurityController::loginAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/login',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'login_check' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/login_check',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'logout' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/logout',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
 
     /**
