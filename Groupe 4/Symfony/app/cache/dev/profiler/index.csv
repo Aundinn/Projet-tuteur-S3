@@ -987,3 +987,5 @@ f4eb7c,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/pr2l/gestionAdmin,
 0544f4,127.0.0.1,POST,http://localhost/Symfony/web/app_dev.php/pr2l/gestionAdmin,1421397664,
 f5d64f,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1421397664,8a2215
 8a2215,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/pr2l/gestionAdmin,1421397664,
+097b8a,127.0.0.1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1421399841,6e9344
+6e9344,::1,GET,http://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1421399841,
