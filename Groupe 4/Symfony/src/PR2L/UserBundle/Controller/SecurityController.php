@@ -25,7 +25,7 @@ class SecurityController extends Controller
       $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
       $session->remove(SecurityContext::AUTHENTICATION_ERROR);
     }
-
+      
     return $this->render('PR2LUserBundle:Security:login.html.twig', array(
       // Valeur du précédent nom d'utilisateur entré par l'internaute
       'last_username' => $session->get(SecurityContext::LAST_USERNAME),
