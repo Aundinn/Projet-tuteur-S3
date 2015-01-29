@@ -1,0 +1,11 @@
+pr2_l_archives_archives:
+    path:     /archives
+    defaults: { _controller: PR2LArchivesBundle:Archives:archives }
+    
+pr2_l_archives_ajouter:
+    path:     /ajouter
+    defaults: { _controller: PR2LArchivesBundle:Ajouter:ajouter }
+    
+pr2_l_archives_rechercheAvancee:
+    path:     /rechercheAvancee
+    defaults: { _controller: PR2LArchivesBundle:RechercheAvancee:rechercheAvancee }
