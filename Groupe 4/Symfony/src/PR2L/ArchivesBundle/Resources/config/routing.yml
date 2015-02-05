@@ -11,5 +11,5 @@ pr2_l_archives_rechercheAvancee:
     defaults: { _controller: PR2LArchivesBundle:RechercheAvancee:rechercheAvancee }
     
 pr2_l_archives_detail:
-    path:     /detail
-    defaults: { _controller: PR2LArchivesBundle:Detail:detail }
+    path:     /detail/{id}
+    defaults: { _controller: PR2LArchivesBundle:Detail:detail, id: 5 }

@@ -10,7 +10,6 @@ class AjouterController extends Controller
     public function ajouterAction()
     {
     $archive = new archive();
-        
     $repository = $this
                 ->getDoctrine()
                 ->getManager()
@@ -81,6 +80,7 @@ class AjouterController extends Controller
                                     'lecture' => 'Lecture',
                                     'pas_acces' => 'Pas d\'accès'),
                                 'multiple' => false))
+      ->add('save', 'button')
     ;
     // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
 
@@ -94,7 +94,7 @@ class AjouterController extends Controller
        $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($archive);
             $em->flush();
@@ -105,9 +105,10 @@ class AjouterController extends Controller
         }
     }
 
+    $listeMenu = array('archives', 'rechercheAvancee','ajouter');    
+        
     // On passe la méthode createView() du formulaire à la vue
     // afin qu'elle puisse afficher le formulaire toute seule
-    return $this->render('PR2LArchivesBundle:Default:ajouter.html.twig', array('form' => $form->createView(),
-    ));
+    return $this->render('PR2LArchivesBundle:Default:ajouter.html.twig', array('form' => $form->createView(),'listeMenu'=>$listeMenu));
     }
 }

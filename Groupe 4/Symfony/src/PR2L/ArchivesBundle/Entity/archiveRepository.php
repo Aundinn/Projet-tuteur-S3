@@ -16,4 +16,15 @@ class archiveRepository extends EntityRepository
     public function myFindAll(){
         return $this->createQueryBuilder('a')->getQuery()->getResult();
     }
+    
+    public function myFindById($id){
+        $qb = $this->createQueryBuilder('a');
+        
+        $qb->where('a.id = :identifiant')
+           ->setParameter('identifiant', $id);
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
 }

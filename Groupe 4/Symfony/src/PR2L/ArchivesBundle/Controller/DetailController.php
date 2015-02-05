@@ -7,7 +7,15 @@ use PR2L\ArchivesBundle\Entity\archive;
 
 class DetailController extends Controller
 {
-    public function detailAction(){
-        return $this->render('PR2LArchivesBundle:Default:detail.html.twig');
+    public function detailAction($id){  
+         $repository = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('PR2LArchivesBundle:archive');
+  
+        $listAdverts = $repository->myFindById($id);
+        $listeMenu = array('archives', 'rechercheAvancee','ajouter');    
+                
+        return $this->render('PR2LArchivesBundle:Default:detail.html.twig',array('listAdverts'=>$listAdverts[0],'listeMenu'=>$listeMenu,'id'=>$id));
     }
 }

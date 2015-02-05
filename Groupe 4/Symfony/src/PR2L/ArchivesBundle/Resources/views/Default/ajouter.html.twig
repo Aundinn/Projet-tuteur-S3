@@ -4,13 +4,14 @@
 
 {% block body %}
 
-    <nav id="menuArchive">
-        <ul>
-            <li><a href="">Consulter</a></li>
-            <li><a href="">Recherche Avancée</a></li>
-            <li><a href="">Ajouter une archive</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul id="menuArchive">
+        <li><a href=" {{ listeMenu[0] }}">Consulter</a></li>
+        <li><a href=" {{ listeMenu[1] }}">Recherche Avancée</a></li>
+        <li><a href=" {{ listeMenu[2] }}">Ajouter une archive</a></li>
+        <li><a href="">Modifier une archive</a></li>
+    </ul>
+</nav>
 
      {% for flashMessage in app.session.flashbag.get('phrase') %}
         <div class="flashBag">
@@ -19,7 +20,6 @@
         </div>
     {% endfor %}
 
-<form method='post'>
     <table>
         {{ form_start(form, {'action': path('pr2_l_archives_archives'), 'method': 'POST'}) }}
         {{ form_errors(form) }}
@@ -142,13 +142,10 @@
             
         </td></tr>
         <tr><td>
-                    
-
-            <input type="submit" value="Envoyer">
+            {{ form_widget(form.save, { 'label': 'Valider' }) }}
         </td></tr>
-
         {{ form_end(form) }}
     </table>
-</form>
+
 
 {% endblock %}
