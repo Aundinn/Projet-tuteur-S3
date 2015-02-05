@@ -1743,12 +1743,12 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>54ca6551e619c</argument>
+            <argument>54d371e581372</argument>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>54ca6551e619c</argument>
+            <argument>54d371e581372</argument>
           </service>
         </argument>
       </argument>
@@ -1942,8 +1942,8 @@
                 <argument type="service" id="security.http_utils"/>
                 <argument type="collection">
                   <argument key="login_path">login</argument>
-                  <argument key="always_use_default_target_path">false</argument>
-                  <argument key="default_target_path">/</argument>
+                  <argument key="always_use_default_target_path">true</argument>
+                  <argument key="default_target_path">/pr2l/accueil</argument>
                   <argument key="target_path_parameter">_target_path</argument>
                   <argument key="use_referer">false</argument>
                 </argument>
@@ -1983,7 +1983,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>54ca6551e619c</argument>
+            <argument>54d371e581372</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2026,7 +2026,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>54ca6551e619c</argument>
+            <argument>54d371e581372</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>

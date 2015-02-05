@@ -298,6 +298,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\RechercheAvanceeController::rechercheAvanceeAction',  '_route' => 'pr2_l_archives_rechercheAvancee',);
             }
 
+            // pr2_l_archives_detail
+            if ($pathinfo === '/pr2l/detail') {
+                return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\DetailController::detailAction',  '_route' => 'pr2_l_archives_detail',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

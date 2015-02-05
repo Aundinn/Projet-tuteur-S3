@@ -60,6 +60,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'pr2_l_archives_archives' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\ArchivesBundle\\Controller\\ArchivesController::archivesAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/archives',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'pr2_l_archives_ajouter' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\ArchivesBundle\\Controller\\AjouterController::ajouterAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/ajouter',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'pr2_l_archives_rechercheAvancee' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\ArchivesBundle\\Controller\\RechercheAvanceeController::rechercheAvanceeAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/rechercheAvancee',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'pr2_l_archives_detail' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'PR2L\\ArchivesBundle\\Controller\\DetailController::detailAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pr2l/detail',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
 
     /**
