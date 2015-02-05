@@ -17,7 +17,7 @@ class AjouterController extends Controller
                 ->getRepository('PR2LArchivesBundle:archive');
 
     // On crée le FormBuilder grâce au service form factory
-    $formBuilder = $this->get('form.factory')->createBuilder('form', $archive);
+    $formBuilder = $this->get('form.factory')->createBuilder('form', $archive)->setMethod("POST")->setAction('#');
 
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
     $formBuilder
@@ -56,8 +56,8 @@ class AjouterController extends Controller
                                     'photos' => 'Photos',
                                     'bandes_magnetiques' => 'Bandes magnétiques'),
                                 'multiple' =>false))
-      ->add('ancPubArchive','datetime')
-      ->add('recPubArchive','datetime')
+      ->add('ancPubArchive','date')
+      ->add('recPubArchive','date')
       ->add('metArchive', 'text')
       ->add('numArchive', 'choice', array(
                                 'choices' => array(
@@ -65,12 +65,22 @@ class AjouterController extends Controller
                                     'non' => 'Non',
                                     'partielle' => 'Partielle'),
                                 'multiple' => false))
-      ->add('dateRentrArchive', 'datetime')
+      ->add('dateRentrArchive', 'date')
       ->add('origArchive', 'text')
       ->add('prodArchive', 'text')
       ->add('detArchive', 'text')
-      ->add('comArchive', 'text')
-      ->add('condAccArchive', 'text')
+      ->add('comArchive', 'choice', array(
+                                'choices' => array(
+                                    'oui' => 'Oui',
+                                    'non' => 'Non',
+                                    'a_verif' => 'A vérifier'),
+                                'multiple' => false))
+      ->add('condAccArchive', 'choice', array(
+                                'choices' => array(
+                                    'aucun' => 'Aucun',
+                                    'lecture' => 'Lecture',
+                                    'pas_acces' => 'Pas d\'accès'),
+                                'multiple' => false))
     ;
     // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
 
@@ -79,11 +89,11 @@ class AjouterController extends Controller
         
     $request = $this->get('request');
         
-    if ($request->getMethod() == 'POST') {
+    if ($request->isMethod('POST')) {
 
-        $form->bind($request);
+       $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted()) {
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($archive);

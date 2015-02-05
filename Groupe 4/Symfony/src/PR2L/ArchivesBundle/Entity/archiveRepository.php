@@ -4,6 +4,7 @@ namespace PR2L\ArchivesBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
+
 /**
  * archiveRepository
  *
@@ -12,4 +13,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class archiveRepository extends EntityRepository
 {
+    public function myFindAll(){
+        return $this->createQueryBuilder('a')->getQuery()->getResult();
+    }
 }
