@@ -1,6 +1,6 @@
 <?php
 
-namespace PR2L\SiteBundle\Entity;
+namespace PR2L\UserBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -12,4 +12,30 @@ use Doctrine\ORM\EntityRepository;
  */
 class utilisateurRepository extends EntityRepository
 {
+	public function myFindAll()
+	{
+		$qb = $this->_em->createQueryBuilder()
+		  ->select('a')
+		  ->from($this->_entityName, 'a')
+		;
+
+		return $qb
+    		->getQuery()
+    		->getResult()
+  		;
+	}
+	
+	public function myFindByLogin($login)
+    {
+        $qb = $this->createQueryBuilder('a');
+
+  		$qb->where('a.type = :login')
+       		->setParameter('login', $login)
+  		;
+
+ 		return $qb
+    		->getQuery()
+    		->getResult()
+  		;
+    }
 }
