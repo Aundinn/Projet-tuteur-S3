@@ -3,7 +3,6 @@
 namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Document
@@ -42,12 +41,7 @@ class Document
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $auteur;
-    
-    /**
-    * @var Element $elements
-    * @ORM\OneToMany(targetEntity="PR2L\SiteBundle\Entity\Element", mappedBy="Document")
-    */
-    private $elements;
+
 
     /**
      * Get id
@@ -127,25 +121,4 @@ class Document
     {
         return $this->auteur;
     }
-    
-    /**
-    * setElement
-    *
-    * @param Element $element
-    */
-    public function setElement(Element $element)
-    {
-        $this->elements[] = $element;
-    }
-     
-    /**
-    * getElements
-    *
-    * @return array $elements
-    */
-    public function getElements()
-    {
-        return $this->elements;
-    }
-    
 }

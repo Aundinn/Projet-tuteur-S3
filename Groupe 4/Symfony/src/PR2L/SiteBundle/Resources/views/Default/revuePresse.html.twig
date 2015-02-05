@@ -3,4 +3,62 @@
 {% block title %}{{ parent() }} - Revue de Presse{% endblock %}
 
 {% block body %}
+
+<div class="well">
+    {{ form(form) }}
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var $container = $('div#pr2l_sitebundle_document_elements');
+
+    var $addLink = $('<a href="#" id="add_element" class="btn btn-default">Ajouter un élément</a>');
+    $container.append($addLink);
+
+    $addLink.click(function(e) {
+      addCategory($container);
+      e.preventDefault();
+      return false;
+    });
+
+    var index = $container.find(':input').length;
+
+    if (index == 0) {
+      addCategory($container);
+    } else {
+      $container.children('div').each(function() {
+        addDeleteLink($(this));
+      });
+    }
+
+    function addCategory($container) {
+      // Dans le contenu de l'attribut « data-prototype », on remplace :
+      // - le texte "__name__label__" qu'il contient par le label du champ
+      // - le texte "__name__" qu'il contient par le numéro du champ
+      var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, 'Element n°' + (index+1))
+          .replace(/__name__/g, index));
+
+      addDeleteLink($prototype);
+
+      $container.append($prototype);
+
+      index++;
+    }
+
+    function addDeleteLink($prototype) {
+      $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+
+      $prototype.append($deleteLink);
+
+      $deleteLink.click(function(e) {
+        $prototype.remove();
+        e.preventDefault();
+        return false;
+      });
+    }
+  });
+</script>
+
 {% endblock %}
