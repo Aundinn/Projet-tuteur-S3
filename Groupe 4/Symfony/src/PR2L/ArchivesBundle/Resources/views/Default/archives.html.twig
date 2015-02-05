@@ -8,8 +8,21 @@
             <li><a href="">Consulter</a></li>
             <li><a href="">Recherche Avancée</a></li>
             <li><a href="">Ajouter une archive</a></li>
+            <li><a href="">Modifier une archive</a></li>
         </ul>
     </nav>
+
+    <table>
+        <tr><th>Côte de l'archive</th><th>Titre Archive</th><th>Nom du fond d'archive</th><th>Resumé de l'archive</th><th>Classification de l'archive</th><th></th></tr>
+        {% for advert in listAdverts %}
+        <tr><td>{{ advert.getCoteArchive() }}</td>
+            <td>{{ advert.getTitreArchive() }}</td>
+            <td>{{ advert.getNomFond() }}</td>
+            <td>{{ advert.getResArchive() }}</td>
+            <td>{{ advert.getClassArchive() }}</td>
+            <td><a href="">Plus d'informations</a></td></tr>
+        {% endfor %}
+    </table>
 
    
     

@@ -19,83 +19,136 @@
         </div>
     {% endfor %}
 
+<form method='post'>
     <table>
+        {{ form_start(form, {'action': path('pr2_l_archives_archives'), 'method': 'POST'}) }}
+        {{ form_errors(form) }}
         <tr><th>Ajout d'une nouvelle archive</th></tr>
         <tr><td>
-            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }} 
             <h4>Le fond d'archive</h4>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.nomFond, "Nom du fond d'archive") }}
+                {{ form_errors(form.nomFond) }}
                 {{ form_widget(form.nomFond) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.depFond, "Département du fond d'archive") }}
+                {{ form_errors(form.depFond) }}
                 {{ form_widget(form.depFond) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.villeFond, "Ville du fond d'archive") }}
+                {{ form_errors(form.villeFond) }}
                 {{ form_widget(form.villeFond) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.adrFond, "Adresse complète du fond d'archive") }}
+                {{ form_errors(form.adrFond) }}
                 {{ form_widget(form.adrFond) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.histFond, "Historique du fond d'archive") }}
+                {{ form_errors(form.histFond) }}
                 {{ form_widget(form.histFond) }}
             </div>
         </td></tr>
         <tr><td>
             <h4>L'archive</h4>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.titreArchive, "Titre de l'archive") }}
+                {{ form_errors(form.titreArchive) }}
                 {{ form_widget(form.titreArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.resArchive, "Résumé de l'archive") }}
+                {{ form_errors(form.resArchive) }}
                 {{ form_widget(form.resArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.grEntrArchive, "Grandes entrées") }}
+                {{ form_errors(form.grEntrArchive) }}
                 {{ form_widget(form.grEntrArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.obsArchive, "Observations") }}
+                {{ form_errors(form.obsArchive) }}
                 {{ form_widget(form.obsArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.coteArchive, "Côte de l'archive") }}
+                {{ form_errors(form.coteArchive) }}
                 {{ form_widget(form.coteArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.classArchive, "Classification de l'archive") }}
+                {{ form_errors(form.classArchive) }}
                 {{ form_widget(form.classArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.typeArchive, "Type de l'archive") }}
+                {{ form_errors(form.typeArchive) }}
                 {{ form_widget(form.typeArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.ancPubArchive, "Date de la publication la plus ancienne de l'archive") }}
+                {{ form_errors(form.ancPubArchive) }}
                 {{ form_widget(form.ancPubArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.recPubArchive, "Date de la publication la plus récente de l'archive") }}
+                {{ form_errors(form.recPubArchive) }}
                 {{ form_widget(form.recPubArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.metArchive, "Métrique de l'archive") }}
+                {{ form_errors(form.metArchive) }}
                 {{ form_widget(form.metArchive) }}
             </div>
-            <div class="form-group">
+            <div>
                 {{ form_label(form.numArchive, "Numérisation de l'archive de l'archive") }}
+                {{ form_errors(form.numArchive) }}
                 {{ form_widget(form.numArchive) }}
             </div>
-            <div class="form-group">
-                {{ form_label(form.dateRentrArchive, "Numérisation de l'archive de l'archive") }}
+            <div>
+                {{ form_label(form.dateRentrArchive, "Date de rentrée de l'archive") }}
+                {{ form_errors(form.dateRentrArchive) }}
                 {{ form_widget(form.dateRentrArchive) }}
             </div>
+            <div>
+                {{ form_label(form.origArchive, "Origine de l'archive") }}
+                {{ form_errors(form.origArchive) }}
+                {{ form_widget(form.origArchive) }}
+            </div>
+            <div>
+                {{ form_label(form.prodArchive, "Producteur de l'archive") }}
+                {{ form_errors(form.prodArchive) }}
+                {{ form_widget(form.prodArchive) }}
+            </div>
+            <div>
+                {{ form_label(form.detArchive, "Détenteur de l'archive") }}
+                {{ form_errors(form.detArchive) }}
+                {{ form_widget(form.detArchive) }}
+            </div>
+            <div>
+                {{ form_label(form.comArchive, "Communicabilité de l'archive") }}
+                {{ form_errors(form.comArchive) }}
+                {{ form_widget(form.comArchive) }}
+            </div>
+            <div>
+                {{ form_label(form.condAccArchive, "Condition d'accès de l'archive") }}
+                {{ form_errors(form.condAccArchive) }}
+                {{ form_widget(form.condAccArchive) }}
+            </div>
+            
         </td></tr>
+        <tr><td>
+                    
+
+            <input type="submit" value="Envoyer">
+        </td></tr>
+
+        {{ form_end(form) }}
     </table>
+</form>
 
 {% endblock %}

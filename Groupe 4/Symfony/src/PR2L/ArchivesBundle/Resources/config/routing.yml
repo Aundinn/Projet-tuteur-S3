@@ -9,3 +9,7 @@ pr2_l_archives_ajouter:
 pr2_l_archives_rechercheAvancee:
     path:     /rechercheAvancee
     defaults: { _controller: PR2LArchivesBundle:RechercheAvancee:rechercheAvancee }
+    
+pr2_l_archives_detail:
+    path:     /detail
+    defaults: { _controller: PR2LArchivesBundle:Detail:detail }

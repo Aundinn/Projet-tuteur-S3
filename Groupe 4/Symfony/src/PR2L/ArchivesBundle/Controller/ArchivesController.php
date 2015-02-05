@@ -9,6 +9,15 @@ class ArchivesController extends Controller
 {
     public function archivesAction()
     {
-         return $this->render('PR2LArchivesBundle:Default:archives.html.twig'); 
+        //Récupération de tous les utilisateurs pour l'affichage
+        $repository = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('PR2LArchivesBundle:archive');
+  
+        $listAdverts = $repository->myFindAll();
+        
+         return $this->render('PR2LArchivesBundle:Default:archives.html.twig',array(
+'listAdverts'=>$listAdverts)); 
     }
 }
