@@ -7,7 +7,15 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
@@ -24,7 +32,8 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_087af1918345d6fa4520a24a83017eef87e7634971245d16b723e171e2a6da56"] = $this;
+        $context["__internal_2a6c2eba376f2deb20385514845f60766b5c83ae5d9563b76e64578eacd2dc36"] = $this;
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -260,7 +269,7 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 188
                 echo "                    ";
-                echo $context["__internal_087af1918345d6fa4520a24a83017eef87e7634971245d16b723e171e2a6da56"]->getform_tree_entry($context["formName"], $context["formData"], true);
+                echo $context["__internal_2a6c2eba376f2deb20385514845f60766b5c83ae5d9563b76e64578eacd2dc36"]->getform_tree_entry($context["formName"], $context["formData"], true);
                 echo "
                 ";
             }
@@ -278,7 +287,7 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 194
                 echo "                ";
-                echo $context["__internal_087af1918345d6fa4520a24a83017eef87e7634971245d16b723e171e2a6da56"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
+                echo $context["__internal_2a6c2eba376f2deb20385514845f60766b5c83ae5d9563b76e64578eacd2dc36"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
                 echo "
             ";
             }
@@ -531,7 +540,7 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
             echo "-details\">
             ";
             // line 418
-            if ((!twig_test_empty($this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "children", array())))) {
+            if ( !twig_test_empty($this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "children", array()))) {
                 // line 419
                 echo "                <a class=\"toggle-button\" data-toggle-target-id=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "id", array()), "html", null, true);
@@ -544,7 +553,7 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
             }
             // line 423
             echo "            ";
-            echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+            echo twig_escape_filter($this->env, ((array_key_exists("name", $context)) ? (_twig_default_filter((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "(no name)")) : ("(no name)")), "html", null, true);
             echo "
             ";
             // line 424
@@ -560,12 +569,12 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
 
         ";
             // line 429
-            if ((!twig_test_empty($this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "children", array())))) {
+            if ( !twig_test_empty($this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "children", array()))) {
                 // line 430
                 echo "            <ul id=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "id", array()), "html", null, true);
                 echo "-children\"";
-                if ((!(isset($context["expanded"]) ? $context["expanded"] : $this->getContext($context, "expanded")))) {
+                if ( !(isset($context["expanded"]) ? $context["expanded"] : $this->getContext($context, "expanded"))) {
                     echo " class=\"hidden\"";
                 }
                 echo ">
@@ -613,13 +622,17 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
         ob_start();
         try {
             // line 440
-            echo "    <div class=\"tree-details\" id=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "id", array()), "html", null, true);
-            echo "-details\">
+            echo "    <div class=\"tree-details\" ";
+            if ($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "id", array(), "any", true, true)) {
+                echo " id=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : $this->getContext($context, "data")), "id", array()), "html", null, true);
+                echo "-details\"";
+            }
+            echo ">
         <h2>
             ";
             // line 442
-            echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+            echo twig_escape_filter($this->env, ((array_key_exists("name", $context)) ? (_twig_default_filter((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "(no name)")) : ("(no name)")), "html", null, true);
             echo "
             ";
             // line 443
@@ -677,7 +690,8 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
                         // line 468
                         echo "                            <em>This form.</em>
                         ";
-                    } elseif ((!$this->getAttribute((isset($context["forms_by_hash"]) ? $context["forms_by_hash"] : null), $this->getAttribute($context["error"], "origin", array()), array(), "array", true, true))) {
+                    } elseif ( !$this->getAttribute(                    // line 469
+(isset($context["forms_by_hash"]) ? $context["forms_by_hash"] : null), $this->getAttribute($context["error"], "origin", array()), array(), "array", true, true)) {
                         // line 470
                         echo "                            <em>Unknown.</em>
                         ";
@@ -697,13 +711,14 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
                         // line 477
                         echo "                            <em>Unknown.</em>
                         ";
-                    } elseif ($this->getAttribute($this->getAttribute($context["error"], "cause", array(), "any", false, true), "root", array(), "any", true, true)) {
+                    } elseif ($this->getAttribute($this->getAttribute(                    // line 478
+$context["error"], "cause", array(), "any", false, true), "root", array(), "any", true, true)) {
                         // line 479
                         echo "                            <strong>Constraint Violation</strong><br/>
                             <pre>";
                         // line 480
                         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["error"], "cause", array()), "root", array()), "html", null, true);
-                        if ((!twig_test_empty($this->getAttribute($this->getAttribute($context["error"], "cause", array()), "path", array())))) {
+                        if ( !twig_test_empty($this->getAttribute($this->getAttribute($context["error"], "cause", array()), "path", array()))) {
                             if ((twig_first($this->env, $this->getAttribute($this->getAttribute($context["error"], "cause", array()), "path", array())) != "[")) {
                                 echo ".";
                             }
@@ -1103,6 +1118,6 @@ class __TwigTemplate_2d0f771b57f6744c5079b64943398d3216273ac3acfd7a3e6081672ad0b
 
     public function getDebugInfo()
     {
-        return array (  1077 => 657,  1073 => 656,  1069 => 654,  1064 => 651,  1055 => 648,  1051 => 647,  1048 => 646,  1044 => 645,  1035 => 639,  1026 => 633,  1023 => 632,  1021 => 631,  1018 => 630,  1013 => 627,  1004 => 624,  1000 => 623,  997 => 622,  993 => 621,  984 => 615,  975 => 609,  972 => 608,  970 => 607,  967 => 606,  963 => 604,  959 => 602,  955 => 600,  947 => 597,  941 => 595,  937 => 593,  935 => 592,  930 => 590,  926 => 589,  923 => 588,  919 => 587,  911 => 581,  909 => 580,  905 => 579,  896 => 573,  893 => 572,  891 => 571,  888 => 570,  884 => 568,  880 => 566,  874 => 562,  870 => 560,  864 => 558,  862 => 557,  854 => 552,  848 => 548,  844 => 546,  838 => 544,  836 => 543,  830 => 539,  828 => 538,  824 => 537,  815 => 531,  812 => 530,  810 => 529,  807 => 528,  800 => 523,  796 => 521,  790 => 519,  788 => 518,  780 => 513,  774 => 509,  770 => 507,  764 => 505,  762 => 504,  754 => 499,  745 => 493,  742 => 492,  740 => 491,  737 => 490,  732 => 487,  724 => 484,  718 => 482,  705 => 480,  702 => 479,  698 => 477,  696 => 476,  692 => 474,  686 => 472,  682 => 470,  678 => 468,  676 => 467,  671 => 465,  668 => 464,  664 => 463,  655 => 457,  646 => 451,  642 => 449,  640 => 448,  636 => 446,  628 => 444,  626 => 443,  622 => 442,  616 => 440,  603 => 439,  591 => 436,  587 => 434,  578 => 432,  574 => 431,  565 => 430,  563 => 429,  559 => 427,  553 => 425,  551 => 424,  546 => 423,  542 => 421,  536 => 419,  534 => 418,  530 => 417,  527 => 416,  514 => 415,  297 => 200,  293 => 198,  289 => 196,  280 => 194,  276 => 193,  271 => 190,  262 => 188,  258 => 187,  251 => 182,  249 => 181,  93 => 27,  90 => 26,  85 => 23,  79 => 21,  77 => 20,  72 => 17,  69 => 16,  64 => 13,  62 => 12,  59 => 11,  44 => 9,  41 => 8,  38 => 7,  35 => 6,  32 => 5,  27 => 3,);
+        return array (  1092 => 657,  1088 => 656,  1084 => 654,  1079 => 651,  1070 => 648,  1066 => 647,  1063 => 646,  1059 => 645,  1050 => 639,  1041 => 633,  1038 => 632,  1036 => 631,  1033 => 630,  1028 => 627,  1019 => 624,  1015 => 623,  1012 => 622,  1008 => 621,  999 => 615,  990 => 609,  987 => 608,  985 => 607,  982 => 606,  978 => 604,  974 => 602,  970 => 600,  962 => 597,  956 => 595,  952 => 593,  950 => 592,  945 => 590,  941 => 589,  938 => 588,  934 => 587,  926 => 581,  924 => 580,  920 => 579,  911 => 573,  908 => 572,  906 => 571,  903 => 570,  899 => 568,  895 => 566,  889 => 562,  885 => 560,  879 => 558,  877 => 557,  869 => 552,  863 => 548,  859 => 546,  853 => 544,  851 => 543,  845 => 539,  843 => 538,  839 => 537,  830 => 531,  827 => 530,  825 => 529,  822 => 528,  815 => 523,  811 => 521,  805 => 519,  803 => 518,  795 => 513,  789 => 509,  785 => 507,  779 => 505,  777 => 504,  769 => 499,  760 => 493,  757 => 492,  755 => 491,  752 => 490,  747 => 487,  739 => 484,  733 => 482,  720 => 480,  717 => 479,  715 => 478,  712 => 477,  710 => 476,  706 => 474,  700 => 472,  696 => 470,  694 => 469,  691 => 468,  689 => 467,  684 => 465,  681 => 464,  677 => 463,  668 => 457,  659 => 451,  655 => 449,  653 => 448,  649 => 446,  641 => 444,  639 => 443,  635 => 442,  625 => 440,  612 => 439,  600 => 436,  596 => 434,  587 => 432,  583 => 431,  574 => 430,  572 => 429,  568 => 427,  562 => 425,  560 => 424,  555 => 423,  551 => 421,  545 => 419,  543 => 418,  539 => 417,  536 => 416,  523 => 415,  306 => 200,  302 => 198,  298 => 196,  289 => 194,  285 => 193,  280 => 190,  271 => 188,  267 => 187,  260 => 182,  258 => 181,  102 => 27,  99 => 26,  94 => 23,  88 => 21,  86 => 20,  81 => 17,  78 => 16,  73 => 13,  71 => 12,  68 => 11,  53 => 9,  50 => 8,  47 => 7,  44 => 6,  41 => 5,  37 => 1,  35 => 3,  11 => 1,);
     }
 }

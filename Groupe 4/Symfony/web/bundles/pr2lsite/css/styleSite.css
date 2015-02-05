@@ -214,11 +214,3 @@ em{
 	padding-bottom: 2%;
 	padding-top: 3%;
 }
-
-td, th, table{
-    border : 1px solid black;   
-}
-
-table{
-    margin : 0 auto 0 auto;   
-}

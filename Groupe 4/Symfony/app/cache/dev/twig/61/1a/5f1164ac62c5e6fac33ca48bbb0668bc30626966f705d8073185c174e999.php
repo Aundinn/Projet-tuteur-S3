@@ -16,7 +16,7 @@ class __TwigTemplate_611a5f1164ac62c5e6fac33ca48bbb0668bc30626966f705d8073185c17
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!-- START of Symfony2 Web Debug Toolbar -->
+        echo "<!-- START of Symfony Web Debug Toolbar -->
 ";
         // line 2
         if (("normal" != (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")))) {
@@ -78,7 +78,11 @@ class __TwigTemplate_611a5f1164ac62c5e6fac33ca48bbb0668bc30626966f705d8073185c17
         foreach ($context['_seq'] as $context["name"] => $context["template"]) {
             // line 29
             echo "        ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["template"], "renderblock", array(0 => "toolbar", 1 => array("collector" => $this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "getcollector", array(0 => $context["name"]), "method"), "profiler_url" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")), "token" => $this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "token", array()), "name" => $context["name"])), "method"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["template"], "renderblock", array(0 => "toolbar", 1 => array("collector" => $this->getAttribute(            // line 30
+(isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "getcollector", array(0 => $context["name"]), "method"), "profiler_url" =>             // line 31
+(isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")), "token" => $this->getAttribute(            // line 32
+(isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "token", array()), "name" =>             // line 33
+$context["name"])), "method"), "html", null, true);
             // line 35
             echo "
     ";
@@ -106,7 +110,7 @@ class __TwigTemplate_611a5f1164ac62c5e6fac33ca48bbb0668bc30626966f705d8073185c17
         }
         // line 47
         echo "</div>
-<!-- END of Symfony2 Web Debug Toolbar -->
+<!-- END of Symfony Web Debug Toolbar -->
 ";
     }
 
@@ -122,6 +126,6 @@ class __TwigTemplate_611a5f1164ac62c5e6fac33ca48bbb0668bc30626966f705d8073185c17
 
     public function getDebugInfo()
     {
-        return array (  108 => 47,  101 => 43,  95 => 39,  93 => 38,  90 => 37,  83 => 35,  80 => 29,  76 => 28,  72 => 27,  69 => 26,  64 => 24,  61 => 23,  59 => 22,  46 => 12,  42 => 11,  36 => 8,  32 => 7,  24 => 3,  22 => 2,  19 => 1,);
+        return array (  112 => 47,  105 => 43,  99 => 39,  97 => 38,  94 => 37,  87 => 35,  85 => 33,  84 => 32,  83 => 31,  82 => 30,  80 => 29,  76 => 28,  72 => 27,  69 => 26,  64 => 24,  61 => 23,  59 => 22,  46 => 12,  42 => 11,  36 => 8,  32 => 7,  24 => 3,  22 => 2,  19 => 1,);
     }
 }

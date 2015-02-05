@@ -7,7 +7,15 @@ class __TwigTemplate_8aecdb7b912c92353804a251dc1547bb64de2659bfd78b5c3b4b7ccf70b
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'head' => array($this, 'block_head'),
@@ -77,7 +85,7 @@ class __TwigTemplate_8aecdb7b912c92353804a251dc1547bb64de2659bfd78b5c3b4b7ccf70b
 
     ";
         // line 27
-        if ((!$this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "hasexception", array()))) {
+        if ( !$this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "hasexception", array())) {
             // line 28
             echo "        <p>
             <em>No exception was thrown and uncaught during the request.</em>
@@ -107,6 +115,6 @@ class __TwigTemplate_8aecdb7b912c92353804a251dc1547bb64de2659bfd78b5c3b4b7ccf70b
 
     public function getDebugInfo()
     {
-        return array (  91 => 33,  88 => 32,  82 => 28,  80 => 27,  76 => 25,  73 => 24,  67 => 20,  63 => 18,  61 => 17,  55 => 13,  52 => 12,  45 => 9,  39 => 6,  36 => 5,  33 => 4,  30 => 3,);
+        return array (  99 => 33,  96 => 32,  90 => 28,  88 => 27,  84 => 25,  81 => 24,  75 => 20,  71 => 18,  69 => 17,  63 => 13,  60 => 12,  53 => 9,  47 => 6,  44 => 5,  41 => 4,  38 => 3,  11 => 1,);
     }
 }

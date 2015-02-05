@@ -7,7 +7,15 @@ class __TwigTemplate_33e26f29cb92f55a66ae872626735a6cfbd8847916368d142e03740428d
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/base.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/base.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
@@ -260,6 +268,6 @@ class __TwigTemplate_33e26f29cb92f55a66ae872626735a6cfbd8847916368d142e03740428d
 
     public function getDebugInfo()
     {
-        return array (  246 => 32,  164 => 58,  162 => 57,  157 => 56,  145 => 46,  139 => 45,  131 => 42,  123 => 41,  120 => 40,  115 => 39,  111 => 38,  108 => 37,  106 => 36,  101 => 33,  98 => 32,  96 => 31,  92 => 29,  83 => 25,  80 => 24,  74 => 22,  66 => 20,  64 => 19,  60 => 18,  55 => 16,  52 => 15,  50 => 14,  43 => 9,  41 => 8,  35 => 5,  32 => 4,  29 => 3,);
+        return array (  254 => 32,  172 => 58,  170 => 57,  165 => 56,  153 => 46,  147 => 45,  139 => 42,  131 => 41,  128 => 40,  123 => 39,  119 => 38,  116 => 37,  114 => 36,  109 => 33,  106 => 32,  104 => 31,  100 => 29,  91 => 25,  88 => 24,  82 => 22,  74 => 20,  72 => 19,  68 => 18,  63 => 16,  60 => 15,  58 => 14,  51 => 9,  49 => 8,  43 => 5,  40 => 4,  37 => 3,  11 => 1,);
     }
 }

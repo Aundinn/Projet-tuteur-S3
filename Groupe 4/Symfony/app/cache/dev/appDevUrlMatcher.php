@@ -173,7 +173,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // pr2_l_site_autourDeNous
             if ($pathinfo === '/pr2l/autourDeNous') {
-                return array (  '_controller' => 'PR2LSiteBundle:AutourDeNous:autourDeNous',  '_route' => 'pr2_l_site_autourDeNous',);
+                return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\AutourDeNousController::autourDeNousAction',  '_route' => 'pr2_l_site_autourDeNous',);
             }
 
             // pr2_l_site_partenaires
@@ -234,7 +234,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/pr2l/c')) {
                 // pr2_l_site_connexion
                 if ($pathinfo === '/pr2l/connexion') {
-                    return array (  '_controller' => 'PR2L\\SiteBundle\\Controller\\ConnexionController::connexionAction',  '_route' => 'pr2_l_site_connexion',);
+                    return array (  '_controller' => 'PR2LSiteBundle:Connexion:connexion',  '_route' => 'pr2_l_site_connexion',);
                 }
 
                 // pr2_l_site_creation
@@ -278,6 +278,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array('_route' => 'logout');
                 }
 
+            }
+
+            if (0 === strpos($pathinfo, '/pr2l/a')) {
+                // pr2_l_archives_archives
+                if ($pathinfo === '/pr2l/archives') {
+                    return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\ArchivesController::archivesAction',  '_route' => 'pr2_l_archives_archives',);
+                }
+
+                // pr2_l_archives_ajouter
+                if ($pathinfo === '/pr2l/ajouter') {
+                    return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\AjouterController::ajouterAction',  '_route' => 'pr2_l_archives_ajouter',);
+                }
+
+            }
+
+            // pr2_l_archives_rechercheAvancee
+            if ($pathinfo === '/pr2l/rechercheAvancee') {
+                return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\RechercheAvanceeController::rechercheAvanceeAction',  '_route' => 'pr2_l_archives_rechercheAvancee',);
             }
 
         }

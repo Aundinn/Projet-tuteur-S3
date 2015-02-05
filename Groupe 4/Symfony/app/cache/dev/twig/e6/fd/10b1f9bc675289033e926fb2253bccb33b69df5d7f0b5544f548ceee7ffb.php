@@ -7,7 +7,15 @@ class __TwigTemplate_e6fd10b1f9bc675289033e926fb2253bccb33b69df5d7f0b5544f548cee
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -37,11 +45,39 @@ class __TwigTemplate_e6fd10b1f9bc675289033e926fb2253bccb33b69df5d7f0b5544f548cee
     {
         // line 6
         echo "
-<article id=\"mission\">
+";
+        // line 7
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listDoc"]) ? $context["listDoc"] : $this->getContext($context, "listDoc")));
+        foreach ($context['_seq'] as $context["_key"] => $context["doc"]) {
+            // line 8
+            echo "<article>
+    ";
+            // line 9
+            echo $this->getAttribute($context["doc"], "titre", array());
+            echo "
+    ";
+            // line 10
+            echo $this->getAttribute($context["doc"], "contenu", array());
+            echo "
+    ";
+            // line 11
+            echo twig_escape_filter($this->env, strip_tags($this->getAttribute($context["doc"], "contenu", array()), "img"), "html", null, true);
+            echo "
+</article>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doc'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 14
+        echo "
+
+<article>
 \t<h1>Présentation de l'association PR2L</h1>
 
 \t<img src=\"";
-        // line 10
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/pr2lsite/images/presPR2L.jpg"), "html", null, true);
         echo "\" id='imagPres'>
 \t<p>L’association PR2L est une association d’intérêt général ouverte à tous qui a pour objectifs :
@@ -55,6 +91,9 @@ class __TwigTemplate_e6fd10b1f9bc675289033e926fb2253bccb33b69df5d7f0b5544f548cee
 \t\t\t<li>De <em>contribuer et participer à la diffusion documentaire et pédagogique des ressources collectées disponibles</em>, en utilisant les outils informatiques appropriés.</li>
 \t\t</ul>
 \t</p>
+</article>
+
+<article>
 \t<h1>le Projet du pôle (orientations, objectifs, axes d'actions....) </h1>
 \t<p>
 \t\tLe Projet de l’association PR2L vise à rassembler toute l’information existant en France et au delà sur les archives des mouvements coopératifs et mutualistes.
@@ -96,6 +135,6 @@ class __TwigTemplate_e6fd10b1f9bc675289033e926fb2253bccb33b69df5d7f0b5544f548cee
 
     public function getDebugInfo()
     {
-        return array (  45 => 10,  39 => 6,  36 => 5,  29 => 3,);
+        return array (  81 => 19,  74 => 14,  65 => 11,  61 => 10,  57 => 9,  54 => 8,  50 => 7,  47 => 6,  44 => 5,  37 => 3,  11 => 1,);
     }
 }

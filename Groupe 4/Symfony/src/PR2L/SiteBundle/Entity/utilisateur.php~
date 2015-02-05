@@ -1,6 +1,6 @@
 <?php
 
-namespace PR2L\SiteBundle\Entity\Entity;
+namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * utilisateur
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PR2L\SiteBundle\Entity\Entity\utilisateurRepository")
+ * @ORM\Entity(repositoryClass="PR2L\SiteBundle\Entity\utilisateurRepository")
  */
 class utilisateur
 {
@@ -24,9 +24,9 @@ class utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="login", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255)
      */
-    private $login;
+    private $username;
 
     /**
      * @var string
@@ -38,13 +38,6 @@ class utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="prenom", type="string", length=255)
      */
     private $prenom;
@@ -52,9 +45,30 @@ class utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="droits", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $droits;
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=255)
+     */
+    private $salt;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles;
 
 
     /**
@@ -68,26 +82,26 @@ class utilisateur
     }
 
     /**
-     * Set login
+     * Set username
      *
-     * @param string $login
+     * @param string $username
      * @return utilisateur
      */
-    public function setLogin($login)
+    public function setUsername($username)
     {
-        $this->login = $login;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get login
+     * Get username
      *
      * @return string 
      */
-    public function getLogin()
+    public function getUsername()
     {
-        return $this->login;
+        return $this->username;
     }
 
     /**
@@ -114,29 +128,6 @@ class utilisateur
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     * @return utilisateur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string 
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
      * Set prenom
      *
      * @param string $prenom
@@ -160,25 +151,94 @@ class utilisateur
     }
 
     /**
-     * Set droits
+     * Set nom
      *
-     * @param string $droits
+     * @param string $nom
      * @return utilisateur
      */
-    public function setDroits($droits)
+    public function setNom($nom)
     {
-        $this->droits = $droits;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get droits
+     * Get nom
      *
      * @return string 
      */
-    public function getDroits()
+    public function getNom()
     {
-        return $this->droits;
+        return $this->nom;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return utilisateur
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return utilisateur
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     * @return utilisateur
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return array 
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }

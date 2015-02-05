@@ -7,7 +7,15 @@ class __TwigTemplate_50e3071ff91ff1d5a1153a57397c1f95a0240c8bf4c78707473dfe38fe3
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
@@ -64,6 +72,6 @@ class __TwigTemplate_50e3071ff91ff1d5a1153a57397c1f95a0240c8bf4c78707473dfe38fe3
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  46 => 13,  38 => 7,  35 => 6,  30 => 3,);
+        return array (  57 => 14,  54 => 13,  46 => 7,  43 => 6,  38 => 3,  11 => 1,);
     }
 }

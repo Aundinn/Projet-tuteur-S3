@@ -7,7 +7,15 @@ class __TwigTemplate_652740f0a1e8cc46a7fa90bb7a6783ec3749914205945a9fff522360e1f
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -45,6 +53,7 @@ class __TwigTemplate_652740f0a1e8cc46a7fa90bb7a6783ec3749914205945a9fff522360e1f
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/pr2lsite/images/photoMotPres.jpg"), "html", null, true);
         echo "\" id=\"motPresident\">
+      
 \t<p>Madame, Monsieur,</p>
 
 \t<p><em>2013 a été une année décisive pour le Pôle.</em>
@@ -88,6 +97,6 @@ class __TwigTemplate_652740f0a1e8cc46a7fa90bb7a6783ec3749914205945a9fff522360e1f
 
     public function getDebugInfo()
     {
-        return array (  46 => 11,  39 => 6,  36 => 5,  29 => 3,);
+        return array (  54 => 11,  47 => 6,  44 => 5,  37 => 3,  11 => 1,);
     }
 }

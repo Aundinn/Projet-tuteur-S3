@@ -3,7 +3,7 @@
 namespace PR2L\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use PR2L\SiteBundle\Entity\utilisateur;
+use PR2L\UserBundle\Entity\utilisateur;
 
 class CreationController extends Controller
 {
@@ -16,9 +16,10 @@ class CreationController extends Controller
         $formBuilder
             ->add('nom','text')
             ->add('prenom','text')
-            ->add('Identifiant','text')
+            ->add('username','text')
             ->add('password','password')
-            ->add('droits','text');
+            ->add('email','email')
+            ->add('roles','text');
 
         $form = $formBuilder->getForm();
 
@@ -31,6 +32,9 @@ class CreationController extends Controller
             if ($form->isValid()) {
 
                 $em = $this->getDoctrine()->getManager();
+                $utilisateur->setSalt('');
+                $role = $utilisateur->getRoles();
+                $utilisateur->setRoles(array($role));
                 $em->persist($utilisateur);
                 $em->flush();
                 

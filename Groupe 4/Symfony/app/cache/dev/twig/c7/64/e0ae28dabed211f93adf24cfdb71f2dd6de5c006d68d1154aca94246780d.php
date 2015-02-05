@@ -7,7 +7,15 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
@@ -25,6 +33,7 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
     {
         // line 3
         $context["logger"] = $this;
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -175,7 +184,7 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
         foreach ($context['_seq'] as $context["value"] => $context["level"]) {
             // line 69
             echo "                            ";
-            if (((!(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority"))) && ($context["value"] > 100))) {
+            if (( !(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) && ($context["value"] > 100))) {
                 // line 70
                 echo "                                ";
                 $context["priority"] = $context["value"];
@@ -202,7 +211,7 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
         if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) {
             // line 75
             echo "                            ";
-            if ((!(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) {
+            if ( !(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority"))) {
                 // line 76
                 echo "                                ";
                 $context["priority"] = "-100";
@@ -303,7 +312,7 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
         try {
             // line 108
             echo "    ";
-            if ((twig_constant("Symfony\\Component\\HttpKernel\\Debug\\ErrorHandler::TYPE_DEPRECATION") == (($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array()), 0)) : (0)))) {
+            if ((twig_constant("Symfony\\Component\\Debug\\ErrorHandler::TYPE_DEPRECATION") == (($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array()), 0)) : (0)))) {
                 // line 109
                 echo "        DEPRECATION -  ";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "message", array()), "html", null, true);
@@ -402,7 +411,7 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
                 echo "
         ";
                 // line 137
-                if (($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", true, true) && (!twig_test_empty($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()))))) {
+                if (($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", true, true) &&  !twig_test_empty($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array())))) {
                     // line 138
                     echo "            <br />
             <small>
@@ -437,6 +446,6 @@ class __TwigTemplate_c764e0ae28dabed211f93adf24cfdb71f2dd6de5c006d68d1154aca9424
 
     public function getDebugInfo()
     {
-        return array (  417 => 143,  411 => 140,  407 => 138,  405 => 137,  398 => 136,  395 => 135,  388 => 134,  384 => 132,  382 => 131,  377 => 129,  374 => 128,  371 => 127,  368 => 126,  365 => 125,  362 => 124,  359 => 123,  356 => 122,  353 => 121,  350 => 120,  347 => 119,  341 => 117,  338 => 116,  333 => 115,  328 => 113,  324 => 112,  315 => 111,  313 => 110,  308 => 109,  305 => 108,  293 => 107,  285 => 100,  281 => 98,  274 => 96,  262 => 93,  249 => 92,  237 => 91,  234 => 90,  232 => 89,  221 => 80,  213 => 78,  210 => 77,  207 => 76,  204 => 75,  201 => 74,  186 => 72,  183 => 71,  180 => 70,  177 => 69,  172 => 68,  161 => 58,  159 => 57,  155 => 55,  152 => 54,  147 => 51,  141 => 48,  138 => 47,  135 => 46,  133 => 45,  128 => 42,  125 => 41,  120 => 38,  117 => 37,  114 => 36,  108 => 33,  104 => 31,  101 => 30,  95 => 27,  91 => 25,  88 => 24,  82 => 21,  78 => 19,  75 => 18,  72 => 17,  61 => 15,  58 => 14,  55 => 13,  52 => 12,  49 => 11,  46 => 10,  44 => 9,  41 => 8,  38 => 7,  35 => 6,  32 => 5,  27 => 3,);
+        return array (  426 => 143,  420 => 140,  416 => 138,  414 => 137,  407 => 136,  404 => 135,  397 => 134,  393 => 132,  391 => 131,  386 => 129,  383 => 128,  380 => 127,  377 => 126,  374 => 125,  371 => 124,  368 => 123,  365 => 122,  362 => 121,  359 => 120,  356 => 119,  350 => 117,  347 => 116,  342 => 115,  337 => 113,  333 => 112,  324 => 111,  322 => 110,  317 => 109,  314 => 108,  302 => 107,  294 => 100,  290 => 98,  283 => 96,  271 => 93,  258 => 92,  246 => 91,  243 => 90,  241 => 89,  230 => 80,  222 => 78,  219 => 77,  216 => 76,  213 => 75,  210 => 74,  195 => 72,  192 => 71,  189 => 70,  186 => 69,  181 => 68,  170 => 58,  168 => 57,  164 => 55,  161 => 54,  156 => 51,  150 => 48,  147 => 47,  144 => 46,  142 => 45,  137 => 42,  134 => 41,  129 => 38,  126 => 37,  123 => 36,  117 => 33,  113 => 31,  110 => 30,  104 => 27,  100 => 25,  97 => 24,  91 => 21,  87 => 19,  84 => 18,  81 => 17,  70 => 15,  67 => 14,  64 => 13,  61 => 12,  58 => 11,  55 => 10,  53 => 9,  50 => 8,  47 => 7,  44 => 6,  41 => 5,  37 => 1,  35 => 3,  11 => 1,);
     }
 }
