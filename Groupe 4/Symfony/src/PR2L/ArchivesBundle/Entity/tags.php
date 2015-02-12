@@ -24,16 +24,16 @@ class tags
     /**
      * @var integer
      *
-     * @ORM\Column(name="idArchive", type="integer")
+     * @ORM\Column(name="identifiantArchive", type="integer")
      */
-    private $idArchive;
+    private $identifiantArchive;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tag", type="string", length=255)
+     * @ORM\Column(name="motClé", type="string", length=255)
      */
-    private $tag;
+    private $motClé;
 
 
     /**
@@ -47,48 +47,48 @@ class tags
     }
 
     /**
-     * Set idArchive
+     * Set identifiantArchive
      *
-     * @param integer $idArchive
+     * @param integer $identifiantArchive
      * @return tags
      */
-    public function setIdArchive($idArchive)
+    public function setIdentifiantArchive($identifiantArchive)
     {
-        $this->idArchive = $idArchive;
+        $this->identifiantArchive = $identifiantArchive;
 
         return $this;
     }
 
     /**
-     * Get idArchive
+     * Get identifiantArchive
      *
      * @return integer 
      */
-    public function getIdArchive()
+    public function getIdentifiantArchive()
     {
-        return $this->idArchive;
+        return $this->identifiantArchive;
     }
 
     /**
-     * Set tag
+     * Set motClé
      *
-     * @param string $tag
+     * @param string $motClé
      * @return tags
      */
-    public function setTag($tag)
+    public function setMotClé($motClé)
     {
-        $this->tag = $tag;
+        $this->motClé = $motClé;
 
         return $this;
     }
 
     /**
-     * Get tag
+     * Get motClé
      *
      * @return string 
      */
-    public function getTag()
+    public function getMotClé()
     {
-        return $this->tag;
+        return $this->motClé;
     }
 }

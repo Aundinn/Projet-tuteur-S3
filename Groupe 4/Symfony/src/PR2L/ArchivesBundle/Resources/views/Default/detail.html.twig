@@ -6,38 +6,38 @@
 
 <nav>
     <ul id="menuArchive">
-        <li><a href=" {{ listeMenu[0] }}">Consulter</a></li>
-        <li><a href=" {{ listeMenu[1] }}">Recherche Avancée</a></li>
-        <li><a href=" {{ listeMenu[2] }}">Ajouter une archive</a></li>
+        <li><a href=" {{ path('pr2_l_archives_archives') }}">Consulter</a></li>
+        <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche Avancée</a></li>
+        <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
         <li><a href="">Modifier une archive</a></li>
     </ul>
 </nav>
 
 <table>
     <tr><th></th><th>Fond d'archive</th></tr>
-    <tr><th>Nom</th><td>{{ listAdverts.getNomFond() }}</td></tr>
-    <tr><th>Département</th><td>{{ listAdverts.getDepFond() }}</td></tr>
-    <tr><th>Ville</th><td>{{ listAdverts.getVilleFond() }}</td></tr>
-    <tr><th>Adresse</th><td>{{ listAdverts.getAdrFond() }}</td></tr>
-    <tr><th>Historique</th><td>{{ listAdverts.getHistFond() }}</td></tr>
+    <tr><th>Nom</th><td>{{ listAdverts.getNomDuFond() }}</td></tr>
+    <tr><th>Département</th><td>{{ listAdverts.getDepartementDuFond() }}</td></tr>
+    <tr><th>Ville</th><td>{{ listAdverts.getVilleDuFond() }}</td></tr>
+    <tr><th>Adresse</th><td>{{ listAdverts.getAdresseCompleteDuFond() }}</td></tr>
+    <tr><th>Historique</th><td>{{ listAdverts.getHistoriqueDuFond() }}</td></tr>
     <tr><th></th><th>Archive</th></tr>
     <tr><th>Titre</th><td>{{ listAdverts.getTitreArchive() }}</td></tr>
-    <tr><th>Résumé</th><td>{{ listAdverts.getResArchive() }}</td></tr>
-    <tr><th>Grandes Entrées</th><td>{{ listAdverts.getGrEntrArchive() }}</td></tr>
-    <tr><th>Observation</th><td>{{ listAdverts.getObsArchive() }}</td></tr>
-    <tr><th>Côte</th><td>{{ listAdverts.getCoteArchive() }}</td></tr>
-    <tr><th>Classification</th><td>{{ listAdverts.getClassArchive() }}</td></tr>
-    <tr><th>Type</th><td>{{ listAdverts.getTypeArchive() }}</td></tr>
-    {# <tr><td>Date de publication la plus ancienne</td><td>{{ listAdverts.getAncPubArchive() }}</td></tr> #}
-    {# <tr><td>Date de publication la plus récente</td><td>{{ listAdverts.getRecPubArchive() }}</td></tr> #}
-    <tr><th>métrique</th><td>{{ listAdverts.getMetArchive() }}</td></tr>
-    <tr><th>Numérisation</th><td>{{ listAdverts.getNumArchive() }}</td></tr>
-    {# <tr><td>Date de rentrée</th><td>{{ listAdverts.getDateRentrArchive	() }}</td></tr> #}
-    <tr><th>Origine</th><td>{{ listAdverts.getOrigArchive() }}</td></tr>
-    <tr><th>Producteur</th><td>{{ listAdverts.getProdArchive() }}</td></tr>
-    <tr><th>Détenteur</th><td>{{ listAdverts.getDetArchive() }}</td></tr>
-    <tr><th>Communicabilité</th><td>{{ listAdverts.getComArchive() }}</td></tr>
-    <tr><th>Condition d'accès</th><td>{{ listAdverts.getCondAccArchive() }}</td></tr>
+    <tr><th>Résumé</th><td>{{ listAdverts.getResume() }}</td></tr>
+    <tr><th>Grandes Entrées</th><td>{{ listAdverts.getGrandesEntrees() }}</td></tr>
+    <tr><th>Observation</th><td>{{ listAdverts.getObservations() }}</td></tr>
+    <tr><th>Côte</th><td>{{ listAdverts.getCote() }}</td></tr>
+    <tr><th>Classification</th><td>{{ listAdverts.getClassification() }}</td></tr>
+    <tr><th>Type</th><td>{{ listAdverts.getTypeDeDocument() }}</td></tr>
+    <tr><th>Date de publication la plus ancienne</th><td>{{ listAdverts.getdateDePublicationLaPlusAncienne()|date("m/d/Y") }}</td></tr> 
+    <tr><th>Date de publication la plus récente</th><td>{{ listAdverts.dateDePublicationLaPlusRecente()|date("m/d/Y") }}</td></tr> 
+    <tr><th>métrique</th><td>{{ listAdverts.getMetrageLineaire() }}</td></tr>
+    <tr><th>Numérisation</th><td>{{ listAdverts.getNumerisation() }}</td></tr>
+    <tr><th>Date de rentrée</th><td>{{ listAdverts.getDateDeRentreeDansLeFond()|date("m/d/Y") }}</td></tr>
+    <tr><th>Origine</th><td>{{ listAdverts.getOrigineArchive() }}</td></tr>
+    <tr><th>Producteur</th><td>{{ listAdverts.getProducteurArchive() }}</td></tr>
+    <tr><th>Détenteur</th><td>{{ listAdverts.getDetenteurArchive() }}</td></tr>
+    <tr><th>Communicabilité</th><td>{{ listAdverts.getCommunicabilite() }}</td></tr>
+    <tr><th>Condition d'accès</th><td>{{ listAdverts.getConditionPourYAcceder() }}</td></tr>
 </table>
 
 

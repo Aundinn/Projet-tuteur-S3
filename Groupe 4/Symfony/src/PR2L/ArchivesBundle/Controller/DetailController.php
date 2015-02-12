@@ -13,9 +13,8 @@ class DetailController extends Controller
                 ->getManager()
                 ->getRepository('PR2LArchivesBundle:archive');
   
-        $listAdverts = $repository->myFindById($id);
-        $listeMenu = array('archives', 'rechercheAvancee','ajouter');    
+        $listAdverts = $repository->myFindById($id);  
                 
-        return $this->render('PR2LArchivesBundle:Default:detail.html.twig',array('listAdverts'=>$listAdverts[0],'listeMenu'=>$listeMenu,'id'=>$id));
+        return $this->render('PR2LArchivesBundle:Default:detail.html.twig',array('listAdverts'=>$listAdverts[0],'id'=>$id));
     }
 }

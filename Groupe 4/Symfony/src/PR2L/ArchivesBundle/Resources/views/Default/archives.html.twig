@@ -5,9 +5,9 @@
 {% block body %}
 <nav>
     <ul id="menuArchive">
-        <li><a href=" {{ listeMenu[0] }}">Consulter</a></li>
-        <li><a href=" {{ listeMenu[1] }}">Recherche Avancée</a></li>
-        <li><a href=" {{ listeMenu[2] }}">Ajouter une archive</a></li>
+        <li><a href=" {{ path('pr2_l_archives_archives') }}">Consulter</a></li>
+        <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche Avancée</a></li>
+        <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
         <li><a href="">Modifier une archive</a></li>
     </ul>
 </nav>
@@ -15,12 +15,12 @@
     <table>
         <tr><th>Côte de l'archive</th><th>Titre Archive</th><th>Nom du fond d'archive</th><th>Resumé de l'archive</th><th>Classification de l'archive</th><th></th></tr>
         {% for advert in listAdverts %}
-        <tr><td>{{ advert.getCoteArchive() }}</td>
+        <tr><td>{{ advert.getCote() }}</td>
             <td>{{ advert.getTitreArchive() }}</td>
-            <td>{{ advert.getNomFond() }}</td>
-            <td>{{ advert.getResArchive() }}</td>
-            <td>{{ advert.getClassArchive() }}</td>
-            <td><a href="{{ listeMenu[3] }}/{{ advert.getId() }}">Plus d'informations</a></td></tr>
+            <td>{{ advert.getNomDuFond() }}</td>
+            <td>{{ advert.getResume() }}</td>
+            <td>{{ advert.getClassification() }}</td>
+            <td><a href="{{ path('pr2_l_archives_detail',{'id':advert.getId()}) }}">Plus d'informations</a></td></tr>
         {% endfor %}
     </table>
 

@@ -16,9 +16,8 @@ class ArchivesController extends Controller
                 ->getRepository('PR2LArchivesBundle:archive');
   
         $listAdverts = $repository->myFindAll();
-        $listeMenu = array('archives', 'rechercheAvancee','ajouter','detail');
         
          return $this->render('PR2LArchivesBundle:Default:archives.html.twig',array(
-'listAdverts'=>$listAdverts,'listeMenu'=>$listeMenu)); 
+'listAdverts'=>$listAdverts)); 
     }
 }

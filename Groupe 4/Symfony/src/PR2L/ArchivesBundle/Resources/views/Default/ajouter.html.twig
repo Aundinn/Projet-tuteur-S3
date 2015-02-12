@@ -6,13 +6,12 @@
 
 <nav>
     <ul id="menuArchive">
-        <li><a href=" {{ listeMenu[0] }}">Consulter</a></li>
-        <li><a href=" {{ listeMenu[1] }}">Recherche Avancée</a></li>
-        <li><a href=" {{ listeMenu[2] }}">Ajouter une archive</a></li>
+        <li><a href=" {{ path('pr2_l_archives_archives') }}">Consulter</a></li>
+        <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche Avancée</a></li>
+        <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
         <li><a href="">Modifier une archive</a></li>
     </ul>
 </nav>
-
      {% for flashMessage in app.session.flashbag.get('phrase') %}
         <div class="flashBag">
             <br>
@@ -21,130 +20,13 @@
     {% endfor %}
 
     <table>
-        {{ form_start(form, {'action': path('pr2_l_archives_archives'), 'method': 'POST'}) }}
-        {{ form_errors(form) }}
         <tr><th>Ajout d'une nouvelle archive</th></tr>
         <tr><td>
-            <h4>Le fond d'archive</h4>
-            <div>
-                {{ form_label(form.nomFond, "Nom du fond d'archive") }}
-                {{ form_errors(form.nomFond) }}
-                {{ form_widget(form.nomFond) }}
-            </div>
-            <div>
-                {{ form_label(form.depFond, "Département du fond d'archive") }}
-                {{ form_errors(form.depFond) }}
-                {{ form_widget(form.depFond) }}
-            </div>
-            <div>
-                {{ form_label(form.villeFond, "Ville du fond d'archive") }}
-                {{ form_errors(form.villeFond) }}
-                {{ form_widget(form.villeFond) }}
-            </div>
-            <div>
-                {{ form_label(form.adrFond, "Adresse complète du fond d'archive") }}
-                {{ form_errors(form.adrFond) }}
-                {{ form_widget(form.adrFond) }}
-            </div>
-            <div>
-                {{ form_label(form.histFond, "Historique du fond d'archive") }}
-                {{ form_errors(form.histFond) }}
-                {{ form_widget(form.histFond) }}
-            </div>
-        </td></tr>
-        <tr><td>
-            <h4>L'archive</h4>
-            <div>
-                {{ form_label(form.titreArchive, "Titre de l'archive") }}
-                {{ form_errors(form.titreArchive) }}
-                {{ form_widget(form.titreArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.resArchive, "Résumé de l'archive") }}
-                {{ form_errors(form.resArchive) }}
-                {{ form_widget(form.resArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.grEntrArchive, "Grandes entrées") }}
-                {{ form_errors(form.grEntrArchive) }}
-                {{ form_widget(form.grEntrArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.obsArchive, "Observations") }}
-                {{ form_errors(form.obsArchive) }}
-                {{ form_widget(form.obsArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.coteArchive, "Côte de l'archive") }}
-                {{ form_errors(form.coteArchive) }}
-                {{ form_widget(form.coteArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.classArchive, "Classification de l'archive") }}
-                {{ form_errors(form.classArchive) }}
-                {{ form_widget(form.classArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.typeArchive, "Type de l'archive") }}
-                {{ form_errors(form.typeArchive) }}
-                {{ form_widget(form.typeArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.ancPubArchive, "Date de la publication la plus ancienne de l'archive") }}
-                {{ form_errors(form.ancPubArchive) }}
-                {{ form_widget(form.ancPubArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.recPubArchive, "Date de la publication la plus récente de l'archive") }}
-                {{ form_errors(form.recPubArchive) }}
-                {{ form_widget(form.recPubArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.metArchive, "Métrique de l'archive") }}
-                {{ form_errors(form.metArchive) }}
-                {{ form_widget(form.metArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.numArchive, "Numérisation de l'archive de l'archive") }}
-                {{ form_errors(form.numArchive) }}
-                {{ form_widget(form.numArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.dateRentrArchive, "Date de rentrée de l'archive") }}
-                {{ form_errors(form.dateRentrArchive) }}
-                {{ form_widget(form.dateRentrArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.origArchive, "Origine de l'archive") }}
-                {{ form_errors(form.origArchive) }}
-                {{ form_widget(form.origArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.prodArchive, "Producteur de l'archive") }}
-                {{ form_errors(form.prodArchive) }}
-                {{ form_widget(form.prodArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.detArchive, "Détenteur de l'archive") }}
-                {{ form_errors(form.detArchive) }}
-                {{ form_widget(form.detArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.comArchive, "Communicabilité de l'archive") }}
-                {{ form_errors(form.comArchive) }}
-                {{ form_widget(form.comArchive) }}
-            </div>
-            <div>
-                {{ form_label(form.condAccArchive, "Condition d'accès de l'archive") }}
-                {{ form_errors(form.condAccArchive) }}
-                {{ form_widget(form.condAccArchive) }}
-            </div>
-            
-        </td></tr>
-        <tr><td>
-            {{ form_widget(form.save, { 'label': 'Valider' }) }}
-        </td></tr>
-        {{ form_end(form) }}
+            <form method="post" action="#" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+                <input type="submit"/>
+            </form>
+            </td></tr>
     </table>
 
 

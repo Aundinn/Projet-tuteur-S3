@@ -4,7 +4,6 @@ namespace PR2L\ArchivesBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
-
 /**
  * archiveRepository
  *

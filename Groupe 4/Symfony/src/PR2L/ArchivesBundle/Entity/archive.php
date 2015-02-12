@@ -24,37 +24,37 @@ class archive
     /**
      * @var string
      *
-     * @ORM\Column(name="nomFond", type="string", length=255)
+     * @ORM\Column(name="nomDuFond", type="string", length=255)
      */
-    private $nomFond;
+    private $nomDuFond;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="depFond", type="string", length=255)
+     * @ORM\Column(name="departementDuFond", type="string", length=255)
      */
-    private $depFond;
+    private $departementDuFond;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="villeFond", type="string", length=255)
+     * @ORM\Column(name="villeDuFond", type="string", length=255)
      */
-    private $villeFond;
+    private $villeDuFond;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adrFond", type="string", length=255)
+     * @ORM\Column(name="adresseCompleteDuFond", type="string", length=255)
      */
-    private $adrFond;
+    private $adresseCompleteDuFond;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="histFond", type="string", length=1024)
+     * @ORM\Column(name="historiqueDuFond", type="string", length=2048)
      */
-    private $histFond;
+    private $historiqueDuFond;
 
     /**
      * @var string
@@ -66,114 +66,114 @@ class archive
     /**
      * @var string
      *
-     * @ORM\Column(name="resArchive", type="string", length=2048)
+     * @ORM\Column(name="resume", type="string", length=2048)
      */
-    private $resArchive;
+    private $resume;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="grEntrArchive", type="string", length=255)
+     * @ORM\Column(name="grandesEntrees", type="string", length=255)
      */
-    private $grEntrArchive;
+    private $grandesEntrees;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="obsArchive", type="string", length=1024)
+     * @ORM\Column(name="observations", type="string", length=2048)
      */
-    private $obsArchive;
+    private $observations;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="coteArchive", type="string", length=255)
+     * @ORM\Column(name="cote", type="string", length=255)
      */
-    private $coteArchive;
+    private $cote;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="classArchive", type="string", length=255)
+     * @ORM\Column(name="classification", type="string", length=255)
      */
-    private $classArchive;
+    private $classification;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="typeArchive", type="string", length=255)
+     * @ORM\Column(name="typeDeDocument", type="string", length=255)
      */
-    private $typeArchive;
+    private $typeDeDocument;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="ancPubArchive", type="datetime")
+     * @ORM\Column(name="dateDePublicationLaPlusAncienne", type="date")
      */
-    private $ancPubArchive;
+    private $dateDePublicationLaPlusAncienne;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="recPubArchive", type="datetime")
+     * @ORM\Column(name="dateDePublicationLaPlusRecente", type="date")
      */
-    private $recPubArchive;
+    private $dateDePublicationLaPlusRecente;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="metArchive", type="float")
+     * @ORM\Column(name="metrageLineaire", type="float")
      */
-    private $metArchive;
+    private $metrageLineaire;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numArchive", type="string", length=255)
+     * @ORM\Column(name="numerisation", type="string", length=255)
      */
-    private $numArchive;
+    private $numerisation;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateRentrArchive", type="datetime")
+     * @ORM\Column(name="dateDeRentreeDansLeFond", type="date")
      */
-    private $dateRentrArchive;
+    private $dateDeRentreeDansLeFond;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="origArchive", type="string", length=1024)
+     * @ORM\Column(name="origineArchive", type="string", length=255)
      */
-    private $origArchive;
+    private $origineArchive;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prodArchive", type="string", length=255)
+     * @ORM\Column(name="producteurArchive", type="string", length=255)
      */
-    private $prodArchive;
+    private $producteurArchive;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="detArchive", type="string", length=255)
+     * @ORM\Column(name="detenteurArchive", type="string", length=255)
      */
-    private $detArchive;
+    private $detenteurArchive;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="comArchive", type="string", length=255)
+     * @ORM\Column(name="communicabilite", type="string", length=255)
      */
-    private $comArchive;
+    private $communicabilite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="condAccArchive", type="string", length=255)
+     * @ORM\Column(name="ConditionPourYAcceder", type="string", length=2048)
      */
-    private $condAccArchive;
+    private $conditionPourYAcceder;
 
 
     /**
@@ -187,118 +187,118 @@ class archive
     }
 
     /**
-     * Set nomFond
+     * Set nomDuFond
      *
-     * @param string $nomFond
+     * @param string $nomDuFond
      * @return archive
      */
-    public function setNomFond($nomFond)
+    public function setNomDuFond($nomDuFond)
     {
-        $this->nomFond = $nomFond;
+        $this->nomDuFond = $nomDuFond;
 
         return $this;
     }
 
     /**
-     * Get nomFond
+     * Get nomDuFond
      *
      * @return string 
      */
-    public function getNomFond()
+    public function getNomDuFond()
     {
-        return $this->nomFond;
+        return $this->nomDuFond;
     }
 
     /**
-     * Set depFond
+     * Set departementDuFond
      *
-     * @param string $depFond
+     * @param string $departementDuFond
      * @return archive
      */
-    public function setDepFond($depFond)
+    public function setDepartementDuFond($departementDuFond)
     {
-        $this->depFond = $depFond;
+        $this->departementDuFond = $departementDuFond;
 
         return $this;
     }
 
     /**
-     * Get depFond
+     * Get departementDuFond
      *
      * @return string 
      */
-    public function getDepFond()
+    public function getDepartementDuFond()
     {
-        return $this->depFond;
+        return $this->departementDuFond;
     }
 
     /**
-     * Set villeFond
+     * Set villeDuFond
      *
-     * @param string $villeFond
+     * @param string $villeDuFond
      * @return archive
      */
-    public function setVilleFond($villeFond)
+    public function setVilleDuFond($villeDuFond)
     {
-        $this->villeFond = $villeFond;
+        $this->villeDuFond = $villeDuFond;
 
         return $this;
     }
 
     /**
-     * Get villeFond
+     * Get villeDuFond
      *
      * @return string 
      */
-    public function getVilleFond()
+    public function getVilleDuFond()
     {
-        return $this->villeFond;
+        return $this->villeDuFond;
     }
 
     /**
-     * Set adrFond
+     * Set adresseCompleteDuFond
      *
-     * @param string $adrFond
+     * @param string $adresseCompleteDuFond
      * @return archive
      */
-    public function setAdrFond($adrFond)
+    public function setAdresseCompleteDuFond($adresseCompleteDuFond)
     {
-        $this->adrFond = $adrFond;
+        $this->adresseCompleteDuFond = $adresseCompleteDuFond;
 
         return $this;
     }
 
     /**
-     * Get adrFond
+     * Get adresseCompleteDuFond
      *
      * @return string 
      */
-    public function getAdrFond()
+    public function getAdresseCompleteDuFond()
     {
-        return $this->adrFond;
+        return $this->adresseCompleteDuFond;
     }
 
     /**
-     * Set histFond
+     * Set historiqueDuFond
      *
-     * @param string $histFond
+     * @param string $historiqueDuFond
      * @return archive
      */
-    public function setHistFond($histFond)
+    public function setHistoriqueDuFond($historiqueDuFond)
     {
-        $this->histFond = $histFond;
+        $this->historiqueDuFond = $historiqueDuFond;
 
         return $this;
     }
 
     /**
-     * Get histFond
+     * Get historiqueDuFond
      *
      * @return string 
      */
-    public function getHistFond()
+    public function getHistoriqueDuFond()
     {
-        return $this->histFond;
+        return $this->historiqueDuFond;
     }
 
     /**
@@ -325,370 +325,370 @@ class archive
     }
 
     /**
-     * Set resArchive
+     * Set resume
      *
-     * @param string $resArchive
+     * @param string $resume
      * @return archive
      */
-    public function setResArchive($resArchive)
+    public function setResume($resume)
     {
-        $this->resArchive = $resArchive;
+        $this->resume = $resume;
 
         return $this;
     }
 
     /**
-     * Get resArchive
+     * Get resume
      *
      * @return string 
      */
-    public function getResArchive()
+    public function getResume()
     {
-        return $this->resArchive;
+        return $this->resume;
     }
 
     /**
-     * Set grEntrArchive
+     * Set grandesEntrees
      *
-     * @param string $grEntrArchive
+     * @param string $grandesEntrees
      * @return archive
      */
-    public function setGrEntrArchive($grEntrArchive)
+    public function setGrandesEntrees($grandesEntrees)
     {
-        $this->grEntrArchive = $grEntrArchive;
+        $this->grandesEntrees = $grandesEntrees;
 
         return $this;
     }
 
     /**
-     * Get grEntrArchive
+     * Get grandesEntrees
      *
      * @return string 
      */
-    public function getGrEntrArchive()
+    public function getGrandesEntrees()
     {
-        return $this->grEntrArchive;
+        return $this->grandesEntrees;
     }
 
     /**
-     * Set obsArchive
+     * Set observations
      *
-     * @param string $obsArchive
+     * @param string $observations
      * @return archive
      */
-    public function setObsArchive($obsArchive)
+    public function setObservations($observations)
     {
-        $this->obsArchive = $obsArchive;
+        $this->observations = $observations;
 
         return $this;
     }
 
     /**
-     * Get obsArchive
+     * Get observations
      *
      * @return string 
      */
-    public function getObsArchive()
+    public function getObservations()
     {
-        return $this->obsArchive;
+        return $this->observations;
     }
 
     /**
-     * Set coteArchive
+     * Set cote
      *
-     * @param string $coteArchive
+     * @param string $cote
      * @return archive
      */
-    public function setCoteArchive($coteArchive)
+    public function setCote($cote)
     {
-        $this->coteArchive = $coteArchive;
+        $this->cote = $cote;
 
         return $this;
     }
 
     /**
-     * Get coteArchive
+     * Get cote
      *
      * @return string 
      */
-    public function getCoteArchive()
+    public function getCote()
     {
-        return $this->coteArchive;
+        return $this->cote;
     }
 
     /**
-     * Set classArchive
+     * Set classification
      *
-     * @param string $classArchive
+     * @param string $classification
      * @return archive
      */
-    public function setClassArchive($classArchive)
+    public function setClassification($classification)
     {
-        $this->classArchive = $classArchive;
+        $this->classification = $classification;
 
         return $this;
     }
 
     /**
-     * Get classArchive
+     * Get classification
      *
      * @return string 
      */
-    public function getClassArchive()
+    public function getClassification()
     {
-        return $this->classArchive;
+        return $this->classification;
     }
 
     /**
-     * Set typeArchive
+     * Set typeDeDocument
      *
-     * @param string $typeArchive
+     * @param string $typeDeDocument
      * @return archive
      */
-    public function setTypeArchive($typeArchive)
+    public function setTypeDeDocument($typeDeDocument)
     {
-        $this->typeArchive = $typeArchive;
+        $this->typeDeDocument = $typeDeDocument;
 
         return $this;
     }
 
     /**
-     * Get typeArchive
+     * Get typeDeDocument
      *
      * @return string 
      */
-    public function getTypeArchive()
+    public function getTypeDeDocument()
     {
-        return $this->typeArchive;
+        return $this->typeDeDocument;
     }
 
     /**
-     * Set ancPubArchive
+     * Set dateDePublicationLaPlusAncienne
      *
-     * @param \DateTime $ancPubArchive
+     * @param \DateTime $dateDePublicationLaPlusAncienne
      * @return archive
      */
-    public function setAncPubArchive($ancPubArchive)
+    public function setDateDePublicationLaPlusAncienne($dateDePublicationLaPlusAncienne)
     {
-        $this->ancPubArchive = $ancPubArchive;
+        $this->dateDePublicationLaPlusAncienne = $dateDePublicationLaPlusAncienne;
 
         return $this;
     }
 
     /**
-     * Get ancPubArchive
+     * Get dateDePublicationLaPlusAncienne
      *
      * @return \DateTime 
      */
-    public function getAncPubArchive()
+    public function getDateDePublicationLaPlusAncienne()
     {
-        return $this->ancPubArchive;
+        return $this->dateDePublicationLaPlusAncienne;
     }
 
     /**
-     * Set recPubArchive
+     * Set dateDePublicationLaPlusRecente
      *
-     * @param \DateTime $recPubArchive
+     * @param \DateTime $dateDePublicationLaPlusRecente
      * @return archive
      */
-    public function setRecPubArchive($recPubArchive)
+    public function setDateDePublicationLaPlusRecente($dateDePublicationLaPlusRecente)
     {
-        $this->recPubArchive = $recPubArchive;
+        $this->dateDePublicationLaPlusRecente = $dateDePublicationLaPlusRecente;
 
         return $this;
     }
 
     /**
-     * Get recPubArchive
+     * Get dateDePublicationLaPlusRecente
      *
      * @return \DateTime 
      */
-    public function getRecPubArchive()
+    public function getDateDePublicationLaPlusRecente()
     {
-        return $this->recPubArchive;
+        return $this->dateDePublicationLaPlusRecente;
     }
 
     /**
-     * Set metArchive
+     * Set metrageLineaire
      *
-     * @param float $metArchive
+     * @param float $metrageLineaire
      * @return archive
      */
-    public function setMetArchive($metArchive)
+    public function setMetrageLineaire($metrageLineaire)
     {
-        $this->metArchive = $metArchive;
+        $this->metrageLineaire = $metrageLineaire;
 
         return $this;
     }
 
     /**
-     * Get metArchive
+     * Get metrageLineaire
      *
      * @return float 
      */
-    public function getMetArchive()
+    public function getMetrageLineaire()
     {
-        return $this->metArchive;
+        return $this->metrageLineaire;
     }
 
     /**
-     * Set numArchive
+     * Set numerisation
      *
-     * @param string $numArchive
+     * @param string $numerisation
      * @return archive
      */
-    public function setNumArchive($numArchive)
+    public function setNumerisation($numerisation)
     {
-        $this->numArchive = $numArchive;
+        $this->numerisation = $numerisation;
 
         return $this;
     }
 
     /**
-     * Get numArchive
+     * Get numerisation
      *
      * @return string 
      */
-    public function getNumArchive()
+    public function getNumerisation()
     {
-        return $this->numArchive;
+        return $this->numerisation;
     }
 
     /**
-     * Set dateRentrArchive
+     * Set dateDeRentreeDansLeFond
      *
-     * @param \DateTime $dateRentrArchive
+     * @param \DateTime $dateDeRentreeDansLeFond
      * @return archive
      */
-    public function setDateRentrArchive($dateRentrArchive)
+    public function setDateDeRentreeDansLeFond($dateDeRentreeDansLeFond)
     {
-        $this->dateRentrArchive = $dateRentrArchive;
+        $this->dateDeRentreeDansLeFond = $dateDeRentreeDansLeFond;
 
         return $this;
     }
 
     /**
-     * Get dateRentrArchive
+     * Get dateDeRentreeDansLeFond
      *
      * @return \DateTime 
      */
-    public function getDateRentrArchive()
+    public function getDateDeRentreeDansLeFond()
     {
-        return $this->dateRentrArchive;
+        return $this->dateDeRentreeDansLeFond;
     }
 
     /**
-     * Set origArchive
+     * Set origineArchive
      *
-     * @param string $origArchive
+     * @param string $origineArchive
      * @return archive
      */
-    public function setOrigArchive($origArchive)
+    public function setOrigineArchive($origineArchive)
     {
-        $this->origArchive = $origArchive;
+        $this->origineArchive = $origineArchive;
 
         return $this;
     }
 
     /**
-     * Get origArchive
+     * Get origineArchive
      *
      * @return string 
      */
-    public function getOrigArchive()
+    public function getOrigineArchive()
     {
-        return $this->origArchive;
+        return $this->origineArchive;
     }
 
     /**
-     * Set prodArchive
+     * Set producteurArchive
      *
-     * @param string $prodArchive
+     * @param string $producteurArchive
      * @return archive
      */
-    public function setProdArchive($prodArchive)
+    public function setProducteurArchive($producteurArchive)
     {
-        $this->prodArchive = $prodArchive;
+        $this->producteurArchive = $producteurArchive;
 
         return $this;
     }
 
     /**
-     * Get prodArchive
+     * Get producteurArchive
      *
      * @return string 
      */
-    public function getProdArchive()
+    public function getProducteurArchive()
     {
-        return $this->prodArchive;
+        return $this->producteurArchive;
     }
 
     /**
-     * Set detArchive
+     * Set detenteurArchive
      *
-     * @param string $detArchive
+     * @param string $detenteurArchive
      * @return archive
      */
-    public function setDetArchive($detArchive)
+    public function setDetenteurArchive($detenteurArchive)
     {
-        $this->detArchive = $detArchive;
+        $this->detenteurArchive = $detenteurArchive;
 
         return $this;
     }
 
     /**
-     * Get detArchive
+     * Get detenteurArchive
      *
      * @return string 
      */
-    public function getDetArchive()
+    public function getDetenteurArchive()
     {
-        return $this->detArchive;
+        return $this->detenteurArchive;
     }
 
     /**
-     * Set comArchive
+     * Set communicabilite
      *
-     * @param string $comArchive
+     * @param string $communicabilite
      * @return archive
      */
-    public function setComArchive($comArchive)
+    public function setCommunicabilite($communicabilite)
     {
-        $this->comArchive = $comArchive;
+        $this->communicabilite = $communicabilite;
 
         return $this;
     }
 
     /**
-     * Get comArchive
+     * Get communicabilite
      *
      * @return string 
      */
-    public function getComArchive()
+    public function getCommunicabilite()
     {
-        return $this->comArchive;
+        return $this->communicabilite;
     }
 
     /**
-     * Set condAccArchive
+     * Set conditionPourYAcceder
      *
-     * @param string $condAccArchive
+     * @param string $conditionPourYAcceder
      * @return archive
      */
-    public function setCondAccArchive($condAccArchive)
+    public function setConditionPourYAcceder($conditionPourYAcceder)
     {
-        $this->condAccArchive = $condAccArchive;
+        $this->conditionPourYAcceder = $conditionPourYAcceder;
 
         return $this;
     }
 
     /**
-     * Get condAccArchive
+     * Get conditionPourYAcceder
      *
      * @return string 
      */
-    public function getCondAccArchive()
+    public function getConditionPourYAcceder()
     {
-        return $this->condAccArchive;
+        return $this->conditionPourYAcceder;
     }
 }

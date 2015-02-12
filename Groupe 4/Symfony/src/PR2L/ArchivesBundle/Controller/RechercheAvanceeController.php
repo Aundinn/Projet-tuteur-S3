@@ -9,8 +9,6 @@ class RechercheAvanceeController extends Controller
 {
     public function rechercheAvanceeAction()
     {
-        $listeMenu = array('archives', 'rechercheAvancee','ajouter');    
-
-        return $this->render('PR2LArchivesBundle:Default:rechercheAvancee.html.twig',array('listeMenu'=>$listeMenu));
+        return $this->render('PR2LArchivesBundle:Default:rechercheAvancee.html.twig');
     }
 }
