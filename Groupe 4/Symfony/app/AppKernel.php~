@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new PR2L\SiteBundle\PR2LSiteBundle(),
             new PR2L\UserBundle\PR2LUserBundle(),
+            new PR2L\ArchivesBundle\PR2LArchivesBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 

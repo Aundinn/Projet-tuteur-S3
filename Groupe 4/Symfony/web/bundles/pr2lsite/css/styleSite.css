@@ -214,3 +214,19 @@ em{
 	padding-bottom: 2%;
 	padding-top: 3%;
 }
+
+.bouton a {
+    display:block;
+    width:150px;
+    line-height:50px;
+    text-align:center;
+    vertical-align:middle;
+    background:url(../images/bouton.png) no-repeat;
+    color:white;
+    text-decoration:none;
+    margin-left: 70%;
+}
+
+.bouton a:hover {
+    background:url(../images/bouton2.png) no-repeat;
+}

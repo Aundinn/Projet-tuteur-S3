@@ -82,13 +82,40 @@ class __TwigTemplate_4453dc18ce41f34f747edbf090a59fb79b379b951a871e45bedf99f09af
 </nav></div>
 <hr/>
   </nav>
-  
+
+";
+        // line 45
+        if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
+            // line 46
+            echo "<div class=\"bouton\">
+  <p>
+    <a href=\"";
+            // line 48
+            echo $this->env->getExtension('routing')->getPath("logout");
+            echo "\">Déconnexion</a>
+ </p>
+</div>
+";
+        } else {
+            // line 52
+            echo "<div class=\"bouton\">
+  <p>
+   <a href=\"";
+            // line 54
+            echo $this->env->getExtension('routing')->getPath("login");
+            echo "\">Connexion</a>
+ </p>
+</div>
+";
+        }
+        // line 58
+        echo "  
   <body>
 
     ";
-        // line 47
+        // line 61
         $this->displayBlock('body', $context, $blocks);
-        // line 50
+        // line 64
         echo "
   </body>
   
@@ -125,10 +152,10 @@ class __TwigTemplate_4453dc18ce41f34f747edbf090a59fb79b379b951a871e45bedf99f09af
         echo "PR2L";
     }
 
-    // line 47
+    // line 61
     public function block_body($context, array $blocks = array())
     {
-        // line 48
+        // line 62
         echo "     
     ";
     }
@@ -145,6 +172,6 @@ class __TwigTemplate_4453dc18ce41f34f747edbf090a59fb79b379b951a871e45bedf99f09af
 
     public function getDebugInfo()
     {
-        return array (  132 => 48,  129 => 47,  123 => 12,  92 => 50,  90 => 47,  78 => 38,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
+        return array (  159 => 62,  156 => 61,  150 => 12,  119 => 64,  117 => 61,  112 => 58,  105 => 54,  101 => 52,  94 => 48,  90 => 46,  88 => 45,  78 => 38,  53 => 16,  46 => 12,  41 => 10,  37 => 9,  32 => 7,  28 => 6,  21 => 1,);
     }
 }

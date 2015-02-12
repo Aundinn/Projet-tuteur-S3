@@ -41,6 +41,20 @@
 </nav></div>
 <hr/>
   </nav>
+
+{% if is_granted('ROLE_USER') %}
+<div class="bouton">
+  <p>
+    <a href="{{ path('logout') }}">Déconnexion</a>
+ </p>
+</div>
+{% else %}
+<div class="bouton">
+  <p>
+   <a href="{{ path('login') }}">Connexion</a>
+ </p>
+</div>
+{% endif %}
   
   <body>
 
