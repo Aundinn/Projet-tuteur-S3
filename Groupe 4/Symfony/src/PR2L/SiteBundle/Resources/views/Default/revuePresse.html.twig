@@ -4,15 +4,25 @@
 
 {% block body %}
 
-<div class="well">
-    {{ form_start(form) }}
-        {{ form_errors(form) }}
-        {{ form_row(form.template) }}
-        {{ form_row(form.theme) }}
-        {{ form_row(form.auteur) }}
-        {{ form_row(form.elements) }}
-    {{ form_end(form) }}
+{% for flashMessage in app.session.flashbag.get('phrase') %}
+<div class="flashBag">
+    <br>
+    {{ flashMessage }}
 </div>
+{% endfor %}
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+<table>
+        <tr><th>Ajout d'un nouveau document</th></tr>
+        <tr><td>
+    {{ form_row(form.template) }}
+    {{ form_row(form.theme) }}
+    {{ form_row(form.auteur) }}
+    {{ form_row(form.elements) }}
+        </td></tr>
+</table>
+{{ form_end(form) }}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 

@@ -215,18 +215,37 @@ em{
 	padding-top: 3%;
 }
 
-.bouton a {
-    display:block;
-    width:150px;
-    line-height:50px;
-    text-align:center;
-    vertical-align:middle;
-    background:url(../images/bouton.png) no-repeat;
-    color:white;
-    text-decoration:none;
-    margin-left: 70%;
+td, th, table{
+    border : 1px solid lightgrey;
 }
 
-.bouton a:hover {
-    background:url(../images/bouton2.png) no-repeat;
+td{
+    text-align: right;
+    padding : 10px;
+}
+
+th{
+    padding : 10px; 
+    color: grey;
+}
+
+table{
+    margin : 10px auto 10px auto;
+        
+}
+
+.flashBag{
+    text-align: center   
+}
+
+.connexion{
+    text-align: center;   
+}
+
+.menuArchive{
+    margin-left: 50%;
+    width: 10%;
+}
+h4{
+    text-align: center;
 }

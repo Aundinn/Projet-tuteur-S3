@@ -26,7 +26,7 @@ class RevuePresseController extends Controller
                 $em->persist($doc);
                 $em->flush();
 
-                $request->getSession()->getFlashBag()->add('document', 'Document bien enregistré.');
+                $request->getSession()->getFlashBag()->add('phrase', 'Le document a bien été enregistré !');
 
                 return $this->redirect($this->generateUrl('pr2_l_site_revuePresse', array('id' => $doc->getId())));
             }
