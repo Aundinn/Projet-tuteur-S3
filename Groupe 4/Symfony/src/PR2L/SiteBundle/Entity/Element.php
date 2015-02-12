@@ -38,12 +38,11 @@ class Element
     
     
     /**
-     * @ORM\ManyToOne(targetEntity="PR2L\SiteBundle\Entity\Document", inversedBy="elements")
+     * @ORM\ManyToOne(targetEntity="PR2L\SiteBundle\Entity\Document", inversedBy="elements",cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $document;
-
-
+    
     /**
      * Get id
      *

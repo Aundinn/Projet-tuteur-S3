@@ -45,10 +45,10 @@ class Document
     
     /**
     * @var Element $elements
-    * @ORM\OneToMany(targetEntity="PR2L\SiteBundle\Entity\Element", mappedBy="Document")
+    * @ORM\OneToMany(targetEntity="PR2L\SiteBundle\Entity\Element", mappedBy="Document",cascade={"persist"})
     */
     private $elements;
-
+    
     /**
      * Get id
      *
@@ -129,13 +129,13 @@ class Document
     }
     
     /**
-    * setElement
+    * setElements
     *
-    * @param Element $element
+    * @param array $elements
     */
-    public function setElement(Element $element)
+    public function setElements(Array $elements)
     {
-        $this->elements[] = $element;
+        $this->elements = $elements;
     }
      
     /**

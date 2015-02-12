@@ -12,7 +12,6 @@ use Doctrine\ORM\EntityRepository;
  */
 class DocumentRepository extends EntityRepository
 {
-<<<<<<< HEAD
     public function myFindByTheme($type)
     {
         $qb = $this->createQueryBuilder('a');
@@ -27,6 +26,4 @@ class DocumentRepository extends EntityRepository
   		;
     }
     
-=======
->>>>>>> 01c3abfcca3fd6aa10fd55348dd3c77d9878c7b4
 }
