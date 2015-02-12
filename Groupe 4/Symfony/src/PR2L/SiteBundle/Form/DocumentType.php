@@ -24,6 +24,7 @@ class DocumentType extends AbstractType
                 'allow_delete' => true,
             ))
             ->add('save', 'submit')
+            ->setMethod("POST")->setAction('#')
         ;
     }
     
