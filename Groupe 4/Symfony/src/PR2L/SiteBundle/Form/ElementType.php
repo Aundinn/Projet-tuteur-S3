@@ -17,7 +17,6 @@ class ElementType extends AbstractType
         $builder
             ->add('type')
             ->add('contenu')
-            ->add('document')
         ;
     }
     

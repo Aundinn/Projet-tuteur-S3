@@ -5,7 +5,13 @@
 {% block body %}
 
 <div class="well">
-    {{ form_widget(form) }}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.template) }}
+        {{ form_row(form.theme) }}
+        {{ form_row(form.auteur) }}
+        {{ form_row(form.elements) }}
+    {{ form_end(form) }}
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

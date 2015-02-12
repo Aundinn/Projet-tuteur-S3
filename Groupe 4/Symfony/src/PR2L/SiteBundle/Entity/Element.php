@@ -36,12 +36,11 @@ class Element
      */
     private $contenu;
     
-    
     /**
-     * @ORM\ManyToOne(targetEntity="PR2L\SiteBundle\Entity\Document", inversedBy="elements",cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $document;
+    * @var Document $documents
+    * @ORM\ManyToMany(targetEntity="PR2L\SiteBundle\Entity\Document", cascade={"persist"})
+    */
+    private $documents;
     
     /**
      * Get id
@@ -98,27 +97,27 @@ class Element
     {
         return $this->contenu;
     }
-
-    /**
-     * Set document
-     *
-     * @param \PR2L\SiteBundle\Entity\Document $document
-     * @return Element
-     */
-    public function setDocument(\PR2L\SiteBundle\Entity\Document $document = null)
-    {
-        $this->document = $document;
     
-        return $this;
+    /**
+     * setDocument
+     *
+     * @param Document $document
+     */
+    public function addDocument(Document $document)
+    {
+        $this->documents[] = $document;
+
+    return $this;
+    }
+     
+    /**
+     * getDocuments
+     *
+     * @return array $documents
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
     }
 
-    /**
-     * Get document
-     *
-     * @return \PR2L\SiteBundle\Entity\Document 
-     */
-    public function getDocument()
-    {
-        return $this->document;
-    }
 }
