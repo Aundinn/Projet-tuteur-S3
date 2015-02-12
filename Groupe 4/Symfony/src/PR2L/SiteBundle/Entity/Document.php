@@ -3,6 +3,7 @@
 namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Document
@@ -31,16 +32,9 @@ class Document
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu", type="text")
+     * @ORM\Column(name="theme", type="string", length=255)
      */
-    private $contenu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="titre", type="string", length=255)
-     */
-    private $titre;
+    private $theme;
 
     /**
      * @var string
@@ -48,28 +42,12 @@ class Document
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $auteur;
-
+    
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateCreation", type="datetime")
-     */
-    private $dateCreation;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateDerniereModif", type="datetime")
-     */
-    private $dateDerniereModif;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255)
-     */
-    private $type;
-
+    * @var Element $elements
+    * @ORM\OneToMany(targetEntity="PR2L\SiteBundle\Entity\Element", mappedBy="Document")
+    */
+    private $elements;
 
     /**
      * Get id
@@ -105,49 +83,26 @@ class Document
     }
 
     /**
-     * Set contenu
+     * Set theme
      *
-     * @param string $contenu
+     * @param string $theme
      * @return Document
      */
-    public function setContenu($contenu)
+    public function setTheme($theme)
     {
-        $this->contenu = $contenu;
+        $this->theme = $theme;
     
         return $this;
     }
 
     /**
-     * Get contenu
+     * Get theme
      *
      * @return string 
      */
-    public function getContenu()
+    public function getTheme()
     {
-        return $this->contenu;
-    }
-
-    /**
-     * Set titre
-     *
-     * @param string $titre
-     * @return Document
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-    
-        return $this;
-    }
-
-    /**
-     * Get titre
-     *
-     * @return string 
-     */
-    public function getTitre()
-    {
-        return $this->titre;
+        return $this->theme;
     }
 
     /**
@@ -172,73 +127,25 @@ class Document
     {
         return $this->auteur;
     }
-
-    /**
-     * Set dateCreation
-     *
-     * @param \DateTime $dateCreation
-     * @return Document
-     */
-    public function setDateCreation($dateCreation)
-    {
-        $this->dateCreation = $dateCreation;
     
-        return $this;
-    }
-
     /**
-     * Get dateCreation
-     *
-     * @return \DateTime 
-     */
-    public function getDateCreation()
+    * setElement
+    *
+    * @param Element $element
+    */
+    public function setElement(Element $element)
     {
-        return $this->dateCreation;
+        $this->elements[] = $element;
     }
-
+     
     /**
-     * Set dateDerniereModif
-     *
-     * @param \DateTime $dateDerniereModif
-     * @return Document
-     */
-    public function setDateDerniereModif($dateDerniereModif)
+    * getElements
+    *
+    * @return array $elements
+    */
+    public function getElements()
     {
-        $this->dateDerniereModif = $dateDerniereModif;
+        return $this->elements;
+    }
     
-        return $this;
-    }
-
-    /**
-     * Get dateDerniereModif
-     *
-     * @return \DateTime 
-     */
-    public function getDateDerniereModif()
-    {
-        return $this->dateDerniereModif;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     * @return Document
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string 
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 }

@@ -299,8 +299,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // pr2_l_archives_detail
-            if ($pathinfo === '/pr2l/detail') {
-                return array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\DetailController::detailAction',  '_route' => 'pr2_l_archives_detail',);
+            if (0 === strpos($pathinfo, '/pr2l/detail') && preg_match('#^/pr2l/detail(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_archives_detail')), array (  '_controller' => 'PR2L\\ArchivesBundle\\Controller\\DetailController::detailAction',  'id' => 5,));
             }
 
         }

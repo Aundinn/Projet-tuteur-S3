@@ -43,4 +43,7 @@ security:
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: /pr2l/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: /pr2l/creation, roles: ROLE_ADMIN, requires_channel: https }
+        - { path: /pr2l/gestionAdmin, roles: ROLE_ADMIN, requires_channel: https }
+        - { path: /pr2l/modification, roles: ROLE_ADMIN, requires_channel: https }
