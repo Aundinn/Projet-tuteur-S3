@@ -7,7 +7,22 @@
     <table>
         <tr><th>Nom</th><th>Prénom</th><th>Identifiant</th><th>Droits</th></tr>
         {% for advert in listAdverts %}
-        <tr><td>{{ advert.getNom() }}</td><td>{{advert.getPrenom()}}</td><td>{{advert.getIdentifiant()}}</td><td>           {{advert.getDroits()}}</td></tr>
+        <tr>
+            <td>{{ advert.getNom() }}</td>
+            <td>{{ advert.getPrenom() }}</td>
+            <td>{{ advert.getUsername() }}</td>
+            {% if advert.getRoles() == 'ROLE_USER' %}
+                <td>Utilisateur</td>
+            {% elseif advert.getRoles() == 'ROLE_ADMIN' %}
+                <td>Administrateur</td>
+            {% elseif advert.getRoles() == 'ROLE_R' %}
+                <td>Lecteur</td>
+            {% elseif advert.getRoles() == 'ROLE_R/W' %}
+                <td>Contributeur</td>
+            {% else %}
+                <td>Anonyme</td>
+            {% endif %}
+        </tr>
         {% endfor %}
     </table>
 

@@ -1,17 +1,29 @@
-
-
 {% for menu in listMenu %}
+{% if is_granted('ROLE_ADMIN') %}
     <li><a href="{{ menu.getLien() }}">{{ menu.getLibelle() }}</a>
    	<ul>
   	{% for menu2 in listMenu2 %}
-        {% if menu2.getIdMenuParent() == menu.getId() %}
-            {% if is_granted('ROLE_ADMIN') %}
+        {% if menu2.getIdMenuParent() == menu.getId() %}   
     		  <li><a href="{{ menu2.getLien() }}">{{ menu2.getLibelle() }}</a></li>
-            {% endif %}
     	{% endif%}
     {% endfor %}
 	</ul>
     </li>
+{% endif %}
 {% endfor %}
 
 
+
+{% for menu in listMenu %}
+{% if not(is_granted('ROLE_ADMIN')) and menu.getId() != 22 %}
+    <li><a href="{{ menu.getLien() }}">{{ menu.getLibelle() }}</a>
+   	<ul>
+  	{% for menu2 in listMenu2 %}
+        {% if menu2.getIdMenuParent() == menu.getId() %}   
+    		  <li><a href="{{ menu2.getLien() }}">{{ menu2.getLibelle() }}</a></li>
+    	{% endif%}
+    {% endfor %}
+	</ul>
+    </li>
+{% endif %}
+{% endfor %}

@@ -3,19 +3,32 @@
 namespace PR2L\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use PR2L\SiteBundle\Entity\utilisateur;
+use PR2L\UserBundle\Entity\utilisateur;
 
 class GestionAdminController extends Controller
 {
     public function gestionAdminAction()
     {
+        $listRoles = array(
+            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Administrateur',
+            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Utilisateur',
+            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Lecteur',
+            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Contributeur',         
+                     );
         //Récupération de tous les utilisateurs pour l'affichage
         $repository = $this
                 ->getDoctrine()
                 ->getManager()
-                ->getRepository('PR2LSiteBundle:utilisateur');
+                ->getRepository('PR2LUserBundle:utilisateur');
   
         $listAdverts = $repository->myFindAll();
+        
+        foreach($listAdverts as $advert){
+            $advert->setRoles(implode($advert->getRoles()));
+            /*$imp = implode($advert->getRoles());
+            echo explode('ROLE_',implode($advert->getRoles()))[1];
+            echo $imp;*/
+        }
         
         //Création du formulaire
         $utilisateur = new utilisateur();
@@ -23,8 +36,8 @@ class GestionAdminController extends Controller
         $formBuilder = $this->createFormBuilder($utilisateur);
 
         $formBuilder
-            ->add('Identifiant','text')
-            ->add('Droits','text');
+            ->add('username','text')
+            ->add('roles','text');
         
         $form = $formBuilder->getForm();
 
@@ -36,8 +49,10 @@ class GestionAdminController extends Controller
 
             if ($form->isValid()) {
                 
-                $utilisateur2 = $repository->myFindByLogin($utilisateur->getIdentifiant());
-                $utilisateur2[0]->setDroits($utilisateur->getDroits());
+                $utilisateur2 = $repository->myFindByLogin($utilisateur->getUsername());
+                $role = $utilisateur->getRoles();
+                $utilisateur->setRoles(array($role));
+                $utilisateur2[0]->setRoles($utilisateur->getRoles());
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($utilisateur2[0]);
