@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new PR2L\SiteBundle\PR2LSiteBundle(),
             new PR2L\UserBundle\PR2LUserBundle(),
             new PR2L\ArchivesBundle\PR2LArchivesBundle(),
-            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
