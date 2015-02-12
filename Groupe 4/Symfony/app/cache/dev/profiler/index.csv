@@ -765,3 +765,12 @@ d28704,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/a
 cc6290,127.0.0.1,POST,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/login_check,1423747820,
 25de1e,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1423747820,13eb58
 13eb58,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1423747820,
+c15e04,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/logout,1423749522,
+8c2e0b,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1423749522,d85dd5
+d85dd5,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/accueil,1423749522,
+1c814e,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1423749524,8a14f4
+8a14f4,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/login,1423749524,
+a15b16,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1423749554,d4d912
+d4d912,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/login,1423749554,
+2e5c0b,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DPR2LSiteBundle%253AMenu%253Amenu,1423749577,a01da3
+a01da3,127.0.0.1,GET,https://localhost/Projet-tuteur-S3/Groupe%204/Symfony/web/app_dev.php/pr2l/login,1423749577,
