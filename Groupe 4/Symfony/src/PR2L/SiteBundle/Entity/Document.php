@@ -4,6 +4,7 @@ namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Document
@@ -45,7 +46,7 @@ class Document
     
     /**
     * @var Element $elements
-    * @ORM\OneToMany(targetEntity="PR2L\SiteBundle\Entity\Element", mappedBy="Document",cascade={"persist"})
+    * @ORM\ManyToMany(targetEntity="PR2L\SiteBundle\Entity\Element", cascade={"persist"})
     */
     private $elements;
     
@@ -128,14 +129,21 @@ class Document
         return $this->auteur;
     }
     
-    /**
-    * setElements
-    *
-    * @param array $elements
-    */
-    public function setElements(Array $elements)
+    public function __construct()
     {
-        $this->elements = $elements;
+        $this->elements = new ArrayCollection();
+    }
+    
+    /**
+    * setElement
+    *
+    * @param Element $element
+    */
+    public function addElement(Element $element)
+    {
+        $this->elements[] = $element;
+
+    return $this;
     }
      
     /**

@@ -31,9 +31,6 @@ class RevuePresseController extends Controller
                 return $this->redirect($this->generateUrl('pr2_l_site_revuePresse', array('id' => $doc->getId())));
             }
         }
-         if (!$form->handleRequest($request)->isValid()) {
-            var_dump($form->getErrorsAsString());
-        }
         
         return $this->render('PR2LSiteBundle:Default:revuePresse.html.twig', array(
       'form' => $form->createView(),
