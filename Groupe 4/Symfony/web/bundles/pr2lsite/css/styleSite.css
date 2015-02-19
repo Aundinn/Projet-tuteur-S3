@@ -249,3 +249,20 @@ table{
 h4{
     text-align: center;
 }
+
+.bouton a {
+    /*position: absolute;
+    margin-left: 70%;
+    margin-top: -8%;*/
+    display:block;
+    width:150px;
+    line-height:50px;
+    text-align:center;
+    vertical-align:middle;
+    background:url(../images/bouton.png) no-repeat;
+    color:white;
+    text-decoration:none;
+}
+.bouton a:hover {
+    background:url(../images/bouton2.png) no-repeat;
+}

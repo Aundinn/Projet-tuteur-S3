@@ -50,10 +50,6 @@ pr2_l_site_ressources:
     path:     /ressources
     defaults: { _controller: PR2LSiteBundle:Ressources:ressources }
     
-pr2_l_site_archives:
-    path:     /archives
-    defaults: { _controller: PR2LSiteBundle:Archives:archives }
-    
 pr2_l_site_bibliotheque:
     path:     /bibliotheque
     defaults: { _controller: PR2LSiteBundle:Bibliotheque:bibliotheque }
@@ -82,10 +78,6 @@ pr2_l_site_intranet:
     path:     /intranet
     defaults: { _controller: PR2LSiteBundle:Intranet:intranet }  
     
-pr2_l_site_connexion:
-    path:     /connexion
-    defaults: { _controller: PR2LSiteBundle:Connexion:connexion }
-    
 pr2_l_site_creation:
     path:     /creation
     defaults: { _controller: PR2LSiteBundle:Creation:creation }
@@ -98,9 +90,6 @@ pr2_l_site_modification:
     path:     /modification
     defaults: { _controller: PR2LSiteBundle:Modification:modification }
     
-pr2_l_site_deconnexion:
-    path:     /deconnexion
-    defaults: { _controller: PR2LSiteBundle:Deconnexion:deconnexion }
     
     
     

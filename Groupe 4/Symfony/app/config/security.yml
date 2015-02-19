@@ -8,7 +8,8 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER,ROLE_R/W,ROLE_R]
+        ROLE_ADMIN:       [ROLE_USER,ROLE_R/W,ROLE_R,ROLE_VAL]
+        ROLE_VAL:         [ROLE_USER,ROLE_R/W,ROLE_R]
         ROLE_R/W:         [ROLE_USER,ROLE_R]
         ROLE_R:           ROLE_USER
         
