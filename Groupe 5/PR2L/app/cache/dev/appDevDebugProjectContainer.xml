@@ -20,6 +20,7 @@
       <parameter key="PR2LUserBundle">PR2L\UserBundle\PR2LUserBundle</parameter>
       <parameter key="PR2LMenuBundle">PR2L\MenuBundle\PR2LMenuBundle</parameter>
       <parameter key="PR2LArticleBundle">PR2L\ArticleBundle\PR2LArticleBundle</parameter>
+      <parameter key="PR2LsiteBundle">PR2L\siteBundle\PR2LsiteBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -3016,6 +3017,10 @@
       <call method="addPath">
         <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\ArticleBundle/Resources/views</argument>
         <argument>PR2LArticle</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\src\PR2L\siteBundle/Resources/views</argument>
+        <argument>PR2Lsite</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\Projet-tuteur-S3\Groupe 5\PR2L\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

@@ -111,7 +111,17 @@ class Profil {
 	public function getId() {
 		return $this->id;
 	}
-	
+	/**
+	 * Set userId
+	 *
+	 * @param string $userId       	
+	 * @return Profil
+	 */
+	public function setUserId($userId) {
+		$this->userId = $userId;
+		
+		return $this;
+	}
 	/**
 	 * Set userLogin
 	 *

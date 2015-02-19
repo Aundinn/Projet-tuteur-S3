@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %} 
+
+{% block title %}
+Modifier un utilisateur - {{ parent() }} 
+{% endblock %} 
+
+{% block body %}
+<h2>{{ user.userPrenom }} {{ user.userNom|upper}} a &eacute;t&eacute; modifi&eacute; !</h2>
+<hr>
+Voici les d&eacute;tails de {{ user.userPrenom }} : <hr/>
+
+Nom et pr&eacute;nom: {{ user.userNom|upper ~ " " ~ user.userPrenom }} <br/>  
+T&eacute;l&eacute;phone : {{ user.userTelephone }} <br/>
+Mail : {{ user.userEmail }} <br/> 
+Fonction de l'utilisateur : {{ user.userFonction }} <br/> 
+<hr/>
+Login : {{ user.userLogin }} <br/>  
+Mot de passe : ******** <br/> 
+<em>Le mot de passe est crypt&eacute; et ne peut &ecirctre affich&eacute;. Pensez &agrave le m&eacute;moriser !</em> 
+<hr/>
+{% if user.userIsAdmin != 0 %}
+	 {{ user.userPrenom }} est administrateur. <br/>
+{% endif %}
+
+{% if user.userIsModerateur != 0 %}
+	 {{ user.userPrenom }} est mod&eacute;rateur. <br/> 
+{% endif %}
+
+{% if user.userIsContributeur != 0 %}
+	 {{ user.userPrenom }} est contributeur. <br/>
+{% endif %}
+
+{% if user.userIsAdherent != 0 %}
+	 {{ user.userPrenom }} est adh&eacute;rent. <br/>
+{% endif %}
+
+{% endblock %}

@@ -1,3 +1,7 @@
+pr2_lsite:
+    resource: "@PR2LsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 pr2_l_article:
     resource: "@PR2LArticleBundle/Resources/config/routing.yml"
     prefix:   /publication #Toutes les routes du ArticleBundle

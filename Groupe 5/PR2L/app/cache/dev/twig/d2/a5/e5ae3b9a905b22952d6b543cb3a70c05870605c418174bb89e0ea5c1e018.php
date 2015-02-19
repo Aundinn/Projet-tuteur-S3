@@ -72,52 +72,51 @@ Login : ";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userLogin", array()), "html", null, true);
         echo " <br/>  
 Mot de passe : ******** <br/> 
-<em>Le mot de passe est crypt&eacute; et ne &ecirctre affich&eacute;. Pensez &agrave le m&eacute;moriser !</em> 
+<em>Le mot de passe est crypt&eacute; et ne peut &ecirctre affich&eacute;. Pensez &agrave le m&eacute;moriser !</em> 
 <hr/>
-Informations compl&eacute;mentaires : <br/>
 ";
-        // line 22
+        // line 21
         if (($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userIsAdmin", array()) != 0)) {
-            // line 23
-            echo "\t- ";
+            // line 22
+            echo "\t ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userPrenom", array()), "html", null, true);
             echo " est administrateur. <br/>
 ";
         }
-        // line 25
+        // line 24
         echo "
 ";
-        // line 26
+        // line 25
         if (($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userIsModerateur", array()) != 0)) {
-            // line 27
-            echo "\t- ";
+            // line 26
+            echo "\t ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userPrenom", array()), "html", null, true);
             echo " est mod&eacute;rateur. <br/> 
 ";
         }
-        // line 29
+        // line 28
         echo "
 ";
-        // line 30
+        // line 29
         if (($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userIsContributeur", array()) != 0)) {
-            // line 31
-            echo "\t- ";
+            // line 30
+            echo "\t ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userPrenom", array()), "html", null, true);
             echo " est contributeur. <br/>
 ";
         }
-        // line 33
+        // line 32
         echo "
 ";
-        // line 34
+        // line 33
         if (($this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userIsAdherent", array()) != 0)) {
-            // line 35
-            echo "\t- ";
+            // line 34
+            echo "\t ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "userPrenom", array()), "html", null, true);
             echo " est adh&eacute;rent. <br/>
 ";
         }
-        // line 37
+        // line 36
         echo "
 ";
     }
@@ -134,6 +133,6 @@ Informations compl&eacute;mentaires : <br/>
 
     public function getDebugInfo()
     {
-        return array (  121 => 37,  115 => 35,  113 => 34,  110 => 33,  104 => 31,  102 => 30,  99 => 29,  93 => 27,  91 => 26,  88 => 25,  82 => 23,  80 => 22,  72 => 17,  67 => 15,  63 => 14,  59 => 13,  55 => 12,  50 => 10,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  120 => 36,  114 => 34,  112 => 33,  109 => 32,  103 => 30,  101 => 29,  98 => 28,  92 => 26,  90 => 25,  87 => 24,  81 => 22,  79 => 21,  72 => 17,  67 => 15,  63 => 14,  59 => 13,  55 => 12,  50 => 10,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

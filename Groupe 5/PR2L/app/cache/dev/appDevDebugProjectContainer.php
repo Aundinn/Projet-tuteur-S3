@@ -46,6 +46,7 @@ class appDevDebugProjectContainer extends Container
                 'PR2LUserBundle' => 'PR2L\\UserBundle\\PR2LUserBundle',
                 'PR2LMenuBundle' => 'PR2L\\MenuBundle\\PR2LMenuBundle',
                 'PR2LArticleBundle' => 'PR2L\\ArticleBundle\\PR2LArticleBundle',
+                'PR2LsiteBundle' => 'PR2L\\siteBundle\\PR2LsiteBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3916,6 +3917,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\src\\PR2L\\UserBundle/Resources/views'), 'PR2LUser');
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\src\\PR2L\\MenuBundle/Resources/views'), 'PR2LMenu');
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\src\\PR2L\\ArticleBundle/Resources/views'), 'PR2LArticle');
+        $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\src\\PR2L\\siteBundle/Resources/views'), 'PR2Lsite');
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\DebugBundle/Resources/views'), 'Debug');
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath((dirname(dirname(dirname(__DIR__))).'\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views'), 'SensioDistribution');

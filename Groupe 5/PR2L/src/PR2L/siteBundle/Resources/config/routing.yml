@@ -1,0 +1,3 @@
+pr2_lsite_homepage:
+    path:     /site
+    defaults: { _controller: PR2LsiteBundle:Default:index }

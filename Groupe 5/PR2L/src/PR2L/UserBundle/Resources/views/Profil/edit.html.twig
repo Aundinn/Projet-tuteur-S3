@@ -1,0 +1,61 @@
+{% extends "::base.html.twig" %} 
+
+{% block title %}
+Modifier un utilisateur - {{ parent() }} 
+{% endblock %} 
+
+{% block body %}
+<h1>Modifier un utilisateur</h1>
+<hr>
+<div id='user'>
+	<form name='modifier_user' id='modifier_user' action='#' method='post'>
+		<fieldset>
+			<legend>Informations g&eacute;n&eacute;rale :</legend>
+				<label for='nom'>Nom : </label> 
+					<input type='text' value='test1' name='nom' required> <br/> 
+				<label for='prenom'>Pr&eacute;nom : </label>
+					<input type='text' value={{user.userPrenom}} name='prenom'  required> <br /> 
+				<label for='tel'>T&eacute;l&eacute;phone : </label>
+					<input type='text' value={{user.userTelephone}} name='tel' pattern='[0][0-9]{9}' required> <br/>
+				<label for='mail'>Mail :</label> 
+					<input type='mail' value={{user.userEmail}} name='mail' required /> <br />
+				<label for='fonction'> Fonction de l'utilisateur :</label> 
+				<select name='fonction' id='fonction'>
+{# 					{% for role in roles %}#}
+{#         				<option value={{ role.id }}>{{ role.libelle }}</option>#}
+{#     				{% endfor %}#}
+					<option>Secr&eacute;taire</option>
+					<option>Directeur</option>
+				</select> 	 
+		</fieldset>
+		<br/>
+		<fieldset>
+			<legend>Informations de connexion :</legend>
+				<label for='login'>Login :</label> 
+					<input type='text'  value={{user.userLogin}} name='login' required> <br/> 
+				<label for='mdp'>Mot de passe :</label> 
+					<input type='password' value={{user.userPwd}} name='mdp' required /> <br />
+		</fieldset> 
+		<br/>
+		<fieldset>
+			<legend> Type de compte :</legend>
+				<input type='checkbox' name='isAdherent' value='1'/>
+				<label for='isAdherent' title="L'utilisateur est adh&eacute;rent de l'association"> Adh&eacute;rent </label>
+				<br/>
+				
+				<input type='checkbox' name='isContributeur' value='1'/>
+				<label for='isContributeur' title="L'utilisateur pourra participer &agrave la r&eacute;daction d'article" > Contributeur </label>
+				<br/>
+				
+				<input type='checkbox' name='isModerateur' value='1'/>
+				<label for='isModerateur' title="L'utilisateur pourra mod&eacute;rer les articles avant leur parution sur le site" > Mod&eacute;rateur </label>
+				<br/>
+				
+				<input type='checkbox' name='isAdmin' value='1'/>
+				<label for='isAdmin' title="L'utilisateur sera administrateur et pourra donc avoir acc&egrave;s &agrave; des parties r&eacute;serv&eacute;es &agrave; la gestion des utilisateurs et du site" > Administrateur </label>
+				<br/>		
+		</fieldset>
+		<input type='submit' value='Valider'>
+	</form>
+</div>
+{% endblock %}

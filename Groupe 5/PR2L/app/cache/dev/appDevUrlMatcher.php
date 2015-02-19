@@ -127,6 +127,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // pr2_lsite_homepage
+        if ($pathinfo === '/site') {
+            return array (  '_controller' => 'PR2L\\siteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pr2_lsite_homepage',);
+        }
+
         // pr2_l_article_homepage
         if (0 === strpos($pathinfo, '/publication/hello') && preg_match('#^/publication/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'pr2_l_article_homepage')), array (  '_controller' => 'PR2L\\ArticleBundle\\Controller\\DefaultController::indexAction',));
