@@ -9,12 +9,13 @@ class GestionAdminController extends Controller
 {
     public function gestionAdminAction()
     {
-        $listRoles = array(
+        /*$listRoles = array(
             'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Administrateur',
-            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Utilisateur',
-            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Lecteur',
-            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Contributeur',         
-                     );
+            'a:1:{i:0;s:10:"ROLE_USER";}' => 'Utilisateur',
+            'a:1:{i:0;s:10:"ROLE_R";}' => 'Lecteur',
+            'a:1:{i:0;s:10:"ROLE_R/W";}' => 'Contributeur', 
+            'a:1:{i:0;s:10:"ROLE_VAL";}' => 'Validateur'
+                     );*/
         //Récupération de tous les utilisateurs pour l'affichage
         $repository = $this
                 ->getDoctrine()
@@ -26,8 +27,8 @@ class GestionAdminController extends Controller
         foreach($listAdverts as $advert){
             $advert->setRoles(implode($advert->getRoles()));
             /*$imp = implode($advert->getRoles());
-            echo explode('ROLE_',implode($advert->getRoles()))[1];
-            echo $imp;*/
+            var_dump(explode('ROLE_',implode($advert->getRoles()))[1]);
+            var_dump($imp);*/
         }
         
         //Création du formulaire
