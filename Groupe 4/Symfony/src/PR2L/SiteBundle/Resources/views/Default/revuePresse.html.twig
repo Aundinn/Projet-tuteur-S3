@@ -14,15 +14,52 @@
 {{ form_start(form) }}
     {{ form_errors(form) }}
 <table>
-        <tr><th>Ajout d'un nouveau document</th></tr>
-        <tr><td>
-    {{ form_row(form.template) }}
-    {{ form_row(form.theme) }}
-    {{ form_row(form.auteur) }}
-    {{ form_row(form.elements) }}
-        </td></tr>
+    <tr>
+        <th colspan="2">Ajout d'un nouveau document</th>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.template) }}
+            {{ form_errors(form.template) }}
+        </td>
+        <td>
+            {{ form_widget(form.template) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.theme) }}
+            {{ form_errors(form.theme) }}
+        </td>
+        <td>
+            {{ form_widget(form.theme) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.auteur) }}
+            {{ form_errors(form.auteur) }}
+        </td>
+        <td>
+            {{ form_widget(form.auteur) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.elements) }}
+            {{ form_errors(form.elements) }}
+        </td>
+        <td>
+            {{ form_widget(form.elements) }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align:center;">
+            {{ form_end(form) }}
+        </td>
+    </tr>
 </table>
-{{ form_end(form) }}
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -30,7 +67,7 @@
   $(document).ready(function() {
     var $container = $('div#pr2l_sitebundle_document_elements');
 
-    var $addLink = $('<a href="#" id="add_element" class="btn btn-default">Ajouter un élément</a>');
+    var $addLink = $('<a href="#" id="add_element" class="plus_moins">+</a>');
     $container.append($addLink);
 
     $addLink.click(function(e) {
@@ -53,7 +90,7 @@
       // Dans le contenu de l'attribut « data-prototype », on remplace :
       // - le texte "__name__label__" qu'il contient par le label du champ
       // - le texte "__name__" qu'il contient par le numéro du champ
-      var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, 'Element n°' + (index+1))
+      var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, '-----------------------------------------------')
           .replace(/__name__/g, index));
 
       addDeleteLink($prototype);
@@ -64,7 +101,7 @@
     }
 
     function addDeleteLink($prototype) {
-      $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+      $deleteLink = $('<a href="#" class="plus_moins">-</a>');
 
       $prototype.append($deleteLink);
 

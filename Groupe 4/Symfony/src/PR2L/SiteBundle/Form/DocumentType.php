@@ -15,15 +15,16 @@ class DocumentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('template')
-            ->add('theme')
-            ->add('auteur')
+            ->add('template', 'text', array('label'=>'Template à utiliser'))
+            ->add('theme', 'text', array('label'=>'Thème de l\'article'))
+            ->add('auteur', 'text', array('label'=>'Auteur'))
             ->add('elements', 'collection', array(
                 'type' => new ElementType(),
                 'allow_add' => true,
                 'allow_delete' => true,
+                'label' => 'Eléments de l\'article',
             ))
-            ->add('save', 'submit')
+            ->add('save', 'submit', array('label'=>'Valider', 'attr' => array('class' => 'plus_moins')))
             ->setMethod("POST")->setAction('#')
         ;
     }
