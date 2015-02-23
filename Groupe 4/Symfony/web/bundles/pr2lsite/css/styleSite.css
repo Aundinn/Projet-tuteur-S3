@@ -251,9 +251,7 @@ h4{
 }
 
 .bouton a {
-    /*position: absolute;
     margin-left: 70%;
-    margin-top: -8%;*/
     display:block;
     width:150px;
     line-height:50px;
