@@ -4,4 +4,26 @@
 
 {% block body %}
 
+{% for article in listeArticles %}
+{% for element in article.elements %}
+
+{% if element.type == "titre" %}
+<h1>{{element.contenu}}</h1>
+{% elseif element.type == "auteur" %}
+<h2>{{element.contenu}}</h2>
+{% elseif element.type == "date" %}
+<h6>{{element.contenu}}</h6>
+{% elseif element.type == "paragraphe" %}
+<p>{{element.contenu}}</p>
+{% elseif element.type == "image" %}
+<img src="{{element.contenu}}" alt="{{element.contenu}}" height="100" width="100"/>
+{% elseif element.type == "lien" %}
+<a>{{element.contenu}}</a>
+{% else %}
+<p>{{element.contenu}}</p>
+{% endif %}
+
+{% endfor %}
+{% endfor %}
+
 {% endblock %}

@@ -8,6 +8,14 @@ class FondateursController extends Controller
 {
     public function fondateursAction()
     {
-        return $this->render('PR2LSiteBundle:Default:fondateurs.html.twig');
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('PR2LSiteBundle:Document')
+        ;
+  
+  	     $listeArticles = $repository->myFindByTheme("fondateurs");
+        
+        return $this->render('PR2LSiteBundle:Default:fondateurs.html.twig', array('listeArticles'=>$listeArticles));
     }
 }

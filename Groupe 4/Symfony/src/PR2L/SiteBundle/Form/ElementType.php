@@ -15,8 +15,8 @@ class ElementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type')
-            ->add('contenu')
+            ->add('type', 'choice', array('choices'   => array('titre' => 'Titre', 'auteur' => 'Auteur', 'date' => 'Date', 'paragraphe' => 'Paragraphe', 'image' => 'Image', 'lien' => 'Lien'), 'label'=>'Type '))
+            ->add('contenu', 'textarea', array('label'=>'Contenu '))
         ;
     }
     

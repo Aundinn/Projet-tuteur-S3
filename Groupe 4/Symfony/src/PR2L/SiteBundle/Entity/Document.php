@@ -50,6 +50,11 @@ class Document
     */
     private $elements;
     
+    public function __toString()
+    {
+        return $this->elements;
+    }
+    
     /**
      * Get id
      *

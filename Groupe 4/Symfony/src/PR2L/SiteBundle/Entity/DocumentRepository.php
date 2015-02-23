@@ -12,12 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class DocumentRepository extends EntityRepository
 {
-    public function myFindByTheme($type)
+    public function myFindByTheme($theme)
     {
         $qb = $this->createQueryBuilder('a');
 
-  		$qb->where('a.type = :type')
-       		->setParameter('type', $type)
+  		$qb->where('a.theme = :theme')
+       		->setParameter('theme', $theme)
   		;
 
  		return $qb
