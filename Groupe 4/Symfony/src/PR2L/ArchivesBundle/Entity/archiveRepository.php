@@ -26,4 +26,36 @@ class archiveRepository extends EntityRepository
                 ->getQuery()
                 ->getResult();
     }
+    
+    public function myFindByAuteur($auteur){
+        $qb = $this->createQueryBuilder('a');
+        
+        $qb->where('a.producteurArchive = :auteur')
+           ->setParameter('auteur', $auteur);
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
+    
+    public function myFindArchive($auteur,$departement,$fond){
+        $qb = $this->createQueryBuilder('a');
+        
+        if($fond != null){
+            $qb ->where('a.nomDuFond = :fond')
+                ->setParameter('fond', $fond);
+        }
+        if($departement != null){
+            $qb ->where('a.departementDuFond = :departement')
+                ->setParameter('departement', $departement);
+        }
+        if($auteur != null){
+            $qb ->where('a.producteurArchive = :auteur')
+                ->setParameter('auteur', $auteur);
+        }
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
 }

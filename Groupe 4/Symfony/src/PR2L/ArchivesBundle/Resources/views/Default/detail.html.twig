@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - Ajouter{% endblock %}
+{% block title %}{{ parent() }} - Détail{% endblock %}
 
 {% block body %}
 
@@ -9,7 +9,7 @@
         <li><a href=" {{ path('pr2_l_archives_archives') }}">Consulter</a></li>
         <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche Avancée</a></li>
         <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
-        <li><a href="">Modifier une archive</a></li>
+        <li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li>
     </ul>
 </nav>
 

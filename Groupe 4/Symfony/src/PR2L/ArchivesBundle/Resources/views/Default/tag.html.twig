@@ -12,7 +12,8 @@
         <li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li>
     </ul>
 </nav>
-     {% for flashMessage in app.session.flashbag.get('phrase') %}
+
+    {% for flashMessage in app.session.flashbag.get('phrase') %}
         <div class="flashBag">
             <br>
             {{ flashMessage }}
@@ -20,7 +21,7 @@
     {% endfor %}
 
     <table>
-        <tr><th>Ajout d'une nouvelle archive</th></tr>
+        <tr><th>Ajout d'un mot clé</th></tr>
         <tr><td>
             <form method="post" action="#" {{ form_enctype(form) }}>
                 {{ form_widget(form) }}
@@ -28,6 +29,5 @@
             </form>
             </td></tr>
     </table>
-
 
 {% endblock %}

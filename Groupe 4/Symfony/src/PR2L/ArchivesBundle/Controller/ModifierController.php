@@ -5,9 +5,9 @@ namespace PR2L\ArchivesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PR2L\ArchivesBundle\Entity\archive;
 
-class ArchivesController extends Controller
+class ModifierController extends Controller
 {
-    public function archivesAction()
+    public function modifierAction()
     {
         //Récupération de tous les utilisateurs pour l'affichage
         $repository = $this
@@ -17,7 +17,7 @@ class ArchivesController extends Controller
   
         $listAdverts = $repository->myFindAll();
         
-         return $this->render('PR2LArchivesBundle:Default:archives.html.twig',array(
+        return $this->render('PR2LArchivesBundle:Default:modifier.html.twig',array(
 'listAdverts'=>$listAdverts)); 
     }
 }
