@@ -12,4 +12,12 @@ pr2_l_archives_rechercheAvancee:
     
 pr2_l_archives_detail:
     path:     /detail/{id}
-    defaults: { _controller: PR2LArchivesBundle:Detail:detail, id: 5 }
+    defaults: { _controller: PR2LArchivesBundle:Detail:detail, id: 1 }
+    
+pr2_l_archives_modifier:
+    path:     /modifier
+    defaults: { _controller: PR2LArchivesBundle:Modifier:modifier }
+    
+pr2_l_archives_tag:
+    path:     /tag/{id}
+    defaults: { _controller: PR2LArchivesBundle:Tag:tag, id: 1 }

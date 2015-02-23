@@ -31,9 +31,9 @@ class tags
     /**
      * @var string
      *
-     * @ORM\Column(name="motClé", type="string", length=255)
+     * @ORM\Column(name="motCle", type="string", length=255)
      */
-    private $motClé;
+    private $motCle;
 
 
     /**
@@ -70,25 +70,25 @@ class tags
     }
 
     /**
-     * Set motClé
+     * Set motCle
      *
-     * @param string $motClé
+     * @param string $motCle
      * @return tags
      */
-    public function setMotClé($motClé)
+    public function setMotCle($motCle)
     {
-        $this->motClé = $motClé;
+        $this->motCle = $motCle;
 
         return $this;
     }
 
     /**
-     * Get motClé
+     * Get motCle
      *
      * @return string 
      */
-    public function getMotClé()
+    public function getMotCle()
     {
-        return $this->motClé;
+        return $this->motCle;
     }
 }
