@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class tagsRepository extends EntityRepository
 {
+    public function myFindByMot($mot){
+        $qb = $this->createQueryBuilder('a');    
+
+        $qb->where('a.motCle = :motCle')
+           ->setParameter('motCle', $mot);
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
 }

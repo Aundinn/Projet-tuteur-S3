@@ -175,7 +175,8 @@ class archive
      */
     private $conditionPourYAcceder;
 
-
+    private $tag;
+    
     /**
      * Get id
      *
@@ -690,5 +691,17 @@ class archive
     public function getConditionPourYAcceder()
     {
         return $this->conditionPourYAcceder;
+    }
+    
+    public function setTag($tag)
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
+    public function getTag()
+    {
+        return $this->tag;
     }
 }

@@ -6,12 +6,27 @@
 
 <nav>
     <ul id="menuArchive">
-        <li><a href=" {{ path('pr2_l_archives_archives') }}">Consulter</a></li>
-        <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche Avancée</a></li>
+        <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche</a></li>
+        <li><a href=" {{ path('pr2_l_archives_archives') }}">Liste des archives</a></li>
         <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
         <li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li>
     </ul>
 </nav>
+
+    {% for advert in archive %}
+        <h4>Résumé de l'archive</h4>
+
+        <table>
+            <tr><th>Cote de l'archive</th><th>Titre Archive</th><th>Nom du fond d'archive</th><th>Resumé de l'archive</th><th>Classification de l'archive</th></tr>
+            <tr><td>{{ advert.getCote() }}</td>
+                <td>{{ advert.getTitreArchive() }}</td>
+                <td>{{ advert.getNomDuFond() }}</td>
+                <td>{{ advert.getResume() }}</td>
+                <td>{{ advert.getClassification() }}</td></tr>
+        </table>
+    {% endfor %}
+
+    <h4>Ajout de mot clé</h4>
 
     {% for flashMessage in app.session.flashbag.get('phrase') %}
         <div class="flashBag">
