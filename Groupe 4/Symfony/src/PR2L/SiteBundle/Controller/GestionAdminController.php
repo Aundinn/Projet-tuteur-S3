@@ -38,7 +38,7 @@ class GestionAdminController extends Controller
 
         $formBuilder
             ->add('username','text')
-            ->add('roles','text');
+            ->add('roles', 'choice', array('choices' => array('ROLE_ADMIN' => 'Administrateur', 'ROLE_VAL' =>'Validateur', 'ROLE_R/W' =>'Contributeur', 'ROLE_R' =>'Lecteur', 'ROLE_USER' =>'Utilisateur')));
         
         $form = $formBuilder->getForm();
 
@@ -49,15 +49,22 @@ class GestionAdminController extends Controller
             $form->bind($request);
 
             if ($form->isValid()) {
-                
-                $utilisateur2 = $repository->myFindByLogin($utilisateur->getUsername());
+                //on récupère l'utilisateur dont le login correspond à celui entré
+                //$utilisateur2 = $repository->myFindByLogin($utilisateur->getUsername());
+                //on récupère le rôle entré
                 $role = $utilisateur->getRoles();
+                //on modifie le role de l'utilisateur entré pour que le format soit bon
                 $utilisateur->setRoles(array($role));
-                $utilisateur2[0]->setRoles($utilisateur->getRoles());
-
+                
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($utilisateur2[0]);
-                $em->flush();
+                $query = $em->createQuery(
+                    'UPDATE PR2L\UserBundle\Entity\utilisateur u
+                    SET u.roles = :role
+                    WHERE u.username = :username'
+                )->setParameters(array('role'=>serialize($utilisateur->getRoles()),'username'=>$utilisateur->getUsername()));
+                
+                $result = $query->getSingleResult();
+                var_dump($result);
                 
                 $this->get('session')->getFlashBag()->add('phrase', "L'utilisateur a bien été modifié !");
 
@@ -69,3 +76,16 @@ class GestionAdminController extends Controller
 'listAdverts'=>$listAdverts, 'form' => $form->createView()));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

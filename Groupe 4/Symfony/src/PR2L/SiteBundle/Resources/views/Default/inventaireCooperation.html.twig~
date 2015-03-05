@@ -1,0 +1,6 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Inventaire Coopération{% endblock %}
+
+{% block body %}
+{% endblock %}
