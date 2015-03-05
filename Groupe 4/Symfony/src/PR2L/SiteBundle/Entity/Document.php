@@ -3,8 +3,6 @@
 namespace PR2L\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Document
@@ -22,7 +20,14 @@ class Document
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+    
     /**
      * @var string
      *
@@ -33,9 +38,9 @@ class Document
     /**
      * @var string
      *
-     * @ORM\Column(name="theme", type="string", length=255)
+     * @ORM\Column(name="titre", type="string", length=255)
      */
-    private $theme;
+    private $titre;
 
     /**
      * @var string
@@ -43,16 +48,44 @@ class Document
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $auteur;
-    
+
     /**
-    * @var Element $elements
-    * @ORM\ManyToMany(targetEntity="PR2L\SiteBundle\Entity\Element", cascade={"persist"})
-    */
-    private $elements;
-    
-    public function __toString()
-    {
-        return $this->elements;
+     * @var datetime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="text")
+     */
+    private $texte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageBanniere", type="string", length=255, nullable=true)
+     */
+    private $imageBanniere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageCoin", type="string", length=255, nullable=true)
+     */
+    private $imageCoin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagesCarousel", type="text", nullable=true)
+     */
+    private $imagesCarousel;
+
+    public function __construct() {
+        $this->auteur = "moi";
     }
     
     /**
@@ -64,7 +97,30 @@ class Document
     {
         return $this->id;
     }
-
+    
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Document
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+    
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+    
     /**
      * Set template
      *
@@ -77,7 +133,7 @@ class Document
     
         return $this;
     }
-
+    
     /**
      * Get template
      *
@@ -89,26 +145,26 @@ class Document
     }
 
     /**
-     * Set theme
+     * Set titre
      *
-     * @param string $theme
+     * @param string $titre
      * @return Document
      */
-    public function setTheme($theme)
+    public function setTitre($titre)
     {
-        $this->theme = $theme;
+        $this->titre = $titre;
     
         return $this;
     }
 
     /**
-     * Get theme
+     * Get titre
      *
      * @return string 
      */
-    public function getTheme()
+    public function getTitre()
     {
-        return $this->theme;
+        return $this->titre;
     }
 
     /**
@@ -133,32 +189,119 @@ class Document
     {
         return $this->auteur;
     }
-    
-    public function __construct()
-    {
-        $this->elements = new ArrayCollection();
-    }
-    
-    /**
-    * setElement
-    *
-    * @param Element $element
-    */
-    public function addElement(Element $element)
-    {
-        $this->elements[] = $element;
 
-    return $this;
-    }
-     
     /**
-    * getElements
-    *
-    * @return array $elements
-    */
-    public function getElements()
+     * Set date
+     *
+     * @param string $date
+     * @return Document
+     */
+    public function setDate($date)
     {
-        return $this->elements;
-    }
+        $this->date = $date;
     
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return string 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set texte
+     *
+     * @param string $texte
+     * @return Document
+     */
+    public function setTexte($texte)
+    {
+        $this->texte = $texte;
+    
+        return $this;
+    }
+
+    /**
+     * Get texte
+     *
+     * @return string 
+     */
+    public function getTexte()
+    {
+        return $this->texte;
+    }
+
+    /**
+     * Set imageBanniere
+     *
+     * @param string $imageBanniere
+     * @return Document
+     */
+    public function setImageBanniere($imageBanniere)
+    {
+        $this->imageBanniere = $imageBanniere;
+    
+        return $this;
+    }
+
+    /**
+     * Get imageBanniere
+     *
+     * @return string 
+     */
+    public function getImageBanniere()
+    {
+        return $this->imageBanniere;
+    }
+
+    /**
+     * Set imageCoin
+     *
+     * @param string $imageCoin
+     * @return Document
+     */
+    public function setImageCoin($imageCoin)
+    {
+        $this->imageCoin = $imageCoin;
+    
+        return $this;
+    }
+
+    /**
+     * Get imageCoin
+     *
+     * @return string 
+     */
+    public function getImageCoin()
+    {
+        return $this->imageCoin;
+    }
+
+    /**
+     * Set imagesCarousel
+     *
+     * @param string $imagesCarousel
+     * @return Document
+     */
+    public function setImagesCarousel($imagesCarousel)
+    {
+        $this->imagesCarousel = $imagesCarousel;
+    
+        return $this;
+    }
+
+    /**
+     * Get imagesCarousel
+     *
+     * @return string 
+     */
+    public function getImagesCarousel()
+    {
+        return $this->imagesCarousel;
+    }
 }

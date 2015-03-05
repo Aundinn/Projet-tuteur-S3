@@ -13,7 +13,7 @@ class DocumentType extends AbstractType
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    {/*
         $builder
             ->add('template', 'text', array('label'=>'Template à utiliser'))
             ->add('theme', 'text', array('label'=>'Thème de l\'article'))
@@ -24,6 +24,19 @@ class DocumentType extends AbstractType
                 'allow_delete' => true,
                 'label' => 'Eléments de l\'article',
             ))
+            ->add('save', 'submit', array('label'=>'Valider', 'attr' => array('class' => 'plus_moins')))
+            ->setMethod("POST")->setAction('#')
+        ;*/
+        
+        $builder
+            ->add('type', 'choice', array('label'=>'Type de l\'article', 'choices' => array('fondateurs' => 'Fondateurs', 'news' => 'News')))
+            ->add('template', 'choice', array('label'=>'Template à utiliser', 'choices' => array('banniereSeule' => 'Bannière seule', 'imageCoin' => 'Image en coin', 'banniereEtCarousel' => 'Bannière et carousel')))
+            ->add('titre', 'text', array('label'=>'Titre'))
+            ->add('date', 'datetime', array('label'=>'Date'))
+            ->add('texte', 'textarea', array('label'=>'Contenu'))
+            ->add('imageBanniere', 'text', array('label'=>'Image de bannière', 'required' => false))
+            ->add('imageCoin', 'text', array('label'=>'Image en coin', 'required' => false))
+            ->add('imagesCarousel', 'text', array('label'=>'Images de carousel', 'required' => false))
             ->add('save', 'submit', array('label'=>'Valider', 'attr' => array('class' => 'plus_moins')))
             ->setMethod("POST")->setAction('#')
         ;

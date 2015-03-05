@@ -19,6 +19,15 @@
     </tr>
     <tr>
         <td>
+            {{ form_label(form.type) }}
+            {{ form_errors(form.type) }}
+        </td>
+        <td>
+            {{ form_widget(form.type) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
             {{ form_label(form.template) }}
             {{ form_errors(form.template) }}
         </td>
@@ -26,33 +35,61 @@
             {{ form_widget(form.template) }}
         </td>
     </tr>
-    <tr>
+     <tr>
         <td>
-            {{ form_label(form.theme) }}
-            {{ form_errors(form.theme) }}
+            {{ form_label(form.titre) }}
+            {{ form_errors(form.titre) }}
         </td>
         <td>
-            {{ form_widget(form.theme) }}
-        </td>
-    </tr>
-    <tr>
-        <td>
-            {{ form_label(form.auteur) }}
-            {{ form_errors(form.auteur) }}
-        </td>
-        <td>
-            {{ form_widget(form.auteur) }}
+            {{ form_widget(form.titre) }}
         </td>
     </tr>
     <tr>
         <td>
-            {{ form_label(form.elements) }}
-            {{ form_errors(form.elements) }}
+            {{ form_label(form.date) }}
+            {{ form_errors(form.date) }}
         </td>
         <td>
-            {{ form_widget(form.elements) }}
+            {{ form_widget(form.date) }}
         </td>
     </tr>
+    <tr>
+        <td>
+            {{ form_label(form.texte) }}
+            {{ form_errors(form.texte) }}
+        </td>
+        <td>
+            {{ form_widget(form.texte) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.imageBanniere) }}
+            {{ form_errors(form.imageBanniere) }}
+        </td>
+        <td>
+            {{ form_widget(form.imageBanniere) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.imageCoin) }}
+            {{ form_errors(form.imageCoin) }}
+        </td>
+        <td>
+            {{ form_widget(form.imageCoin) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_label(form.imagesCarousel) }}
+            {{ form_errors(form.imagesCarousel) }}
+        </td>
+        <td>
+            {{ form_widget(form.imagesCarousel) }}
+        </td>
+    </tr>
+    
     <tr>
         <td colspan="2" style="text-align:center;">
             {{ form_end(form) }}
@@ -61,7 +98,7 @@
 </table>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -112,6 +149,6 @@
       });
     }
   });
-</script>
+</script>-->
 
 {% endblock %}
