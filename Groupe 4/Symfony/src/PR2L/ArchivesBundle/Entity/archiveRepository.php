@@ -27,35 +27,33 @@ class archiveRepository extends EntityRepository
                 ->getResult();
     }
     
-    public function myFindByAuteur($auteur){
-        $qb = $this->createQueryBuilder('a');
-        
-        $qb->where('a.producteurArchive = :auteur')
-           ->setParameter('auteur', $auteur);
-        
-        return $qb
-                ->getQuery()
-                ->getResult();
-    }
-    
     public function myFindArchive($auteur,$departement,$fond){
-        $qb = $this->createQueryBuilder('a');
-        
-        if($fond != null){
-            $qb ->where('a.nomDuFond = :fond')
-                ->setParameter('fond', $fond);
-        }
-        if($departement != null){
-            $qb ->where('a.departementDuFond = :departement')
-                ->setParameter('departement', $departement);
-        }
-        if($auteur != null){
-            $qb ->where('a.producteurArchive = :auteur')
-                ->setParameter('auteur', $auteur);
-        }
-        
-        return $qb
+        $qb = $this->createQueryBuilder('a');    
+
+        $result = $qb
                 ->getQuery()
                 ->getResult();
+        
+        $cpt = 0;
+        foreach ($result as $valeur){
+            if($fond != null){
+                if($valeur->getNomDuFond() != $fond){
+                       unset($result[$cpt]);
+                }
+            }
+            if($departement != null){
+                if($valeur->getDepartementDuFond() != $departement){
+                       unset($result[$cpt]);
+                }
+            }
+            if($auteur != null){
+                if($valeur->getProducteurArchive() != $auteur){
+                       unset($result[$cpt]);
+                }
+            }
+            $cpt++;
+        }
+        
+        return $result;
     }
 }

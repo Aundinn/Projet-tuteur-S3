@@ -15,6 +15,11 @@ class RechercheAvanceeController extends Controller
                 ->getManager()
                 ->getRepository('PR2LArchivesBundle:archive');
         
+        $repositoryTag = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('PR2LArchivesBundle:tags');
+        
         $recherche = new archive();
         
         $formBuilder1 = $this->get('form.factory')->createBuilder('form', $recherche)->setMethod("POST")->setAction('#');
@@ -22,7 +27,8 @@ class RechercheAvanceeController extends Controller
         $formBuilder1
             ->add('producteurArchive','text',array('required' => false))
             ->add('nomDuFond','text',array('required' => false))
-            ->add('departementDuFond','text', array('required' => false));
+            ->add('departementDuFond','text', array('required' => false))
+            ->add('tag','text', array('required' => false));
         ;
         $form1 = $formBuilder1->getForm();
         
@@ -35,6 +41,24 @@ class RechercheAvanceeController extends Controller
             if ($form1->isSubmitted()) {
             
                 $listAdverts = $repository->myFindArchive($recherche->getProducteurArchive(),$recherche->getDepartementDuFond(),$recherche->getNomDuFond());
+                
+                if($recherche->getTag() != null){
+                    $listTags = $repositoryTag->myFindByMot($recherche->getTag());
+                
+                    $cpt = 0;
+                    foreach($listAdverts as $ar){
+                        $present = false;
+                        foreach($listTags as $tag){
+                            if($ar->getId() == $tag->getIdentifiantArchive()){
+                                $present = true;   
+                            }
+                        }
+                        if($present == false){
+                            unset($listAdverts[$cpt]);
+                        }
+                        $cpt++;
+                    }
+                }
                 
                 $this->get('session')->getFlashBag()->add('resultat', $listAdverts);
 
