@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class IntranetController extends Controller
 {
-    public function intranetAction()
+    public function inventaireCooperationAction()
     {
-        return $this->render('PR2LSiteBundle:Default:intranet.html.twig');
+        return $this->render('PR2LSiteBundle:Default:inventaireCooperation.html.twig');
     }
 }

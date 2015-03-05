@@ -70,10 +70,6 @@ pr2_l_site_chantiers:
     path:     /chantiers
     defaults: { _controller: PR2LSiteBundle:Chantiers:chantiers }  
     
-pr2_l_site_inventaireCooperation:
-    path:     /inventaireCooperation
-    defaults: { _controller: PR2LSiteBundle:InventaireCooperation:inventaireCooperation } 
-    
 pr2_l_site_recensementMutualite:
     path:     /recensementMutualite
     defaults: { _controller: PR2LSiteBundle:RecensementMutualite:recensementMutualite }  
