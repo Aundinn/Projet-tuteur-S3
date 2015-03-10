@@ -1,0 +1,98 @@
+/* Bannière et carousel */
+
+.div_banniere_carousel .redim_img_banniere{
+    height: 80px;
+    overflow : hidden;
+}
+
+.div_banniere_carousel .redim_img_banniere:hover{
+    height: 100%;
+    overflow : hidden;
+}
+
+.div_banniere_carousel .redim_img_banniere_img {
+    width: 100%;
+}
+
+.div_banniere_carousel .images-box ul li{ 
+    position:relative;
+    float:left; 
+    width:100px;
+    height:100px;
+    padding:10px;
+    list-style:none; 
+}
+
+.div_banniere_carousel .images-box ul li:nth-child(4n){
+    clear:left;
+} 
+
+.div_banniere_carousel .images-box ul li a{ 
+    display:block;
+    overflow:hidden; 
+    width:100px;
+    height:100px; 
+    margin-top:0px;margin-left:0px; 
+    border:0px solid rgba(0,0,0,0.7); 
+    transition-property:width,height,margin,z-index,border; 
+    transition-duration:0.4s; 
+} 
+
+.div_banniere_carousel .images-box ul li a:hover{ 
+    position:absolute;
+    width:400px;
+    height:400px; 
+    margin-top:-150px;
+    margin-left:-150px; 
+    z-index:100; 
+    border:6px solid rgba(0,0,0,0.7); 
+} 
+
+.div_banniere_carousel .images-box ul li a img{ 
+    position:absolute; 
+    width:100px;
+    height:100px;
+    z-index:20; 
+    transition-property:width,height,z-index; 
+    transition-duration:0.4s; 
+} 
+
+.div_banniere_carousel .images-box ul li a:hover img{ 
+    width:400px;
+    height:400px; 
+    z-index:100; 
+}
+
+
+/* Image en coin */
+.coin img {
+    max-width: 40%;
+    margin-right: 10px;
+    float: left;
+}
+
+/* Colonne */
+.col{	
+-moz-column-count:2;
+-webkit-column-count:2;
+-o-column-count:2;
+column-count:2;
+-moz-column-gap:30px;
+-webkit-column-gap:30px;
+-o-column-gap:30px;
+column-gap:30px;
+-webkit-column-rule-width:3px;
+-webkit-column-rule-color:#cbcefb;
+-webkit-column-rule-style:dotted;
+-moz-column-rule-width:3px;
+-moz-column-rule-color:#cbcefb;
+-moz-column-rule-style:dotted;
+-o-column-rule-width:3px;
+-o-column-rule-color:#cbcefb;
+-o-column-rule-style:dotted;
+column-rule-width:3px;
+column-rule-color:#cbcefb;
+column-rule-style:dotted;
+	border: 2 solid red;
+	margin-top: 20px;
+}

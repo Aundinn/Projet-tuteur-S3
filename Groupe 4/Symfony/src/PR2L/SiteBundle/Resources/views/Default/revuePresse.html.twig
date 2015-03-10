@@ -19,40 +19,77 @@
     </tr>
     <tr>
         <td>
+            {{ form_label(form.type) }}
+            {{ form_errors(form.type) }}
+        </td>
+        <td>
+            {{ form_widget(form.type) }}
+        </td>
+    </tr>
+    <tr onchange="showImages()">
+        <td>
             {{ form_label(form.template) }}
             {{ form_errors(form.template) }}
         </td>
         <td>
-            {{ form_widget(form.template) }}
+            {{ form_widget(form.template, {'id': 'template'}) }}
+        </td>
+    </tr>
+     <tr>
+        <td>
+            {{ form_label(form.titre) }}
+            {{ form_errors(form.titre) }}
+        </td>
+        <td>
+            {{ form_widget(form.titre) }}
         </td>
     </tr>
     <tr>
         <td>
-            {{ form_label(form.theme) }}
-            {{ form_errors(form.theme) }}
+            {{ form_label(form.date) }}
+            {{ form_errors(form.date) }}
         </td>
         <td>
-            {{ form_widget(form.theme) }}
+            {{ form_widget(form.date) }}
         </td>
     </tr>
     <tr>
         <td>
-            {{ form_label(form.auteur) }}
-            {{ form_errors(form.auteur) }}
+            {{ form_label(form.texte) }}
+            {{ form_errors(form.texte) }}
         </td>
         <td>
-            {{ form_widget(form.auteur) }}
+            {{ form_widget(form.texte) }}
         </td>
     </tr>
-    <tr>
+    <tr id="imageBanniere">
         <td>
-            {{ form_label(form.elements) }}
-            {{ form_errors(form.elements) }}
+            {{ form_label(form.imageBanniere) }}
+            {{ form_errors(form.imageBanniere) }}
         </td>
         <td>
-            {{ form_widget(form.elements) }}
+            {{ form_widget(form.imageBanniere, {'id': 'banniere'}) }}
         </td>
     </tr>
+    <tr id="imageCoin">
+        <td>
+            {{ form_label(form.imageCoin) }}
+            {{ form_errors(form.imageCoin) }}
+        </td>
+        <td>
+            {{ form_widget(form.imageCoin, {'id': 'coin'}) }}
+        </td>
+    </tr>
+    <tr id="imagesCarousel">
+        <td>
+            {{ form_label(form.imagesCarousel) }}
+            {{ form_errors(form.imagesCarousel) }}
+        </td>
+        <td>
+            {{ form_widget(form.imagesCarousel, {'id': 'carousel'}) }}
+        </td>
+    </tr>
+    
     <tr>
         <td colspan="2" style="text-align:center;">
             {{ form_end(form) }}
@@ -60,58 +97,43 @@
     </tr>
 </table>
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    var $container = $('div#pr2l_sitebundle_document_elements');
-
-    var $addLink = $('<a href="#" id="add_element" class="plus_moins">+</a>');
-    $container.append($addLink);
-
-    $addLink.click(function(e) {
-      addCategory($container);
-      e.preventDefault();
-      return false;
-    });
-
-    var index = $container.find(':input').length;
-
-    if (index == 0) {
-      addCategory($container);
-    } else {
-      $container.children('div').each(function() {
-        addDeleteLink($(this));
-      });
+<script>
+    window.onload = showImages();
+    
+    function showImages(){
+        var opt = document.getElementById("template");
+        var valueOpt = opt.options[opt.selectedIndex].value;
+        ic = document.getElementById("imageCoin");
+        isc = document.getElementById("imagesCarousel");
+        ib = document.getElementById("imageBanniere");
+        c = document.getElementById("coin");
+        sc = document.getElementById("carousel");
+        b = document.getElementById("banniere");
+        if (valueOpt == "banniereSeule") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = 'none';
+            isc.style.display = 'none';
+            ib.style.display = '';
+        }
+        if (valueOpt == "imageCoin") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = '';
+            isc.style.display = 'none';
+            ib.style.display = 'none';
+        }
+        if (valueOpt == "banniereEtCarousel") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = '';
+            isc.style.display = 'none';
+            ib.style.display = '';
+        }
     }
-
-    function addCategory($container) {
-      // Dans le contenu de l'attribut « data-prototype », on remplace :
-      // - le texte "__name__label__" qu'il contient par le label du champ
-      // - le texte "__name__" qu'il contient par le numéro du champ
-      var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, '-----------------------------------------------')
-          .replace(/__name__/g, index));
-
-      addDeleteLink($prototype);
-
-      $container.append($prototype);
-
-      index++;
-    }
-
-    function addDeleteLink($prototype) {
-      $deleteLink = $('<a href="#" class="plus_moins">-</a>');
-
-      $prototype.append($deleteLink);
-
-      $deleteLink.click(function(e) {
-        $prototype.remove();
-        e.preventDefault();
-        return false;
-      });
-    }
-  });
 </script>
 
 {% endblock %}

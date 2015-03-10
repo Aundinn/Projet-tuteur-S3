@@ -14,7 +14,7 @@ class FondateursController extends Controller
         ->getRepository('PR2LSiteBundle:Document')
         ;
   
-  	     $listeArticles = $repository->myFindByTheme("fondateurs");
+  	     $listeArticles = $repository->myFindByType("fondateurs");
         
         return $this->render('PR2LSiteBundle:Default:fondateurs.html.twig', array('listeArticles'=>$listeArticles));
     }
