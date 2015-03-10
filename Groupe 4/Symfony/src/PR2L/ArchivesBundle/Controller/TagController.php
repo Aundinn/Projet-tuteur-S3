@@ -23,6 +23,8 @@ class TagController extends Controller
         
         $archive = $repository2->myFindById($id);
         
+        $liste = $repository->myFindByArchive($id);
+        
         $formBuilder = $this->get('form.factory')->createBuilder('form', $tag)->setMethod("POST")->setAction('#');
         
         $formBuilder
@@ -51,6 +53,6 @@ class TagController extends Controller
             return $this->redirect($this->generateUrl('pr2_l_archives_tag',array('id' => $tag->getId())));
             }
         }
-        return $this->render('PR2LArchivesBundle:Default:tag.html.twig', array('form' => $form->createView(), 'archive' => $archive));
+        return $this->render('PR2LArchivesBundle:Default:tag.html.twig', array('form' => $form->createView(), 'archive' => $archive, 'mots' => $liste));
     }
 }

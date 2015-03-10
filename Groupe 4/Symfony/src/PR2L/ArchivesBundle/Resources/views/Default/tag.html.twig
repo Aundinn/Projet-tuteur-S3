@@ -8,8 +8,10 @@
     <ul id="menuArchive">
         <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche</a></li>
         <li><a href=" {{ path('pr2_l_archives_archives') }}">Liste des archives</a></li>
+        {% if is_granted('ROLE_R/W') %}
         <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
         <li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li>
+        {% endif %}
     </ul>
 </nav>
 
@@ -25,6 +27,16 @@
                 <td>{{ advert.getClassification() }}</td></tr>
         </table>
     {% endfor %}
+    
+    {% if mots != null %}
+        <h4>Résumé des mots clé</h4>
+    
+        <table>
+            {% for mot in mots %}
+                <tr><td>{{ mot.getMotCle() }}</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
 
     <h4>Ajout de mot clé</h4>
 

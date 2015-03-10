@@ -19,7 +19,7 @@ class CreationController extends Controller
             ->add('username','text')
             ->add('password','password')
             ->add('email','email')
-            ->add('roles','text');
+            ->add('roles', 'choice', array('choices' => array('ROLE_ADMIN' => 'Administrateur', 'ROLE_VAL' =>'Validateur', 'ROLE_R/W' =>'Contributeur', 'ROLE_R' =>'Lecteur', 'ROLE_USER' =>'Utilisateur')));
 
         $form = $formBuilder->getForm();
 

@@ -22,4 +22,15 @@ class tagsRepository extends EntityRepository
                 ->getQuery()
                 ->getResult();
     }
+    
+    public function myFindByArchive($id){
+        $qb = $this->createQueryBuilder('a');
+        
+        $qb->where('a.identifiantArchive = :identifiant')
+           ->setParameter('identifiant', $id);
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
 }
