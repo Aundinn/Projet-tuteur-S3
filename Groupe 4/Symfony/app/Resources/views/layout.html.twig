@@ -42,6 +42,16 @@
 <hr/>
   </nav>
 
+{% if is_granted('ROLE_ADMIN') %}
+<div><nav>
+<ul id="menu-deroulant">
+    <li><a href="{{ path('pr2_l_site_creation') }}">Création d'utilisateur</a></li>
+    <li><a href="{{ path('pr2_l_site_gestionAdmin') }}">Gestion administrateur</a></li> 
+    <li><a href="{{ path('pr2_l_site_modification') }}">Modification d'informations</a></li> 
+</ul>
+</nav></div>
+{% endif %}
+
 {% if is_granted('ROLE_USER') %}
 <div class="bouton">
   <p>
