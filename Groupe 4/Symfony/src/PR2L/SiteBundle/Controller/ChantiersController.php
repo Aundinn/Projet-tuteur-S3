@@ -4,7 +4,7 @@ namespace PR2L\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ChantierController extends Controller
+class ChantiersController extends Controller
 {
     public function chantiersAction()
     {

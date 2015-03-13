@@ -1,6 +1,32 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - Modification d'informations{% endblock %}
+{% block title %}{{ parent() }} - Modification de mot de passe{% endblock %}
 
 {% block body %}
+
+    <table>
+        <tr><th>Nom</th><th>Prénom</th><th>Identifiant</th></tr>
+        {% for advert in listAdverts %}
+        <tr>
+            <td>{{ advert.getNom() }}</td>
+            <td>{{ advert.getPrenom() }}</td>
+            <td>{{ advert.getUsername() }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="formulaire">
+        <form method="post" action="#" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+            <input type="submit" value="Valider" id="boutonform">
+        </form>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('phrase') %}
+        <div>
+            <br>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
 {% endblock %}

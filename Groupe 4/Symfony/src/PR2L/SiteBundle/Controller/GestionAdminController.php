@@ -9,13 +9,6 @@ class GestionAdminController extends Controller
 {
     public function gestionAdminAction()
     {
-        /*$listRoles = array(
-            'a:1:{i:0;s:10:"ROLE_ADMIN";}' => 'Administrateur',
-            'a:1:{i:0;s:10:"ROLE_USER";}' => 'Utilisateur',
-            'a:1:{i:0;s:10:"ROLE_R";}' => 'Lecteur',
-            'a:1:{i:0;s:10:"ROLE_R/W";}' => 'Contributeur', 
-            'a:1:{i:0;s:10:"ROLE_VAL";}' => 'Validateur'
-                     );*/
         //Récupération de tous les utilisateurs pour l'affichage
         $repository = $this
                 ->getDoctrine()
@@ -64,7 +57,6 @@ class GestionAdminController extends Controller
                 )->setParameters(array('role'=>serialize($utilisateur->getRoles()),'username'=>$utilisateur->getUsername()));
                 
                 $result = $query->getSingleResult();
-                var_dump($result);
                 
                 $this->get('session')->getFlashBag()->add('phrase', "L'utilisateur a bien été modifié !");
 

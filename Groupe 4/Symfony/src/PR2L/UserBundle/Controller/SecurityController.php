@@ -1,5 +1,4 @@
 <?php
-// src/OC/UserBundle/Controller/SecurityController.php;
 
 namespace PR2L\UserBundle\Controller;
 

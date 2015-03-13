@@ -33,6 +33,9 @@ class CreationController extends Controller
 
                 $em = $this->getDoctrine()->getManager();
                 $utilisateur->setSalt('');
+                $pass = $utilisateur->getPassword();
+                $pass = hash('sha512',$pass);
+                $utilisateur->setPassword($pass);
                 $role = $utilisateur->getRoles();
                 $utilisateur->setRoles(array($role));
                 $em->persist($utilisateur);
