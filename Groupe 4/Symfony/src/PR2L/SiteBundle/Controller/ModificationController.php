@@ -39,6 +39,8 @@ class ModificationController extends Controller
                 //$utilisateur2 = $repository->myFindByLogin($utilisateur->getUsername());
                 //on récupère le mot de passe entré
                 $pass = $utilisateur->getPassword();
+                $pass = hash('sha512',$pass);
+                $utilisateur->setPassword($pass);
                 
                 $em = $this->getDoctrine()->getManager();
                 $query = $em->createQuery(
