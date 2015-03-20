@@ -30,13 +30,16 @@ class DocumentType extends AbstractType
         
         $builder
             ->add('type', 'choice', array('label'=>'Type de l\'article', 'choices' => array('fondateurs' => 'Fondateurs', 'news' => 'News')))
-            ->add('template', 'choice', array('label'=>'Template à utiliser', 'choices' => array('banniereSeule' => 'Bannière seule', 'imageCoin' => 'Image en coin', 'banniereEtCarousel' => 'Bannière et carousel')))
+            ->add('template', 'choice', array('label'=>'Template à utiliser', 'choices' => array('banniereSeule' => 'Bannière seule', 'imageCoin' => 'Image en coin', 'banniereEtCarousel' => 'Bannière et carrousel')))
             ->add('titre', 'text', array('label'=>'Titre'))
-            ->add('date', 'datetime', array('label'=>'Date'))
+            ->add('auteur', 'text', array('label'=>'Auteur'))
             ->add('texte', 'textarea', array('label'=>'Contenu'))
-            ->add('imageBanniere', 'text', array('label'=>'Image de bannière', 'required' => false))
-            ->add('imageCoin', 'text', array('label'=>'Image en coin', 'required' => false))
-            ->add('imagesCarousel', 'text', array('label'=>'Images de carousel', 'required' => false))
+            ->add('images', 'collection', array(
+                'type' => new ImageType(),
+                'allow_add' => true,
+                'allow_delete' => true,
+                'label' => 'Image(s)',
+            ))
             ->add('save', 'submit', array('label'=>'Valider', 'attr' => array('class' => 'plus_moins')))
             ->setMethod("POST")->setAction('#')
         ;
