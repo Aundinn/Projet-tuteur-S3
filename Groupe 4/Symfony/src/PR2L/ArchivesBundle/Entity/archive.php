@@ -55,6 +55,13 @@ class archive
      * @ORM\Column(name="historiqueDuFond", type="string", length=2048)
      */
     private $historiqueDuFond;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="siteDuFond", type="string", length=2048)
+     */
+    private $siteDuFond;
 
     /**
      * @var string
@@ -174,6 +181,13 @@ class archive
      * @ORM\Column(name="ConditionPourYAcceder", type="string", length=2048)
      */
     private $conditionPourYAcceder;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valide", type="integer", length=2)
+     */
+    private $valide;
 
     private $tag;
     
@@ -301,6 +315,30 @@ class archive
     {
         return $this->historiqueDuFond;
     }
+    
+     /**
+     * Set historiqueDuFond
+     *
+     * @param string $historiqueDuFond
+     * @return archive
+     */
+    public function setSiteDuFond($siteDuFond)
+    {
+        $this->siteDuFond = $siteDuFond;
+
+        return $this;
+    }
+
+    /**
+     * Get historiqueDuFond
+     *
+     * @return string 
+     */
+    public function getSiteDuFond()
+    {
+        return $this->siteDuFond;
+    }
+
 
     /**
      * Set titreArchive
@@ -703,5 +741,28 @@ class archive
     public function getTag()
     {
         return $this->tag;
+    }
+    
+    /**
+     * Set valide
+     *
+     * @param integer $valide
+     * @return valide
+     */
+    public function setValide($valide)
+    {
+        $this->valide = $valide;
+
+        return $this;
+    }
+
+    /**
+     * Get valide
+     *
+     * @return integer
+     */
+    public function getValide()
+    {
+        return $this->valide;
     }
 }

@@ -21,3 +21,15 @@ pr2_l_archives_modifier:
 pr2_l_archives_tag:
     path:     /tag/{id}
     defaults: { _controller: PR2LArchivesBundle:Tag:tag, id: 1 }
+    
+pr2_l_archives_validation:
+    path:     /validation
+    defaults: { _controller: PR2LArchivesBundle:Validation:validation }
+    
+pr2_l_archives_valider:
+    path:     /valider/{id}
+    defaults: { _controller: PR2LArchivesBundle:Valider:valider, id: 1 }
+    
+pr2_l_archives_confirmation:
+    path:     /confirmation/{id}
+    defaults: { _controller: PR2LArchivesBundle:Valider:confirmation, id: 1 }

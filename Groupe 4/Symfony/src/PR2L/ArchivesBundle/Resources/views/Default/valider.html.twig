@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - Détail{% endblock %}
+{% block title %}{{ parent() }} - Validation{% endblock %}
 
 {% block body %}
 
@@ -13,6 +13,10 @@
         <li><a href=" {{ path('pr2_l_archives_validation') }}">Validation d'une archive</a></li>
     </ul>
 </nav>
+
+<form action="{{ path('pr2_l_archives_confirmation', {'id': id}) }}" method="post">
+    <input id="validerArchive" type="submit" value="Valider">
+</form>
 
 <table>
     <tr><th></th><th>Fond d'archive</th></tr>
@@ -42,6 +46,6 @@
     <tr><th>Condition d'accès</th><td>{{ listAdverts.getConditionPourYAcceder() }}</td></tr>
 </table>
 
-<a href="{{ path('pr2_l_archives_rechercheAvancee') }}">Retour à la recherche avancée</a>
+<a href="{{ path('pr2_l_archives_validation') }}">Retour à la recherche avancée</a>
 
 {% endblock %}
