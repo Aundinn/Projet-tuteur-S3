@@ -7,9 +7,9 @@
     <ul id="menuArchive">
         <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche</a></li>
         <li><a href=" {{ path('pr2_l_archives_archives') }}">Liste des archives</a></li>
-        <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li>
-        <li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li>
-        <li><a href=" {{ path('pr2_l_archives_validation') }}">Validation d'une archive</a></li>
+        {% if is_granted('ROLE_R/W') %} <li><a href=" {{ path('pr2_l_archives_ajouter') }}">Ajouter une archive</a></li> {% endif %}
+        {% if is_granted('ROLE_R/W') %}<li><a href=" {{ path('pr2_l_archives_modifier') }}">Modifier une archive</a></li> {% endif %}
+        {% if is_granted('ROLE_VAL') %}<li><a href=" {{ path('pr2_l_archives_validation') }}">Validation d'une archive</a></li> {% endif %}
     </ul>
 </nav>
 
