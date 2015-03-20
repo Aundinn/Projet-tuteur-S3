@@ -1,44 +1,60 @@
+/* Style docs */
+.styleDoc p{
+    font-size: 10px;
+    line-height: 25px;
+}
+
+.styleDoc h2{
+    color: #544343;
+}
+
+.styleDoc h6{
+    color: #887f7f;
+    line-height: 0px;
+}
+
+.styleDoc > div{
+    margin: auto;
+    width: 700px;
+    border: 3px #603d40 double;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+    background-color: #ffffff;
+
+    -moz-box-shadow: inset 0px 0px 5px 2px #ddcfcf;
+    -webkit-box-shadow: inset 0px 0px 5px 2px #ddcfcf;
+    box-shadow: inset 0px 0px 5px 2px #ddcfcf;
+
+}
+
 /* Bannière et carousel */
-
-.div_banniere_carousel .redim_img_banniere{
-    height: 80px;
-    overflow : hidden;
-}
-
-.div_banniere_carousel .redim_img_banniere:hover{
-    height: 100%;
-    overflow : hidden;
-}
-
-.div_banniere_carousel .redim_img_banniere_img {
-    width: 100%;
-}
-
-.div_banniere_carousel .images-box ul li{ 
+.images-box ul li{ 
     position:relative;
     float:left; 
     width:100px;
     height:100px;
     padding:10px;
     list-style:none; 
-}
-
-.div_banniere_carousel .images-box ul li:nth-child(4n){
+} 
+/*permet de créer deux lignes*/ 
+.images-box ul li:nth-child(4n){
     clear:left;
 } 
 
-.div_banniere_carousel .images-box ul li a{ 
+.images-box ul li a{ 
     display:block;
     overflow:hidden; 
     width:100px;
     height:100px; 
-    margin-top:0px;margin-left:0px; 
+    margin-top:0px;
+    margin-left:0px; 
     border:0px solid rgba(0,0,0,0.7); 
     transition-property:width,height,margin,z-index,border; 
     transition-duration:0.4s; 
 } 
 
-.div_banniere_carousel .images-box ul li a:hover{ 
+.images-box ul li a:hover{ 
     position:absolute;
     width:400px;
     height:400px; 
@@ -48,7 +64,7 @@
     border:6px solid rgba(0,0,0,0.7); 
 } 
 
-.div_banniere_carousel .images-box ul li a img{ 
+.images-box ul li a img{ 
     position:absolute; 
     width:100px;
     height:100px;
@@ -57,7 +73,7 @@
     transition-duration:0.4s; 
 } 
 
-.div_banniere_carousel .images-box ul li a:hover img{ 
+.images-box ul li a:hover img{ 
     width:400px;
     height:400px; 
     z-index:100; 
@@ -95,4 +111,22 @@
     column-rule-style:dotted;
 	border: 2 solid red;
 	margin-top: 20px;
+}
+
+/* Bannière */
+.redim_img_banniere{
+    height: 80px;
+    overflow : hidden;
+    transition-property:height; 
+    transition-duration:0.4s; 
+}
+
+.redim_img_banniere:hover{
+    height: 600px;
+    overflow : hidden;
+}
+
+.redim_img_banniere_img {
+    width: 700px;
+    height: 600px;
 }

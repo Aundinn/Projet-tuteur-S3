@@ -5,38 +5,50 @@
 {% block body %}
 
 {% for article in listeArticles %}
+<div class="styleDoc">
 <div class="{{ article.template }}">
-    {% if article.template == "banniereEtCarousel" %}
-    <div class="redim_img_banniere"> 
-        <a href="{{ article.imageBanniere }}" title="Image">
-            <img class="redim_img_banniere_img" src="{{ article.imageBanniere }}" alt="{{ article.imageBanniere }}" />
-        </a>   
+    {% for image in article.images %}
+    {% if image.rendu == "imgBanniere" %}
+    <div class="redim_img_banniere">
+        <a title="{{image.name}}">
+        <img class="redim_img_banniere_img" id="imhaut" name="imhaut" src="{{ asset('bundles/pr2lsite/images/images_articles/') }}{{image.path}}" alt="{{image.name}}"/>
+        </a> 
     </div>
     {% endif %}
-    {% if article.template == "imageCoin" %}
-    <div id="image"> 
-        <a href="{{ article.imageCoin }}" title="Image">
-            <img src="{{ article.imageCoin }}" alt="{{ article.imageCoin }}" />
+    {% endfor %}
+    
+    {% for image in article.images %}
+    {% if image.rendu == "imgCoin" %}
+    <div class="coin"> 
+        <a title="{{image.name}}">
+           <img src="{{ asset('bundles/pr2lsite/images/images_articles/') }}{{image.path}}" alt="{{image.name}}"/>
         </a>
     </div>
     {% endif %}
-    <h1>{{article.titre}}</h1>
-    <p>{{article.auteur}}</p>
-    <p>{{article.date|date('d-m-Y H:i:s')}}</p>
+    {% endfor %}
+    <h2>{{article.titre}}</h2>
+    <h6>Par {{article.auteur}}</h6>
+    <h6>Le {{article.jourHeure|date('d/m/Y à H:i:s')}}</h6>
     <p>{{article.texte}}</p>
     {% if article.template == "banniereEtCarousel" %}
     <div class="images-box">
-        <!--<ul id="thumbs">
-            <li><a href="1.jpg"><img alt="1.jpg" src="1.jpg" /></a></li>
-            <li><a href="2.jpg"><img alt="2.jpg" src="2.jpg" /></a></li>
-            <li><a href="3.jpg"><img alt="3.jpg" src="3.jpg" /></a></li>
-            <li><a href="4.jpg"><img alt="4.jpg" src="4.jpg" /></a></li>
-            <li><a href="5.jpg"><img alt="5.jpg" src="5.jpg" /></a></li>
-        </ul>-->
+        <ul id="thumbs">
+            {% for image in article.images %}
+            {% if image.rendu == "imgCarrousel" %}
+            <li>
+                <a title="{{image.name}}">
+                <img src="{{ asset('bundles/pr2lsite/images/images_articles/') }}{{image.path}}" alt="{{image.name}}"/>
+                </a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
     </div>
     {% endif %}
-
+<hr style="clear:both;visibility:hidden;"> 
 </div>
+</div>
+
+
 {% endfor %}
 
 {% endblock %}
