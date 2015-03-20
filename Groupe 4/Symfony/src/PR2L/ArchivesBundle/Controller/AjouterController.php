@@ -20,16 +20,17 @@ class AjouterController extends Controller
 
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
     $formBuilder
-      ->add('nomDuFond',   'text')
-      ->add('departementDuFond',   'text')
-      ->add('villeDuFond', 'text')
-      ->add('adresseCompleteDuFond',   'text')
-      ->add('historiqueDuFond',  'textarea')
-      ->add('titreArchive', 'text')
-      ->add('resume','textarea')
-      ->add('grandesEntrees', 'text')
-      ->add('observations', 'textarea')
-      ->add('cote','text')
+      ->add('nomDuFond',   'text', array('label' => 'Nom du fond d\'archive'))
+      ->add('departementDuFond',   'text', array('label' => 'Département du fond d\'archive'))
+      ->add('villeDuFond', 'text', array('label' => 'Ville du fond d\'archive'))
+      ->add('adresseCompleteDuFond',   'text', array('label' => 'Adresse complète du fond d\'archive'))
+      ->add('historiqueDuFond',  'textarea', array('label' => 'Historique du fond d\'archive'))
+      ->add('siteDuFond', 'text', array('label' => 'Site web du fond d\'archive'))
+      ->add('titreArchive', 'text', array('label' => 'Titre de l\'archive'))
+      ->add('resume','textarea', array('label' => 'Résumé de l\'archive'))
+      ->add('grandesEntrees', 'text', array('label' => 'Grandes entrées de l\'archive'))
+      ->add('observations', 'textarea', array('label' => 'Observation de l\'archive'))
+      ->add('cote','text', array('label' => 'Cote de l\'archive'))
       ->add('classification','choice', array(
                                  'choices'   => array(
                                     'registres'   => 'Registres',
@@ -47,27 +48,33 @@ class AjouterController extends Controller
                                     'photographies' => 'Photographies',
                                     'notes_Manuscrites' => 'Notes manuscrites',
                                     'divers' => 'Divers'),
-                                'multiple' => false))
+                                'multiple' => false, 'label' => 'Classification de l\'archive'))
       ->add('typeDeDocument','choice', array(
                                 'choices'   => array(
                                     'papiers' => 'Papiers',
                                     'films' => 'Films',
                                     'photos' => 'Photos',
                                     'bandes_magnetiques' => 'Bandes magnétiques'),
-                                'multiple' =>false))
-      ->add('dateDePublicationLaPlusAncienne','date')
-      ->add('dateDePublicationLaPlusRecente','date')
-      ->add('metrageLineaire', 'text')
+                                'multiple' =>false, 'label' => 'Type de document'))
+      ->add('dateDePublicationLaPlusAncienne','date', array(
+            'years' => range(date('Y') - 200, date('Y'))
+            ))
+      ->add('dateDePublicationLaPlusRecente','date', array(
+            'years' => range(date('Y') - 200, date('Y'))
+            ))
+      ->add('metrageLineaire', 'text', array('label' => 'Métrage linéaire'))
       ->add('numerisation', 'choice', array(
                                 'choices' => array(
                                     'oui' => 'Oui',
                                     'non' => 'Non',
                                     'partielle' => 'Partielle'),
-                                'multiple' => false))
-      ->add('dateDeRentreeDansLeFond', 'date')
-      ->add('origineArchive', 'text')
-      ->add('producteurArchive', 'text')
-      ->add('detenteurArchive', 'text')
+                                'multiple' => false, 'label' => 'Numérisation'))
+      ->add('dateDeRentreeDansLeFond', 'date', array(
+            'years' => range(date('Y') - 200, date('Y'))
+            ))
+      ->add('origineArchive', 'text', array('label' => 'Origine de l\'archive'))
+      ->add('producteurArchive', 'text', array('label' => 'Producteur de l\'archive'))
+      ->add('detenteurArchive', 'text', array('label' => 'Détenteur de l\'archive'))
       ->add('communicabilite', 'choice', array(
                                 'choices' => array(
                                     'oui' => 'Oui',
@@ -79,7 +86,7 @@ class AjouterController extends Controller
                                     'aucun' => 'Aucun',
                                     'lecture' => 'Lecture',
                                     'pas_acces' => 'Pas d\'accès'),
-                                'multiple' => false))
+                                'multiple' => false, 'label' => 'Condition pour accéder à l\'archive'))
     ;
     // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
 
@@ -93,6 +100,8 @@ class AjouterController extends Controller
        $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+            
+            $archive->setValide(0);
             
             $em = $this->getDoctrine()->getManager();
             $em->persist($archive);

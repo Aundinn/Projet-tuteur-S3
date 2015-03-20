@@ -1,8 +1,9 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - RechercheAvancée{% endblock %}
+{% block title %}{{ parent() }} - Validation{% endblock %}
 
 {% block body %}
+
 <nav>
     <ul id="menuArchive">
         <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche</a></li>
@@ -13,15 +14,8 @@
     </ul>
 </nav>
 
-<h4>Modifier une archive</h4>
+<h4>Validation d'un archive</h4>
 
-<table>
-        <tr><th>Cote de l'archive</th><th>Titre Archive</th><th>Auteur</th></tr>
-        {% for advert in listAdverts %}
-        <tr><td>{{ advert.getCote() }}</td>
-            <td>{{ advert.getTitreArchive() }}</td>
-            <td>{{ advert.getDetenteurArchive() }}</td>
-            <td><a href="{{ path('pr2_l_archives_tag',{'id':advert.getId()}) }}">Ajouter un mot clé</a></td></tr>
-        {% endfor %}
-</table>
+<p>L'archive a été validée</p>
+
 {% endblock %}

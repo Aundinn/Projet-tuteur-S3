@@ -25,10 +25,10 @@ class RechercheAvanceeController extends Controller
         $formBuilder1 = $this->get('form.factory')->createBuilder('form', $recherche)->setMethod("POST")->setAction('#');
         
         $formBuilder1
-            ->add('producteurArchive','text',array('required' => false))
-            ->add('nomDuFond','text',array('required' => false))
-            ->add('departementDuFond','text', array('required' => false))
-            ->add('tag','text', array('required' => false));
+            ->add('producteurArchive','text',array('required' => false, 'label' => 'Auteur'))
+            ->add('nomDuFond','text',array('required' => false, 'label' => 'Nom du fond d\'archive'))
+            ->add('departementDuFond','text', array('required' => false, 'label' => 'Département du fond d\'archive'))
+            ->add('tag','text', array('required' => false, 'label' => 'Mot clé'));
         ;
         $form1 = $formBuilder1->getForm();
         

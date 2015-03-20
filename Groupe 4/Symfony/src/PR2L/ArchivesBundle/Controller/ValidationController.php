@@ -4,20 +4,20 @@ namespace PR2L\ArchivesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PR2L\ArchivesBundle\Entity\archive;
+use PR2L\ArchivesBundle\Entity\tags;
 
-class ArchivesController extends Controller
+class ValidationController extends Controller
 {
-    public function archivesAction()
+    public function validationAction()
     {
-        //Récupération de tous les utilisateurs pour l'affichage
         $repository = $this
                 ->getDoctrine()
                 ->getManager()
                 ->getRepository('PR2LArchivesBundle:archive');
   
-        $listAdverts = $repository->myFindValide();
+        $listAdverts = $repository->myFindNonValide();
         
-         return $this->render('PR2LArchivesBundle:Default:archives.html.twig',array(
+        return $this->render('PR2LArchivesBundle:Default:validation.html.twig',array(
 'listAdverts'=>$listAdverts)); 
     }
 }

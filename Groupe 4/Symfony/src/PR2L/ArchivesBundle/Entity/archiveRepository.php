@@ -3,6 +3,7 @@
 namespace PR2L\ArchivesBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use PR2L\ArchivesBundle\Entity\archive;
 
 /**
  * archiveRepository
@@ -16,6 +17,26 @@ class archiveRepository extends EntityRepository
         return $this->createQueryBuilder('a')->getQuery()->getResult();
     }
     
+    public function myFindValide(){
+        $qb = $this->createQueryBuilder('a');
+        
+        $qb->where('a.valide = 1');
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
+    
+    public function myFindNonValide(){
+        $qb = $this->createQueryBuilder('a');
+        
+        $qb->where('a.valide = 0');
+        
+        return $qb
+                ->getQuery()
+                ->getResult();
+    }
+    
     public function myFindById($id){
         $qb = $this->createQueryBuilder('a');
         
@@ -25,6 +46,18 @@ class archiveRepository extends EntityRepository
         return $qb
                 ->getQuery()
                 ->getResult();
+    }
+    
+    public function valider($id){
+        $query = $this->getEntityManager()
+        ->createQuery('
+            UPDATE PR2L\ArchivesBundle\Entity\archive a
+            SET a.valide = 1
+            WHERE a.id = :identifiant'
+        )->setParameter('identifiant', $id);
+
+        $result = $query->getSingleResult();
+
     }
     
     public function myFindArchive($auteur,$departement,$fond){
@@ -50,6 +83,9 @@ class archiveRepository extends EntityRepository
                 if($valeur->getProducteurArchive() != $auteur){
                        unset($result[$cpt]);
                 }
+            }
+            if($valeur->getValide() == 0){
+                unset($result[$cpt]);
             }
             $cpt++;
         }

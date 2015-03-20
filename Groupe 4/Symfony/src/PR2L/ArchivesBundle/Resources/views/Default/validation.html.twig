@@ -1,8 +1,9 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - RechercheAvancée{% endblock %}
+{% block title %}{{ parent() }} - Validation{% endblock %}
 
 {% block body %}
+
 <nav>
     <ul id="menuArchive">
         <li><a href=" {{ path('pr2_l_archives_rechercheAvancee') }}">Recherche</a></li>
@@ -13,15 +14,18 @@
     </ul>
 </nav>
 
-<h4>Modifier une archive</h4>
+<h4>Validation d'un article</h4>
 
 <table>
-        <tr><th>Cote de l'archive</th><th>Titre Archive</th><th>Auteur</th></tr>
+        <tr><th>Cote de l'archive</th><th>Titre Archive</th><th>Nom du fond d'archive</th><th>Resumé de l'archive</th><th>Classification de l'archive</th><th></th></tr>
         {% for advert in listAdverts %}
         <tr><td>{{ advert.getCote() }}</td>
             <td>{{ advert.getTitreArchive() }}</td>
-            <td>{{ advert.getDetenteurArchive() }}</td>
-            <td><a href="{{ path('pr2_l_archives_tag',{'id':advert.getId()}) }}">Ajouter un mot clé</a></td></tr>
+            <td>{{ advert.getNomDuFond() }}</td>
+            <td>{{ advert.getResume() }}</td>
+            <td>{{ advert.getClassification() }}</td>
+            <td><a href="{{ path('pr2_l_archives_valider',{'id':advert.getId()}) }}">Plus d'informations</a></td></tr>
         {% endfor %}
-</table>
+    </table>
+
 {% endblock %}
