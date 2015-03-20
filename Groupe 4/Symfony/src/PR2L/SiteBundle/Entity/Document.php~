@@ -69,6 +69,7 @@ class Document
     private $texte;
 
     public function __construct() {
+        $this->auteur = "moi";
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
         $this->jourHeure = new \DateTime('now');
     }
