@@ -24,7 +24,6 @@ class RevuePresseController extends Controller
             if ($form->isSubmitted()) {
                 
                 $em = $this->getDoctrine()->getManager();
-                
                 $em->persist($doc);
                 $em->flush();
 

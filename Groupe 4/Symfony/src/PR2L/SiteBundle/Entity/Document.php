@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Document
  *
- * @ORM\Table(name="document")
+ * @ORM\Table()
  * @ORM\Entity(repositoryClass="PR2L\SiteBundle\Entity\DocumentRepository")
  */
 class Document
@@ -52,15 +52,10 @@ class Document
     /**
      * @var datetime
      *
-     * @ORM\Column(name="jourHeure", type="datetime")
+     * @ORM\Column(name="date", type="datetime")
      */
-    private $jourHeure;
+    private $date;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
-     */
-    private $images;
-    
     /**
      * @var string
      *
@@ -68,9 +63,29 @@ class Document
      */
     private $texte;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageBanniere", type="string", length=255, nullable=true)
+     */
+    private $imageBanniere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageCoin", type="string", length=255, nullable=true)
+     */
+    private $imageCoin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagesCarousel", type="text", nullable=true)
+     */
+    private $imagesCarousel;
+
     public function __construct() {
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->jourHeure = new \DateTime('now');
+        $this->auteur = "moi";
     }
     
     /**
@@ -176,6 +191,29 @@ class Document
     }
 
     /**
+     * Set date
+     *
+     * @param string $date
+     * @return Document
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return string 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
      * Set texte
      *
      * @param string $texte
@@ -198,70 +236,72 @@ class Document
         return $this->texte;
     }
 
-
     /**
-     * Add images
+     * Set imageBanniere
      *
-     * @param \PR2L\SiteBundle\Entity\Image $images
+     * @param string $imageBanniere
      * @return Document
      */
-    public function addImage(\PR2L\SiteBundle\Entity\Image $images)
+    public function setImageBanniere($imageBanniere)
     {
-        $this->images[] = $images;
+        $this->imageBanniere = $imageBanniere;
     
         return $this;
     }
 
     /**
-     * Remove images
+     * Get imageBanniere
      *
-     * @param \PR2L\SiteBundle\Entity\Image $images
+     * @return string 
      */
-    public function removeImage(\PR2L\SiteBundle\Entity\Image $images)
+    public function getImageBanniere()
     {
-        $this->images->removeElement($images);
+        return $this->imageBanniere;
     }
 
     /**
-     * Get images
+     * Set imageCoin
      *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-    
-    /**
-     * Set images
-     *
-     * @param \Doctrine\Common\Collections\Collection $images
-     */
-    public function setDeskComment(\Doctrine\Common\Collections\Collection $images)
-    {
-        $this->images = $images;
-    }
-
-    /**
-     * Set jourHeure
-     *
-     * @param \DateTime $jourHeure
+     * @param string $imageCoin
      * @return Document
      */
-    public function setJourHeure($jourHeure)
+    public function setImageCoin($imageCoin)
     {
-        $this->jourHeure = $jourHeure;
+        $this->imageCoin = $imageCoin;
     
         return $this;
     }
 
     /**
-     * Get jourHeure
+     * Get imageCoin
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getJourHeure()
+    public function getImageCoin()
     {
-        return $this->jourHeure;
+        return $this->imageCoin;
+    }
+
+    /**
+     * Set imagesCarousel
+     *
+     * @param string $imagesCarousel
+     * @return Document
+     */
+    public function setImagesCarousel($imagesCarousel)
+    {
+        $this->imagesCarousel = $imagesCarousel;
+    
+        return $this;
+    }
+
+    /**
+     * Get imagesCarousel
+     *
+     * @return string 
+     */
+    public function getImagesCarousel()
+    {
+        return $this->imagesCarousel;
     }
 }

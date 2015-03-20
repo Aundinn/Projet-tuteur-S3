@@ -1,24 +1,25 @@
-{% extends "::layout.html.twig" %} 
-{% block title %}
-    {{ parent() }} - Revue de Presse
-{% endblock %} 
+{% extends "::layout.html.twig" %}
 
-{% block body %} 
+{% block title %}{{ parent() }} - Revue de Presse{% endblock %}
+
+{% block body %}
 
 {% for flashMessage in app.session.flashbag.get('phrase') %}
 <div class="flashBag">
-    <br> {{ flashMessage }}
+    <br>
+    {{ flashMessage }}
 </div>
-{% endfor %} 
+{% endfor %}
 
-{{ form_start(form, {'enctype': 'multipart/form-data'}) }} {{ form_errors(form) }}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
 <table>
     <tr>
         <th colspan="2">Ajout d'un nouveau document</th>
     </tr>
     <tr>
         <td>
-            {{ form_label(form.type) }} 
+            {{ form_label(form.type) }}
             {{ form_errors(form.type) }}
         </td>
         <td>
@@ -27,16 +28,16 @@
     </tr>
     <tr onchange="showImages()">
         <td>
-            {{ form_label(form.template) }} 
+            {{ form_label(form.template) }}
             {{ form_errors(form.template) }}
         </td>
         <td>
             {{ form_widget(form.template, {'id': 'template'}) }}
         </td>
     </tr>
-    <tr>
+     <tr>
         <td>
-            {{ form_label(form.titre) }} 
+            {{ form_label(form.titre) }}
             {{ form_errors(form.titre) }}
         </td>
         <td>
@@ -45,31 +46,50 @@
     </tr>
     <tr>
         <td>
-            {{ form_label(form.auteur) }} 
-            {{ form_errors(form.auteur) }}
+            {{ form_label(form.date) }}
+            {{ form_errors(form.date) }}
         </td>
         <td>
-            {{ form_widget(form.auteur) }}
+            {{ form_widget(form.date) }}
         </td>
     </tr>
     <tr>
         <td>
-            {{ form_label(form.texte) }} 
+            {{ form_label(form.texte) }}
             {{ form_errors(form.texte) }}
         </td>
         <td>
             {{ form_widget(form.texte) }}
         </td>
     </tr>
-    <tr>
+    <tr id="imageBanniere">
         <td>
-            {{ form_label(form.images) }} 
-            {{ form_errors(form.images) }}
+            {{ form_label(form.imageBanniere) }}
+            {{ form_errors(form.imageBanniere) }}
         </td>
         <td>
-            {{ form_widget(form.images) }}
+            {{ form_widget(form.imageBanniere, {'id': 'banniere'}) }}
         </td>
     </tr>
+    <tr id="imageCoin">
+        <td>
+            {{ form_label(form.imageCoin) }}
+            {{ form_errors(form.imageCoin) }}
+        </td>
+        <td>
+            {{ form_widget(form.imageCoin, {'id': 'coin'}) }}
+        </td>
+    </tr>
+    <tr id="imagesCarousel">
+        <td>
+            {{ form_label(form.imagesCarousel) }}
+            {{ form_errors(form.imagesCarousel) }}
+        </td>
+        <td>
+            {{ form_widget(form.imagesCarousel, {'id': 'carousel'}) }}
+        </td>
+    </tr>
+    
     <tr>
         <td colspan="2" style="text-align:center;">
             {{ form_end(form) }}
@@ -77,43 +97,43 @@
     </tr>
 </table>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var $container = $('div#pr2l_sitebundle_document_images');
-        var $addLink = $('<a href="#" id="add_image" class="plus_moins">+</a>');
-        $container.append($addLink);
-        $addLink.click(function (e) {
-            addCategory($container);
-            e.preventDefault();
-            return false;
-        });
-        var index = $container.find(':input').length;
-        if (index == 0) {
-            addCategory($container);
-        } else {
-            $container.children('div').each(function () {
-                addDeleteLink($(this));
-            });
+<script>
+    window.onload = showImages();
+    
+    function showImages(){
+        var opt = document.getElementById("template");
+        var valueOpt = opt.options[opt.selectedIndex].value;
+        ic = document.getElementById("imageCoin");
+        isc = document.getElementById("imagesCarousel");
+        ib = document.getElementById("imageBanniere");
+        c = document.getElementById("coin");
+        sc = document.getElementById("carousel");
+        b = document.getElementById("banniere");
+        if (valueOpt == "banniereSeule") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = 'none';
+            isc.style.display = 'none';
+            ib.style.display = '';
         }
-
-        function addCategory($container) {
-            var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, '-----------------------------------------------')
-                .replace(/__name__/g, index));
-            addDeleteLink($prototype);
-            $container.append($prototype);
-            index++;
+        if (valueOpt == "imageCoin") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = '';
+            isc.style.display = 'none';
+            ib.style.display = 'none';
         }
-
-        function addDeleteLink($prototype) {
-            $deleteLink = $('<a href="#" class="plus_moins">-</a>');
-            $prototype.append($deleteLink);
-            $deleteLink.click(function (e) {
-                $prototype.remove();
-                e.preventDefault();
-                return false;
-            });
+        if (valueOpt == "banniereEtCarousel") {
+            c.value = '';
+            sc.value = '';
+            b.value = '';
+            ic.style.display = '';
+            isc.style.display = 'none';
+            ib.style.display = '';
         }
-    });
+    }
 </script>
+
 {% endblock %}
