@@ -14,10 +14,22 @@ pr2_l_site_fondateurs:
     path:     /fondateurs
     defaults: { _controller: PR2LSiteBundle:Fondateurs:fondateurs }
     
-pr2_l_site_revuePresse:
+pr2_l_site_revuePresseAdd:
     path:     /revuePresse
-    defaults: { _controller: PR2LSiteBundle:RevuePresse:revuePresse }
+    defaults: { _controller: PR2LSiteBundle:RevuePresse:add }
     
+pr2_l_site_revuePresseEdit:
+    pattern:  /revuePresse/{id}/edit
+    defaults: { _controller: PR2LSiteBundle:RevuePresse:edit }
+    requirements:
+        id:  \d+
+
+pr2_l_site_revuePresseDelete:
+    pattern:  /revuePresse/{id}/delete/
+    defaults: { _controller: PR2LSiteBundle:RevuePresse:delete }
+    requirements:
+        id:  \d+
+
 pr2_l_site_adherer:
     path:     /adherer
     defaults: { _controller: PR2LSiteBundle:Adherer:adherer }

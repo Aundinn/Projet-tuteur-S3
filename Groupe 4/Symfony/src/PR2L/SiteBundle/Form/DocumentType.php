@@ -13,21 +13,7 @@ class DocumentType extends AbstractType
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {/*
-        $builder
-            ->add('template', 'text', array('label'=>'Template à utiliser'))
-            ->add('theme', 'text', array('label'=>'Thème de l\'article'))
-            ->add('auteur', 'text', array('label'=>'Auteur'))
-            ->add('elements', 'collection', array(
-                'type' => new ElementType(),
-                'allow_add' => true,
-                'allow_delete' => true,
-                'label' => 'Eléments de l\'article',
-            ))
-            ->add('save', 'submit', array('label'=>'Valider', 'attr' => array('class' => 'plus_moins')))
-            ->setMethod("POST")->setAction('#')
-        ;*/
-        
+    {        
         $builder
             ->add('type', 'choice', array('label'=>'Type de l\'article', 'choices' => array('fondateurs' => 'Fondateurs', 'news' => 'News')))
             ->add('template', 'choice', array('label'=>'Template à utiliser', 'choices' => array('banniereSeule' => 'Bannière seule', 'imageCoin' => 'Image en coin', 'banniereEtCarousel' => 'Bannière et carrousel')))

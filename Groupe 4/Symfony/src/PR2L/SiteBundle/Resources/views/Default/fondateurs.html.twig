@@ -5,6 +5,8 @@
 {% block body %}
 
 {% for article in listeArticles %}
+    <a href="{{ path('pr2_l_site_revuePresseDelete',{'id':article.getId()}) }}"><img class="delete" src="{{ asset('bundles/pr2lsite/images//delete_icone.png') }}" alt="Supprimer" onclick="return confirm('Etes-vous sûr de vouloir supprimer ce document ?')"/></a>
+    <a href="{{ path('pr2_l_site_revuePresseEdit',{'id':article.getId()}) }}"><img class="edit" src="{{ asset('bundles/pr2lsite/images/edit_icone.png') }}" alt="Editer"/></a>
 <div class="styleDoc">
 <div class="{{ article.template }}">
     {% for image in article.images %}

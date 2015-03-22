@@ -130,3 +130,12 @@
     width: 700px;
     height: 600px;
 }
+
+/* Icone edit et delete */
+.edit {
+    float: right;
+}
+
+.delete {
+    float: right;
+}

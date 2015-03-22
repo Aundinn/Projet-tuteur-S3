@@ -76,8 +76,9 @@ class Image
      */
     public function preUpload()
     {
-        if (null !== $this->file) {
-            $this->path = sha1(uniqid(mt_rand(), true)).'.'.$this->file->guessExtension();
+        if (null !== $this->getFile()) {
+            $filename = sha1(uniqid(mt_rand(), true));
+            $this->path = $filename.'.'.$this->getFile()->guessExtension();
         }
     }
 
@@ -87,13 +88,17 @@ class Image
      */
     public function upload()
     {
-        if (null === $this->file) {
+        if (null === $this->getFile()) {
             return;
         }
 
-        $this->file->move($this->getUploadRootDir(), $this->path);
+        $this->getFile()->move($this->getUploadRootDir(), $this->path);
 
-        unset($this->file);
+        if (isset($this->temp)) {
+            unlink($this->getUploadRootDir().'/'.$this->temp);
+            $this->temp = null;
+        }
+        $this->file = null;
     }
 
     /**
@@ -101,9 +106,25 @@ class Image
      */
     public function removeUpload()
     {
-        if ($file = $this->getAbsolutePath()) {
+        $file = $this->getAbsolutePath();
+        if ($file) {
             unlink($file);
         }
+    }
+    
+    public function setFile($file = null)
+    {
+        $this->file = $file;
+        if (isset($this->path)) {
+            $this->temp = $this->path;
+            $this->path = null;
+        } else {
+            $this->path = 'initial';
+        }
+    }
+    
+    public function getFile(){
+        return $this->file;
     }
     
     /**
