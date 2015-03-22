@@ -98,7 +98,7 @@
         }
 
         function addCategory($container) {
-            var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, '-----------------------------------------------')
+            var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, '--------------------------------------------------------')
                 .replace(/__name__/g, index));
             addDeleteLink($prototype);
             $container.append($prototype);

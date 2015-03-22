@@ -44,7 +44,7 @@ class RevuePresseController extends Controller
     public function editAction($id){        
         $request = $this->get('request');
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $doc = $em->getRepository('PR2LSiteBundle:Document')->find($id);
         $form = $this->createForm(new DocumentType(), $doc);
 

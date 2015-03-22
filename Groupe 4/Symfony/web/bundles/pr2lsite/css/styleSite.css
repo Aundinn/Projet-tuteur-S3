@@ -12,6 +12,10 @@ section{
 	border: 1px solid lightgrey;
 }
 
+body ul li {
+    font-size: 15px;
+}
+
 /*		MENU		*/
 nav ul li{						/* option du menu */
 	display:inline-block;
