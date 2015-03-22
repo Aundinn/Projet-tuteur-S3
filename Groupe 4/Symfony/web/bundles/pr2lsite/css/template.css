@@ -132,10 +132,12 @@
 }
 
 /* Icone edit et delete */
-.edit {
-    float: right;
+.delete {
+    margin-left: 676px;
+    position: absolute;
 }
 
-.delete {
-    float: right;
+.edit {
+    margin-left: 650px;
+    position: absolute;
 }
