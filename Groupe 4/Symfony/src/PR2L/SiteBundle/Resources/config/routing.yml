@@ -34,6 +34,18 @@ pr2_l_site_adherer:
     path:     /adherer
     defaults: { _controller: PR2LSiteBundle:Adherer:adherer }
     
+pr2_l_site_adhererValide:
+    path:     /adherer/{id}/valide
+    defaults: { _controller: PR2LSiteBundle:Adherer:valide }
+    requirements:
+        id:  \d+
+    
+pr2_l_site_adhererNonValide:
+    path:     /adherer/{id}/nonvalide
+    defaults: { _controller: PR2LSiteBundle:Adherer:nonvalide }
+    requirements:
+        id:  \d+
+    
 pr2_l_site_vieAssociation:
     path:     /vieAssociation
     defaults: { _controller: PR2LSiteBundle:VieAssociation:vieAssociation }

@@ -3,4 +3,23 @@
 {% block title %}{{ parent() }} - Adhérer à l'association{% endblock %}
 
 {% block body %}
+
+<table>
+{% for article in listeArticles %}
+    <tr>
+        <td>
+            {{article.titre}}
+        </td>
+        <td>
+            {% if article.valide == 0 %}
+            <a href="{{ path('pr2_l_site_adhererValide',{'id':article.getId()}) }}"><img src="{{ asset('bundles/pr2lsite/images/valide_icone.png') }}" alt="Valider"/></a>
+            {% else %}
+            <a href="{{ path('pr2_l_site_adhererNonValide',{'id':article.getId()}) }}"><img src="{{ asset('bundles/pr2lsite/images/nonvalide_icone.png') }}" alt="Invalider"/></a>
+            {% endif %}
+            <a href="{{ path('pr2_l_site_revuePresseEdit',{'id':article.getId()}) }}"><img src="{{ asset('bundles/pr2lsite/images/edit_icone.png') }}" alt="Editer"/></a>
+            <a href="{{ path('pr2_l_site_revuePresseDelete',{'id':article.getId()}) }}"><img src="{{ asset('bundles/pr2lsite/images//delete_icone.png') }}" alt="Supprimer" onclick="return confirm('Etes-vous sûr de vouloir supprimer ce document ?')"/></a>
+        </td>
+    </tr>
+{% endfor %}  
+</table>
 {% endblock %}

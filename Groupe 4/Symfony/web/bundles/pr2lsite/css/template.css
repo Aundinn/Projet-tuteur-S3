@@ -131,15 +131,3 @@
     width: 700px;
     height: 600px;
 }
-
-/* Icone edit et delete */
-.delete {
-    margin-left: 724px;
-    margin-top: 30px;
-    position: absolute;
-}
-
-.edit {
-    margin-left: 724px;
-    position: absolute;
-}

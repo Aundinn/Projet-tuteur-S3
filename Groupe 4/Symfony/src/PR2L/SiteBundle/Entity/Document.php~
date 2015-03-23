@@ -272,27 +272,4 @@ class Document
     {
         return $this->jourHeure;
     }
-
-    /**
-     * Set valide
-     *
-     * @param integer $valide
-     * @return Document
-     */
-    public function setValide($valide)
-    {
-        $this->valide = $valide;
-    
-        return $this;
-    }
-
-    /**
-     * Get valide
-     *
-     * @return integer 
-     */
-    public function getValide()
-    {
-        return $this->valide;
-    }
 }

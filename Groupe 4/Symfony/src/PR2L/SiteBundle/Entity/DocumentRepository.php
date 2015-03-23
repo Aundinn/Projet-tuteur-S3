@@ -25,4 +25,28 @@ class DocumentRepository extends EntityRepository
     		->getResult()
   		;
     }
+    
+    public function valider($id){
+        $query = $this->getEntityManager()
+        ->createQuery('
+            UPDATE PR2L\SiteBundle\Entity\Document d
+            SET d.valide = 1
+            WHERE d.id = :identifiant'
+        )->setParameter('identifiant', $id);
+
+        $result = $query->getSingleResult();
+
+    }
+    
+    public function invalider($id){
+        $query = $this->getEntityManager()
+        ->createQuery('
+            UPDATE PR2L\SiteBundle\Entity\Document d
+            SET d.valide = 0
+            WHERE d.id = :identifiant'
+        )->setParameter('identifiant', $id);
+
+        $result = $query->getSingleResult();
+
+    }
 }
